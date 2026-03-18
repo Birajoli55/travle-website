@@ -386,6 +386,49 @@
             }
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
@@ -427,82 +470,13 @@
 
                 <!-- Desktop nav links -->
                 <ul class="nav-links" id="navLinks">
-
-                    <!-- Treks dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="tsum-valley-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-peace"></i></span>
-                                        <span><strong>Tsum Valley Trek</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="upper-mustang-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Upper Mustang Trek</strong><small>14 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i>
-                                        Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i
-                                            class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i>
-                                        Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <!-- Departures (direct) -->
                     <li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
 
+                    <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
                     <!-- Destinations dropdown -->
                     <li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
@@ -597,6 +571,7 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
+                <li><a href="treks.html">🏔 All Treks</a></li>
                 <li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
@@ -1102,213 +1077,8 @@
         </div>
     </section>
 
-    <!-- ===== FAQ SECTION ===== -->
-    <section class="section faq-section" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Got Questions?</span>
-                <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
-                <p class="section-sub">Everything you need to know before you hit the trail</p>
-            </div>
-            <div class="faq-layout">
 
-                <div class="faq-categories">
-                    <button class="faq-cat-btn active" data-cat="all">All Questions</button>
-                    <button class="faq-cat-btn" data-cat="booking">Booking</button>
-                    <button class="faq-cat-btn" data-cat="preparation">Preparation</button>
-                    <button class="faq-cat-btn" data-cat="safety">Safety</button>
-                    <button class="faq-cat-btn" data-cat="permits">Permits</button>
-                </div>
 
-                <div class="faq-list" id="faqList">
-
-                    <div class="faq-item" data-cat="booking">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-calendar-check"></i></span>
-                            <span>How far in advance should I book my trek?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We recommend booking at least <strong>2–3 months in advance</strong>, especially for peak
-                                season
-                                (March–May and September–November). Popular treks like Everest Base Camp fill up
-                                quickly. However, we
-                                can sometimes accommodate last-minute bookings — contact us and we'll do our best!</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="booking">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-credit-card"></i></span>
-                            <span>What is your cancellation and refund policy?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We offer a <strong>full refund</strong> if you cancel 30+ days before the trek start
-                                date.
-                                Cancellations 15–29 days before receive a 50% refund. Cancellations within 14 days are
-                                non-refundable.
-                                However, we're always happy to reschedule your trek at no extra cost.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="preparation">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-dumbbell"></i></span>
-                            <span>What fitness level is required for trekking in Nepal?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Fitness requirements vary by trek. Easy treks like <strong>Langtang Valley</strong> need
-                                basic fitness.
-                                Moderate treks like Annapurna Circuit require regular cardio training 2–3 months prior.
-                                Challenging
-                                treks like <strong>Everest Base Camp</strong> demand consistent hiking, running, and
-                                stair-climbing
-                                exercise for 3–4 months. No prior trekking experience is needed — just good physical
-                                conditioning.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="preparation">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-suitcase-rolling"></i></span>
-                            <span>What should I pack for a Himalayan trek?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Essential packing includes: <strong>layered clothing</strong> (moisture-wicking base,
-                                insulating
-                                mid-layer, waterproof outer shell), quality trekking boots, trekking poles, a 35–45L
-                                daypack, sleeping
-                                bag (rated to -10°C for high-altitude treks), sun protection, and a first aid kit. We
-                                provide a detailed
-                                packing list upon booking. Gear can also be rented affordably in Kathmandu's Thamel
-                                district.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="preparation">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-calendar-alt"></i></span>
-                            <span>What is the best time of year to trek in Nepal?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Nepal has two ideal trekking windows: <strong>Spring (March–May)</strong> — clear skies,
-                                blooming
-                                rhododendrons, warm temperatures; and <strong>Autumn (September–November)</strong> — the
-                                most popular
-                                season with exceptional visibility and crystal-clear mountain views. Winter treks
-                                (Dec–Feb) are possible
-                                at lower altitudes and offer solitude. Monsoon (June–August) is generally avoided for
-                                most high-altitude
-                                treks.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="safety">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-heartbeat"></i></span>
-                            <span>How do you handle altitude sickness (AMS)?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Altitude Mountain Sickness (AMS) is a serious concern above 3,000m. Our guides are
-                                <strong>Wilderness
-                                    First Aid (WFA) certified</strong> and trained to monitor symptoms closely. We
-                                follow a strict
-                                acclimatization schedule with rest days built in ("climb high, sleep low"). All guides
-                                carry pulse
-                                oximeters and emergency oxygen. In severe cases, immediate descent and helicopter
-                                evacuation is
-                                arranged. We strongly advise purchasing <strong>comprehensive travel insurance</strong>
-                                that covers
-                                high-altitude evacuation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="safety">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-shield-alt"></i></span>
-                            <span>Is trekking in Nepal safe for solo travelers and women?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Nepal is considered one of the <strong>safest adventure travel destinations in
-                                    Asia</strong>. Solo
-                                travelers — including women — trek successfully every year. On our group treks, you're
-                                never alone. We
-                                recommend staying on established routes, keeping emergency contacts updated, and
-                                registering with TIMS
-                                (Trekkers' Information Management System). Our guides are personally vetted and
-                                background-checked for
-                                your peace of mind.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="permits">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-file-alt"></i></span>
-                            <span>What permits are required for trekking in Nepal?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Most treks require a <strong>TIMS Card</strong> (Trekkers' Information Management System)
-                                and a
-                                <strong>National Park / Conservation Area Permit</strong>. For example, Everest treks
-                                need a Sagarmatha
-                                National Park permit, while Annapurna treks need an ACAP permit. Restricted area treks
-                                (Manaslu, Upper
-                                Dolpa) require additional special permits. <strong>We handle all permits on your
-                                    behalf</strong> —
-                                just provide your passport copy and we take care of the rest.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="permits">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-passport"></i></span>
-                            <span>Do I need a visa to enter Nepal?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Most nationalities can obtain a <strong>Nepal Tourist Visa on arrival</strong> at
-                                Tribhuvan
-                                International Airport (Kathmandu) or at land border crossings. Fees are approximately
-                                <strong>$30 for 15
-                                    days, $50 for 30 days, $125 for 90 days</strong>. You'll need a valid passport (6+
-                                months),
-                                passport-size photos, and the visa fee in cash (USD preferred). We provide a complete
-                                pre-arrival
-                                checklist with your booking confirmation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-cat="booking">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-q-icon"><i class="fas fa-users"></i></span>
-                            <span>Can I join a trek as a solo traveler or do I need a group?</span>
-                            <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Absolutely! Solo travelers are warmly welcomed. You can <strong>join one of our scheduled
-                                    group
-                                    departures</strong> to meet like-minded adventurers, or book a <strong>private
-                                    custom trek</strong>
-                                with a dedicated guide and porter just for you. Private treks can be customized for
-                                pace, itinerary, and
-                                dates. We specialize in making solo travel comfortable, social, and safe.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ===== REVIEWS ===== -->
     <section class="section">
@@ -1346,6 +1116,49 @@
                     <div class="reviewer">
                         <div class="reviewer-avatar" style="background:#7c3aed">SK</div>
                         <div class="reviewer-info"><strong>Sarah Klein</strong><span>New York, USA</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Annapurna Circuit <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Essential information for your journey around the Annapurnas</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the Thorong La Pass? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Thorong La (5,416m) is the highest point of the trek and the most challenging day. It requires a pre-dawn start and a steady 4–6 hour climb, followed by a long descent. While physically demanding, no technical climbing is involved. Good physical conditioning and proper acclimatization in Manang are the keys to success.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Has the road ruined the Annapurna Circuit? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>While road construction has changed some sections, we use <strong>New Annapurna Trekking Trails (NATT)</strong> to avoid the road as much as possible. The high-altitude sections from Chame to Muktinath remain spectacular and untouched by roads, offering a world-class wilderness experience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What permits do I need for the Annapurna Circuit? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>You need the <strong>ACAP (Annapurna Conservation Area Permit)</strong> and a <strong>TIMS (Trekkers' Information Management System) card</strong>. We handle both of these for you and they are included in our package cost.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I do the trek in reverse? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>We strongly discourage trekking from Muktinath to Thorong La (reverse). The altitude gain is too rapid and dangerous for proper acclimatization. The traditional counter-clockwise route from Besisahar allows your body to adjust gradually as you ascend.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is Wi-Fi and charging available? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, most teahouses along the Annapurna Circuit offer Wi-Fi and electricity for charging devices, often for a small fee ($2–$5). Connectivity is surprisingly good in villages like Manang and Muktinath, though it may be unavailable at Thorong Phedi and High Camp.</p>
                     </div>
                 </div>
             </div>
@@ -1453,6 +1266,14 @@
             });
         });
 
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
         // Sticky Booking Bar
         const stickyBar = document.getElementById('stickyBooking');
         if (stickyBar) {
@@ -1483,7 +1304,6 @@
                 overviewReadMore.querySelector('i').className = isHidden ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
             });
         }
-
     </script>
 </body>
 

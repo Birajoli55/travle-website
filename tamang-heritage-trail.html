@@ -375,6 +375,49 @@
             grid-row: span 2;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 992px) {
             .cost-grid {
                 grid-template-columns: 1fr;
@@ -425,64 +468,14 @@
 
                 <!-- Desktop nav links -->
                 <ul class="nav-links" id="navLinks">
-
-                    <!-- Treks dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days · Challenging</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i> Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="index.html#plan" class="dropdown-link"><i class="fas fa-paper-plane"></i> Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$490</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Departures (direct) -->
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<!-- Departures (direct) -->
                     <li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
 
-                    <!-- Destinations dropdown -->
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<!-- Destinations dropdown -->
                     <li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
@@ -492,29 +485,29 @@
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
                                     <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-hiking"></i></span><span><strong>Everest
-                                                 Region</strong><small>12 treks available</small></span></a>
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks available</small></span></a>
                                     <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Annapurna
-                                                 Region</strong><small>9 treks available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks available</small></span></a>
                                     <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-tree"></i></span><span><strong>Langtang
-                                                 Region</strong><small>6 treks available</small></span></a>
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks available</small></span></a>
                                     <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-compass"></i></span><span><strong>Manaslu
-                                                 Region</strong><small>5 treks available</small></span></a>
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks available</small></span></a>
                                     <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-paw"></i></span><span><strong>Dolpa
-                                                 Region</strong><small>4 treks available</small></span></a>
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks available</small></span></a>
                                     <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
-                                                 Region</strong><small>2 treks available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
+                                                Region</strong><small>2 treks available</small></span></a>
                                     <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-sun"></i></span><span><strong>Mustang
-                                                 Region</strong><small>3 treks available</small></span></a>
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks available</small></span></a>
                                     <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Makalu
-                                                 Region</strong><small>1 trek available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu
+                                                Region</strong><small>1 trek available</small></span></a>
                                 </div>
                             </div>
                         </div>
@@ -575,7 +568,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -591,7 +585,8 @@
         <div class="pkg-hero-content">
             <span class="pkg-badge">Cultural Experience</span>
             <h1>Tamang Heritage Trail</h1>
-            <p>Immerse yourself in the rich traditions, unique architecture, and warm hospitality of the Tamang people in the Langtang region.</p>
+            <p>Immerse yourself in the rich traditions, unique architecture, and warm hospitality of the Tamang people
+                in the Langtang region.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Customize Trip</a>
@@ -641,17 +636,27 @@
                 style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
                 <div class="overview-text" id="overviewText">
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        The Tamang Heritage Trail is a unique <strong>cultural trekking experience</strong> that takes you off the beaten path into the heart of the Langtang region. Unlike more commercial routes, this trail focuses on the rich heritage and traditions of the Tamang people, descendants of Tibetan horse traders who have inhabited these hills for centuries.
+                        The Tamang Heritage Trail is a unique <strong>cultural trekking experience</strong> that takes
+                        you off the beaten path into the heart of the Langtang region. Unlike more commercial routes,
+                        this trail focuses on the rich heritage and traditions of the Tamang people, descendants of
+                        Tibetan horse traders who have inhabited these hills for centuries.
                     </p>
                     <div id="overviewMore" style="display: none;">
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                            The trek winds through beautifully preserved villages like Gatlang, Thuman, and Briddim, where you can admire traditional stone houses with intricate wood carvings. Along the way, you'll witness ancient rituals, colorful costumes, and the genuine warmth of local hospitality through community-based homestays.
+                            The trek winds through beautifully preserved villages like Gatlang, Thuman, and Briddim,
+                            where you can admire traditional stone houses with intricate wood carvings. Along the way,
+                            you'll witness ancient rituals, colorful costumes, and the genuine warmth of local
+                            hospitality through community-based homestays.
                         </p>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
-                            Beyond the culture, the trail offers stunning natural beauty, including natural hot springs at Tatopani and panoramic views of the Langtang Lirung, Ganesh Himal, and even the Tibetan mountains from the Nagthali viewpoint. It's a perfect blend of easy trekking and deep cultural immersion.
+                            Beyond the culture, the trail offers stunning natural beauty, including natural hot springs
+                            at Tatopani and panoramic views of the Langtang Lirung, Ganesh Himal, and even the Tibetan
+                            mountains from the Nagthali viewpoint. It's a perfect blend of easy trekking and deep
+                            cultural immersion.
                         </p>
                     </div>
-                    <button id="overviewReadMore" class="btn-read-more" style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                    <button id="overviewReadMore" class="btn-read-more"
+                        style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
                         <span>Read More</span> <i class="fas fa-chevron-down"></i>
                     </button>
                 </div>
@@ -669,11 +674,13 @@
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Meals</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking</td>
+                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Transportation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Private Jeep / Local Bus</td>
+                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Private Jeep / Local Bus
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Max Elevation</td>
@@ -701,63 +708,72 @@
                     <i class="fas fa-home"></i>
                     <div>
                         <strong>Traditional Tamang Villages</strong>
-                        <p>Explore living museums like Gatlang and Thuman, known for their unique stone masonry and carved woodwork.</p>
+                        <p>Explore living museums like Gatlang and Thuman, known for their unique stone masonry and
+                            carved woodwork.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-hot-tub"></i>
                     <div>
                         <strong>Tatopani Hot Springs</strong>
-                        <p>Relax and rejuvenate in natural riverside hot springs, believed to have healing properties by the locals.</p>
+                        <p>Relax and rejuvenate in natural riverside hot springs, believed to have healing properties by
+                            the locals.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-binoculars"></i>
                     <div>
                         <strong>Nagthali Viewpoint (3,165m)</strong>
-                        <p>Witness a spectacular 360-degree panorama of Langtang Lirung, Ganesh Himal, and mountains in Tibet.</p>
+                        <p>Witness a spectacular 360-degree panorama of Langtang Lirung, Ganesh Himal, and mountains in
+                            Tibet.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-users"></i>
                     <div>
                         <strong>Authentic Homestays</strong>
-                        <p>Experience genuine Himalayan hospitality in community-run homestays, sharing meals and stories with local families.</p>
+                        <p>Experience genuine Himalayan hospitality in community-run homestays, sharing meals and
+                            stories with local families.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-dharmachakra"></i>
                     <div>
                         <strong>Ancient Monasteries</strong>
-                        <p>Visit centuries-old monasteries and chortens that are the spiritual heart of the Tamang community.</p>
+                        <p>Visit centuries-old monasteries and chortens that are the spiritual heart of the Tamang
+                            community.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-mountain"></i>
                     <div>
                         <strong>Off-the-Beaten-Path</strong>
-                        <p>Enjoy a quieter, more peaceful trekking experience away from the crowded main trails of Nepal.</p>
+                        <p>Enjoy a quieter, more peaceful trekking experience away from the crowded main trails of
+                            Nepal.</p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-water"></i>
                     <div>
                         <strong>Parvati Kunda Lake</strong>
-                        <p>Visit the sacred high-altitude lake near Gatlang, a site of spiritual importance and natural beauty.</p>
+                        <p>Visit the sacred high-altitude lake near Gatlang, a site of spiritual importance and natural
+                            beauty.</p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-vest"></i>
                     <div>
                         <strong>Local Handicrafts</strong>
-                        <p>See traditional weaving and craftsmanship, with opportunities to support local artisans directly.</p>
+                        <p>See traditional weaving and craftsmanship, with opportunities to support local artisans
+                            directly.</p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-camera"></i>
                     <div>
                         <strong>Cultural Photography</strong>
-                        <p>Capture the vibrant colors of traditional Tamang costumes and the timeless architecture of the villages.</p>
+                        <p>Capture the vibrant colors of traditional Tamang costumes and the timeless architecture of
+                            the villages.</p>
                     </div>
                 </li>
             </ul>
@@ -783,7 +799,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Namaste and welcome! Upon arrival at Tribhuvan International Airport, you'll be met by our team and transferred to your hotel. In the evening, we'll have a trek briefing followed by a traditional welcome dinner. Overnight in Kathmandu.
+                        Namaste and welcome! Upon arrival at Tribhuvan International Airport, you'll be met by our team
+                        and transferred to your hotel. In the evening, we'll have a trek briefing followed by a
+                        traditional welcome dinner. Overnight in Kathmandu.
                     </div>
                 </div>
 
@@ -793,7 +811,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A scenic 7-8 hour drive takes us north from Kathmandu. We pass through rural towns and terraced hillsides, following the Trishuli River. Syabrubesi is the gateway to the Langtang region and our trek starting point. Overnight in Syabrubesi.
+                        A scenic 7-8 hour drive takes us north from Kathmandu. We pass through rural towns and terraced
+                        hillsides, following the Trishuli River. Syabrubesi is the gateway to the Langtang region and
+                        our trek starting point. Overnight in Syabrubesi.
                     </div>
                 </div>
 
@@ -803,7 +823,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The trek begins with an ascent to a viewpoint overlooking the Ganesh Himal and the Tibetan border. We then descend into the beautiful Tamang village of Gatlang, known for its traditional stone houses and the nearby sacred lake, Parvati Kunda. Walking time: 5-6 hours.
+                        The trek begins with an ascent to a viewpoint overlooking the Ganesh Himal and the Tibetan
+                        border. We then descend into the beautiful Tamang village of Gatlang, known for its traditional
+                        stone houses and the nearby sacred lake, Parvati Kunda. Walking time: 5-6 hours.
                     </div>
                 </div>
 
@@ -813,17 +835,22 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Today's trail takes us through rhododendron and pine forests as we head toward Tatopani. 'Tatopani' literally means 'hot water' in Nepali, and you can spend the afternoon relaxing in the natural hot springs to soothe your muscles. Walking time: 6-7 hours.
+                        Today's trail takes us through rhododendron and pine forests as we head toward Tatopani.
+                        'Tatopani' literally means 'hot water' in Nepali, and you can spend the afternoon relaxing in
+                        the natural hot springs to soothe your muscles. Walking time: 6-7 hours.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">05</span> Tatopani &rarr; Thuman (2,338m) via Nagthali (3,165m)</h4>
+                        <h4><span class="iti-day-circle">05</span> Tatopani &rarr; Thuman (2,338m) via Nagthali (3,165m)
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A highlight day! We climb to the open grassland of Nagthali Danda, the highest point of our trek, offering breathtaking 360-degree views of the Himalayas. We then descend to Thuman, a village strongly influenced by Tibetan culture. Walking time: 6-7 hours.
+                        A highlight day! We climb to the open grassland of Nagthali Danda, the highest point of our
+                        trek, offering breathtaking 360-degree views of the Himalayas. We then descend to Thuman, a
+                        village strongly influenced by Tibetan culture. Walking time: 6-7 hours.
                     </div>
                 </div>
 
@@ -833,7 +860,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The trail descends toward the Bhote Koshi river before climbing back up to Briddim. This village offers a unique homestay experience where you live with a local family, learning about their daily tea rituals and farming life. Walking time: 5-6 hours.
+                        The trail descends toward the Bhote Koshi river before climbing back up to Briddim. This village
+                        offers a unique homestay experience where you live with a local family, learning about their
+                        daily tea rituals and farming life. Walking time: 5-6 hours.
                     </div>
                 </div>
 
@@ -843,7 +872,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Our final trekking day takes us on a gentle descent through terraced fields and small settlements back to Syabrubesi. We'll celebrate the successful completion of our cultural journey with a farewell dinner with our guides and porters. Walking time: 3-4 hours.
+                        Our final trekking day takes us on a gentle descent through terraced fields and small
+                        settlements back to Syabrubesi. We'll celebrate the successful completion of our cultural
+                        journey with a farewell dinner with our guides and porters. Walking time: 3-4 hours.
                     </div>
                 </div>
 
@@ -853,7 +884,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        After breakfast, we board our vehicle for the drive back to Kathmandu. Relax and enjoy the changing landscape as we return to the city. Evening is free for souvenir shopping or exploring Thamel. Overnight in Kathmandu.
+                        After breakfast, we board our vehicle for the drive back to Kathmandu. Relax and enjoy the
+                        changing landscape as we return to the city. Evening is free for souvenir shopping or exploring
+                        Thamel. Overnight in Kathmandu.
                     </div>
                 </div>
             </div>
@@ -916,51 +949,59 @@
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
-    <section class="section faq-section" id="faq">
+    <section class="section bg-light" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Got Questions?</span>
-                <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Tamang Heritage <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Everything you need to know about this cultural journey</p>
             </div>
-            <div class="faq-list" id="faqList" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How is the accommodation on the Tamang Heritage Trail?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">How is the accommodation on the Tamang Heritage Trail? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>The trek features unique <strong>community homestays</strong> and local teahouses. While basic, they provide a comfortable bed, warm blankets, and a chance to experience authentic Tamang lifestyle and cuisine.</p>
+                        <p>The trek features unique <strong>community homestays</strong> and local teahouses. While basic, they provide a clean bed, warm blankets, and a chance to experience authentic Tamang lifestyle and cuisine. You'll often eat with the host family in their traditional kitchen.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do I need to be an experienced trekker?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">Do I need to be an experienced trekker? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>No, this is considered an <strong>easy to moderate</strong> trek. It's suitable for beginners with a reasonable level of fitness. The highest point is 3,165m, so the risk of altitude sickness is lower than on many other treks.</p>
+                        <p>No, this is considered an <strong>easy to moderate</strong> trek. It's suitable for beginners with a reasonable level of fitness. The highest point is 3,165m at Nagthali, so the risk of altitude sickness is significantly lower than on most other Himalayan treks.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Can I customize this trek?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">What is the best time for the Tamang Heritage trek? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>Absolutely! The Tamang Heritage Trail can easily be combined with the <strong>Langtang Valley Trek</strong> or the <strong>Gosainkunda Lake Trek</strong> for a longer adventure. Contact us for a custom itinerary.</p>
+                        <p><strong>Spring (March-May)</strong> and <strong>Autumn (September-November)</strong> are ideal. However, because this is a lower-altitude trek, it is also a great choice for <strong>Winter trekking</strong> (December-February), offering clear skies and mild daytime temperatures while higher trails are snow-bound.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there natural hot springs on the trail? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, the village of <strong>Tatopani</strong> is famous for its natural hot springs. 'Tatopani' means 'hot water' in Nepali. It's a highlight of the trek where you can soak in the healing mineral waters after a few days of walking.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I customize this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Absolutely! The Tamang Heritage Trail can easily be combined with the <strong>Langtang Valley Trek</strong> or the <strong>Gosainkunda Lake Trek</strong> for a longer 15-18 day adventure. Contact us to create your perfect custom itinerary.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- ===== FINAL CTA ===== -->
-     <section class="cta-section" style="padding: 100px 0; position: relative; text-align: center; color: white;">
-        <div class="cta-bg" style="background-image:url('hero.png'); position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1;"></div>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-section" style="padding: 100px 0; position: relative; text-align: center; color: white;">
+        <div class="cta-bg"
+            style="background-image:url('hero.png'); position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1;">
+        </div>
         <div class="cta-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: -1;"></div>
         <div class="cta-content container">
             <h2>Experience <span class="accent">Cultural Magic</span></h2>
-            <p style="margin-bottom: 30px;">Walk through history and heritage. Book your Tamang Heritage adventure today.</p>
+            <p style="margin-bottom: 30px;">Walk through history and heritage. Book your Tamang Heritage adventure
+                today.</p>
             <div class="hero-btns" style="justify-content: center;">
                 <a href="contact.html" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Inquire Now</a>
@@ -985,7 +1026,8 @@
                 <div class="footer-logo" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">
                     <i class="fas fa-mountain" style="color:var(--pkg-orange)"></i> HimalayaQuest
                 </div>
-                <p style="opacity: 0.7; line-height: 1.6;">Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world, safely and sustainably.</p>
+                <p style="opacity: 0.7; line-height: 1.6;">Nepal's premier adventure trekking company. We connect
+                    passionate travelers with the roof of the world, safely and sustainably.</p>
             </div>
             <div class="footer-col">
                 <h4 style="margin-bottom: 20px;">Quick Links</h4>
@@ -1006,19 +1048,38 @@
             </div>
             <div class="footer-col">
                 <h4 style="margin-bottom: 20px;">Newsletter</h4>
-                <p style="opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px;">Get the latest trekking news and offers.</p>
+                <p style="opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px;">Get the latest trekking news and
+                    offers.</p>
                 <div style="display: flex; gap: 5px;">
-                    <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; border: none; flex: 1;" />
-                    <button style="background: var(--pkg-orange); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;"><i class="fas fa-paper-plane"></i></button>
+                    <input type="email" placeholder="Email"
+                        style="padding: 10px; border-radius: 5px; border: none; flex: 1;" />
+                    <button
+                        style="background: var(--pkg-orange); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;"><i
+                            class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container" style="margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.8rem;">
+        <div class="footer-bottom container"
+            style="margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.8rem;">
             &copy; 2026 HimalayaQuest Nepal. All rights reserved.
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="app.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
+
 </html>
+
+
+
+

@@ -227,7 +227,7 @@
 
         .high-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
         }
 
         .high-item i {
@@ -285,6 +285,49 @@
             color: #dc3545;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 992px) {
             .cost-grid {
                 grid-template-columns: 1fr;
@@ -314,63 +357,12 @@
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="tsum-valley-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-peace"></i></span>
-                                        <span><strong>Tsum Valley Trek</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="upper-mustang-trek.html" class="dropdown-link nav-active">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Upper Mustang Trek</strong><small>14 Days · Moderate</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i> Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i> Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
-                    <li class="nav-item has-dropdown">
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
                         </a>
@@ -378,12 +370,24 @@
                             <div class="dropdown-inner">
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
-                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks available</small></span></a>
-                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks available</small></span></a>
-                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks available</small></span></a>
-                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks available</small></span></a>
-                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-paw"></i></span><span><strong>Dolpa Region</strong><small>4 treks available</small></span></a>
-                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-sun"></i></span><span><strong>Mustang Region</strong><small>3 treks available</small></span></a>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks available</small></span></a>
                                 </div>
                             </div>
                         </div>
@@ -408,7 +412,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -422,7 +427,8 @@
         <div class="pkg-hero-content">
             <span class="pkg-badge">The Last Forbidden Kingdom</span>
             <h1>Upper Mustang Trek</h1>
-            <p>Step into the hidden world of Lo Manthang, where ancient Tibetan culture meets a surreal desert landscape.</p>
+            <p>Step into the hidden world of Lo Manthang, where ancient Tibetan culture meets a surreal desert
+                landscape.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Customize Trip</a>
@@ -472,13 +478,21 @@
                 style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
                 <div class="overview-text">
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        Upper Mustang is one of the most mysterious and beautiful regions in Nepal. Often referred to as the <strong>"Last Forbidden Kingdom"</strong>, this high-altitude desert was closed to foreigners until 1992. Today, it remains a strictly regulated area, preserving an authentic Tibetan culture that has barely changed in centuries.
+                        Upper Mustang is one of the most mysterious and beautiful regions in Nepal. Often referred to as
+                        the <strong>"Last Forbidden Kingdom"</strong>, this high-altitude desert was closed to
+                        foreigners until 1992. Today, it remains a strictly regulated area, preserving an authentic
+                        Tibetan culture that has barely changed in centuries.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        Unlike the lush valleys of the Annapurna or the jagged ice of Everest, Mustang offers a landscape of <strong>eroded red cliffs</strong>, deep canyons, and windswept plateaus. Being in the rain shadow of the Himalayas, it is one of the few treks in Nepal that can be comfortably enjoyed even during the summer monsoon season.
+                        Unlike the lush valleys of the Annapurna or the jagged ice of Everest, Mustang offers a
+                        landscape of <strong>eroded red cliffs</strong>, deep canyons, and windswept plateaus. Being in
+                        the rain shadow of the Himalayas, it is one of the few treks in Nepal that can be comfortably
+                        enjoyed even during the summer monsoon season.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
-                        The highlight is the walled city of <strong>Lo Manthang</strong>, the capital of the former Kingdom of Lo. Here, you'll walk through narrow alleys, visit 14th-century monasteries filled with exquisite murals, and perhaps even meet members of the local royal lineage.
+                        The highlight is the walled city of <strong>Lo Manthang</strong>, the capital of the former
+                        Kingdom of Lo. Here, you'll walk through narrow alleys, visit 14th-century monasteries filled
+                        with exquisite murals, and perhaps even meet members of the local royal lineage.
                     </p>
                 </div>
                 <div class="overview-table"
@@ -495,7 +509,8 @@
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Accommodation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Teahouses / Guesthouses</td>
+                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Teahouses / Guesthouses
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Meals</td>
@@ -579,7 +594,9 @@
             <div class="itinerary-container">
                 <div class="iti-item active">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">01</div> Arrival & Drive to Pokhara</h4>
+                        <h4>
+                            <div class="iti-day-circle">01</div> Arrival & Drive to Pokhara
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
@@ -588,115 +605,153 @@
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">02</div> Flight to Jomsom & Trek to Kagbeni</h4>
+                        <h4>
+                            <div class="iti-day-circle">02</div> Flight to Jomsom & Trek to Kagbeni
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Early flight between Dhaulagiri and Annapurna ranges to Jomsom. Trek along the Kali Gandaki river to the medieval village of Kagbeni. (Alt: 2,810m)
+                        Early flight between Dhaulagiri and Annapurna ranges to Jomsom. Trek along the Kali Gandaki
+                        river to the medieval village of Kagbeni. (Alt: 2,810m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">03</div> Kagbeni to Chele</h4>
+                        <h4>
+                            <div class="iti-day-circle">03</div> Kagbeni to Chele
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Enter the restricted area of Upper Mustang. The trail climbs through Tangbe village to the red cliffs of Chele. (Alt: 3,050m)
+                        Enter the restricted area of Upper Mustang. The trail climbs through Tangbe village to the red
+                        cliffs of Chele. (Alt: 3,050m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">04</div> Chele to Syangboche</h4>
+                        <h4>
+                            <div class="iti-day-circle">04</div> Chele to Syangboche
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Cross several passes with panoramic views of Tilicho and Nilgiri peaks. Pass through traditional Loba villages. (Alt: 3,800m)
+                        Cross several passes with panoramic views of Tilicho and Nilgiri peaks. Pass through traditional
+                        Loba villages. (Alt: 3,800m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">05</div> Syangboche to Ghami</h4>
+                        <h4>
+                            <div class="iti-day-circle">05</div> Syangboche to Ghami
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Ascend to the Yamada La pass (3,850m) and then the Nyi La pass (4,010m). Descend into the beautiful village of Ghami, surrounded by desert greenery. (Alt: 3,520m)
+                        Ascend to the Yamada La pass (3,850m) and then the Nyi La pass (4,010m). Descend into the
+                        beautiful village of Ghami, surrounded by desert greenery. (Alt: 3,520m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">06</div> Ghami to Tsarang</h4>
+                        <h4>
+                            <div class="iti-day-circle">06</div> Ghami to Tsarang
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Pass the longest Mani wall in Mustang, then climb to the Tsarang La pass. Arrive in Tsarang, home to a massive 14th-century fortress and red gompa. (Alt: 3,500m)
+                        Pass the longest Mani wall in Mustang, then climb to the Tsarang La pass. Arrive in Tsarang,
+                        home to a massive 14th-century fortress and red gompa. (Alt: 3,500m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">07</div> Arrival at Lo Manthang</h4>
+                        <h4>
+                            <div class="iti-day-circle">07</div> Arrival at Lo Manthang
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The trail descends gently into the plain of aspiration, revealing the majestic walled city of Lo Manthang. (Alt: 3,840m)
+                        The trail descends gently into the plain of aspiration, revealing the majestic walled city of Lo
+                        Manthang. (Alt: 3,840m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">08</div> Exploration Day at Lo Manthang</h4>
+                        <h4>
+                            <div class="iti-day-circle">08</div> Exploration Day at Lo Manthang
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Visit Jampa Lhakhang, Thubchen Gompa, and the Royal Palace. Optional ride to the Chhoser cave complex.
+                        Visit Jampa Lhakhang, Thubchen Gompa, and the Royal Palace. Optional ride to the Chhoser cave
+                        complex.
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">09</div> Lo Manthang to Dhakmar</h4>
+                        <h4>
+                            <div class="iti-day-circle">09</div> Lo Manthang to Dhakmar
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Trek via the ancient Ghar Gompa, one of the oldest monasteries in Mustang. Continue through dramatic red rock landscapes to the village of Dhakmar. (Alt: 3,820m)
+                        Trek via the ancient Ghar Gompa, one of the oldest monasteries in Mustang. Continue through
+                        dramatic red rock landscapes to the village of Dhakmar. (Alt: 3,820m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">10</div> Dhakmar to Ghiling</h4>
+                        <h4>
+                            <div class="iti-day-circle">10</div> Dhakmar to Ghiling
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A scenic walk through high passes and traditional villages. The trail offers fantastic views of the Dhaulagiri and Nilgiri massifs during the descent to Ghiling. (Alt: 3,570m)
+                        A scenic walk through high passes and traditional villages. The trail offers fantastic views of
+                        the Dhaulagiri and Nilgiri massifs during the descent to Ghiling. (Alt: 3,570m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">11</div> Ghiling to Chhusang</h4>
+                        <h4>
+                            <div class="iti-day-circle">11</div> Ghiling to Chhusang
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Retrace your steps back towards the lower reaches of Mustang. Enjoy the changing colors of the canyon walls as you descend to the village of Chhusang. (Alt: 2,980m)
+                        Retrace your steps back towards the lower reaches of Mustang. Enjoy the changing colors of the
+                        canyon walls as you descend to the village of Chhusang. (Alt: 2,980m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">12</div> Chhusang to Jomsom</h4>
+                        <h4>
+                            <div class="iti-day-circle">12</div> Chhusang to Jomsom
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Final day of trekking back to Jomsom. After exiting the restricted area at Kagbeni, enjoy a relaxed walk along the Kali Gandaki riverbed. (Alt: 2,720m)
+                        Final day of trekking back to Jomsom. After exiting the restricted area at Kagbeni, enjoy a
+                        relaxed walk along the Kali Gandaki riverbed. (Alt: 2,720m)
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">13</div> Flight Jomsom to Pokhara</h4>
+                        <h4>
+                            <div class="iti-day-circle">13</div> Flight Jomsom to Pokhara
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Early morning flight back to Pokhara. Spend the rest of the day relaxing by the Phewa Lake or exploring the Peace Pagoda.
+                        Early morning flight back to Pokhara. Spend the rest of the day relaxing by the Phewa Lake or
+                        exploring the Peace Pagoda.
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">14</div> Return to Kathmandu</h4>
+                        <h4>
+                            <div class="iti-day-circle">14</div> Return to Kathmandu
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
@@ -713,7 +768,8 @@
             <div class="cost-section">
                 <div class="section-header" style="text-align: left; margin-bottom: 40px;">
                     <h2 class="section-title">Trip <span class="accent">Cost</span></h2>
-                    <div class="trek-price" style="font-size: 2rem;">From <strong>$1,650</strong> <span style="font-size: 1rem; color: #666; font-weight: 400;">/ person</span></div>
+                    <div class="trek-price" style="font-size: 2rem;">From <strong>$1,650</strong> <span
+                            style="font-size: 1rem; color: #666; font-weight: 400;">/ person</span></div>
                 </div>
                 <div class="cost-grid">
                     <div class="cost-col">
@@ -744,6 +800,52 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trip Details</span>
+                <h2 class="section-title">Upper Mustang <span class="accent">FAQs</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Why is the Upper Mustang permit so expensive? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        Upper Mustang is a restricted area controlled by the Department of Immigration to preserve its
+                        fragile culture and environment. The $500 permit (for 10 days) acts as a high-value, low-impact
+                        tourism strategy.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I trek Upper Mustang during the monsoon? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        Yes! This is one of the best treks for summer (June-August). Mustang lies in the rain shadow of
+                        the Annapurna and Dhaulagiri ranges, meaning it receives very little rain while the rest of
+                        Nepal is in peak monsoon.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the trek compared to EBC? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        Upper Mustang is generally easier than Everest Base Camp. The maximum altitude is lower (around
+                        3,800m-4,000m) and the trails are less steep, though the wind and arid climate can be
+                        challenging.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there ATMs in Lo Manthang? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        While there are now a few ATMs in Jomsom and even Lo Manthang, they are often unreliable or out
+                        of cash. It is highly recommended to carry enough Nepalese Rupees from Pokhara or Kathmandu.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer" id="contact">
         <div class="footer-top">
@@ -753,7 +855,8 @@
                         <i class="fas fa-mountain"></i>
                         Himalaya<span>Quest</span>
                     </div>
-                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world, safely and sustainably.</p>
+                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the
+                        world, safely and sustainably.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -813,15 +916,25 @@
             header.addEventListener('click', () => {
                 const item = header.parentElement;
                 const isActive = item.classList.contains('active');
-                
+
                 // Close all
                 document.querySelectorAll('.iti-item').forEach(i => i.classList.remove('active'));
-                
+
                 // Toggle clicked
                 if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
             });
         });
     </script>
 </body>
 
 </html>
+
+

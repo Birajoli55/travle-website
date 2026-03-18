@@ -375,6 +375,49 @@
             grid-row: span 2;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 992px) {
             .cost-grid {
                 grid-template-columns: 1fr;
@@ -425,64 +468,14 @@
 
                 <!-- Desktop nav links -->
                 <ul class="nav-links" id="navLinks">
-
-                    <!-- Treks dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days · Challenging</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i> Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="index.html#plan" class="dropdown-link"><i class="fas fa-paper-plane"></i> Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Departures (direct) -->
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<!-- Departures (direct) -->
                     <li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
 
-                    <!-- Destinations dropdown -->
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<!-- Destinations dropdown -->
                     <li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
@@ -492,29 +485,29 @@
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
                                     <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-hiking"></i></span><span><strong>Everest
-                                                 Region</strong><small>12 treks available</small></span></a>
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks available</small></span></a>
                                     <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Annapurna
-                                                 Region</strong><small>9 treks available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks available</small></span></a>
                                     <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-tree"></i></span><span><strong>Langtang
-                                                 Region</strong><small>6 treks available</small></span></a>
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks available</small></span></a>
                                     <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-compass"></i></span><span><strong>Manaslu
-                                                 Region</strong><small>5 treks available</small></span></a>
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks available</small></span></a>
                                     <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-paw"></i></span><span><strong>Dolpa
-                                                 Region</strong><small>4 treks available</small></span></a>
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks available</small></span></a>
                                     <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
-                                                 Region</strong><small>2 treks available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
+                                                Region</strong><small>2 treks available</small></span></a>
                                     <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-sun"></i></span><span><strong>Mustang
-                                                 Region</strong><small>3 treks available</small></span></a>
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks available</small></span></a>
                                     <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                 class="fas fa-mountain"></i></span><span><strong>Makalu
-                                                 Region</strong><small>1 trek available</small></span></a>
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu
+                                                Region</strong><small>1 trek available</small></span></a>
                                 </div>
                             </div>
                         </div>
@@ -575,7 +568,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -591,7 +585,8 @@
         <div class="pkg-hero-content">
             <span class="pkg-badge">Sacred Journey</span>
             <h1>Gosainkunda Lake Trek</h1>
-            <p>A spiritual pilgrimage to high-altitude holy lakes, surrounded by the majestic peaks of the Langtang and Ganesh Himal.</p>
+            <p>A spiritual pilgrimage to high-altitude holy lakes, surrounded by the majestic peaks of the Langtang and
+                Ganesh Himal.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Customize Trip</a>
@@ -641,17 +636,28 @@
                 style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
                 <div class="overview-text" id="overviewText">
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        The Gosainkunda Lake Trek is one of Nepal's most revered <strong>spiritual and natural journeys</strong>. Located within the Langtang National Park, this trek takes you to the holy Gosainkunda Lake (4,380m), a site of immense religious significance for both Hindus and Buddhists. According to Hindu mythology, Lord Shiva created the lake by striking his trident into the mountain to quench his thirst.
+                        The Gosainkunda Lake Trek is one of Nepal's most revered <strong>spiritual and natural
+                            journeys</strong>. Located within the Langtang National Park, this trek takes you to the
+                        holy Gosainkunda Lake (4,380m), a site of immense religious significance for both Hindus and
+                        Buddhists. According to Hindu mythology, Lord Shiva created the lake by striking his trident
+                        into the mountain to quench his thirst.
                     </p>
                     <div id="overviewMore" style="display: none;">
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                            The trail begins with a drive to Dhunche and ascends through lush rhododendron and oak forests, home to the elusive Red Panda. As you climb higher, the landscape transitions into rugged alpine terrain, offering spectacular panoramas of the Ganesh Himal, Langtang Lirung, and the Manaslu range.
+                            The trail begins with a drive to Dhunche and ascends through lush rhododendron and oak
+                            forests, home to the elusive Red Panda. As you climb higher, the landscape transitions into
+                            rugged alpine terrain, offering spectacular panoramas of the Ganesh Himal, Langtang Lirung,
+                            and the Manaslu range.
                         </p>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
-                            The highlight of the trek is the crystal-clear waters of the sacred lake itself, often surrounded by several other smaller high-altitude lakes like Bhairab Kunda and Saraswati Kunda. Whether you seek spiritual peace or high-altitude adventure, Gosainkunda delivers an unforgettable Himalayan experience.
+                            The highlight of the trek is the crystal-clear waters of the sacred lake itself, often
+                            surrounded by several other smaller high-altitude lakes like Bhairab Kunda and Saraswati
+                            Kunda. Whether you seek spiritual peace or high-altitude adventure, Gosainkunda delivers an
+                            unforgettable Himalayan experience.
                         </p>
                     </div>
-                    <button id="overviewReadMore" class="btn-read-more" style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                    <button id="overviewReadMore" class="btn-read-more"
+                        style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
                         <span>Read More</span> <i class="fas fa-chevron-down"></i>
                     </button>
                 </div>
@@ -669,7 +675,8 @@
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Meals</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking</td>
+                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Transportation</td>
@@ -701,63 +708,72 @@
                     <i class="fas fa-water"></i>
                     <div>
                         <strong>Sacred Gosainkunda Lake</strong>
-                        <p>Experience the serene, deep blue waters of the holy lake, a major pilgrimage site for Hindus and Buddhists.</p>
+                        <p>Experience the serene, deep blue waters of the holy lake, a major pilgrimage site for Hindus
+                            and Buddhists.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-mountain"></i>
                     <div>
                         <strong>Panoramic Views</strong>
-                        <p>Enjoy breathtaking vistas of Langtang Lirung, Ganesh Himal, Manaslu, and the Annapurna range from Lauribinayak.</p>
+                        <p>Enjoy breathtaking vistas of Langtang Lirung, Ganesh Himal, Manaslu, and the Annapurna range
+                            from Lauribinayak.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-place-of-worship"></i>
                     <div>
                         <strong>Shin Gompa Monastery</strong>
-                        <p>Visit the peaceful Buddhist monastery and taste the famous local yak cheese at the nearby factory.</p>
+                        <p>Visit the peaceful Buddhist monastery and taste the famous local yak cheese at the nearby
+                            factory.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-paw"></i>
                     <div>
                         <strong>Rare Wildlife</strong>
-                        <p>Trek through the dense forests of Langtang National Park, habitat of the rare and elusive Red Panda.</p>
+                        <p>Trek through the dense forests of Langtang National Park, habitat of the rare and elusive Red
+                            Panda.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-users"></i>
                     <div>
                         <strong>Tamang Culture</strong>
-                        <p>Engage with the hospitable Tamang people and learn about their unique high-altitude lifestyle and traditions.</p>
+                        <p>Engage with the hospitable Tamang people and learn about their unique high-altitude lifestyle
+                            and traditions.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-leaf"></i>
                     <div>
                         <strong>Rhododendron Forests</strong>
-                        <p>Walk through vibrant forests that come alive with red, pink, and white blooms during the spring season.</p>
+                        <p>Walk through vibrant forests that come alive with red, pink, and white blooms during the
+                            spring season.</p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-braid"></i>
                     <div>
                         <strong>Bhairab & Saraswati Kunda</strong>
-                        <p>Explore the smaller adjoining lakes, each with its own spiritual significance and natural beauty.</p>
+                        <p>Explore the smaller adjoining lakes, each with its own spiritual significance and natural
+                            beauty.</p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-route"></i>
                     <div>
                         <strong>Lauribinayak Pass (4,610m)</strong>
-                        <p>Opt for the challenging climb to the pass for even more expansive views across the Himalayas.</p>
+                        <p>Opt for the challenging climb to the pass for even more expansive views across the Himalayas.
+                        </p>
                     </div>
                 </li>
                 <li class="high-item extra-highlight">
                     <i class="fas fa-car-side"></i>
                     <div>
                         <strong>Accessible Adventure</strong>
-                        <p>One of the most accessible high-altitude treks from Kathmandu, perfect for those with limited time.</p>
+                        <p>One of the most accessible high-altitude treks from Kathmandu, perfect for those with limited
+                            time.</p>
                     </div>
                 </li>
             </ul>
@@ -784,7 +800,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Welcome to Nepal! Upon arrival at Tribhuvan International Airport, you will be met by our representative and transferred to your hotel. Evening briefing about the trek and a welcome dinner. Overnight in Kathmandu.
+                        Welcome to Nepal! Upon arrival at Tribhuvan International Airport, you will be met by our
+                        representative and transferred to your hotel. Evening briefing about the trek and a welcome
+                        dinner. Overnight in Kathmandu.
                     </div>
                 </div>
 
@@ -794,7 +812,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A scenic drive of 7-8 hours takes us through the winding roads of hills and valleys to Dhunche, the administrative headquarters of the Rasuwa district. The journey offers glimpses of local life and terraced hillsides. Overnight in Dhunche.
+                        A scenic drive of 7-8 hours takes us through the winding roads of hills and valleys to Dhunche,
+                        the administrative headquarters of the Rasuwa district. The journey offers glimpses of local
+                        life and terraced hillsides. Overnight in Dhunche.
                     </div>
                 </div>
 
@@ -804,7 +824,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The trek begins with a steady ascent through forests of oak, pine, and rhododendron. We pass through Deurali (2,625m) before reaching the peaceful village of Shin Gompa. Visit the local cheese factory and the old monastery. Walking time: 5-6 hours.
+                        The trek begins with a steady ascent through forests of oak, pine, and rhododendron. We pass
+                        through Deurali (2,625m) before reaching the peaceful village of Shin Gompa. Visit the local
+                        cheese factory and the old monastery. Walking time: 5-6 hours.
                     </div>
                 </div>
 
@@ -814,7 +836,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A more challenging day with significant altitude gain. The ascent leads to Lauribinayak (3,910m), offering stunning views of the Ganesh Himal and Langtang Lirung. Continuing upward, we reach the sacred Gosainkunda Lake. Walking time: 5-6 hours.
+                        A more challenging day with significant altitude gain. The ascent leads to Lauribinayak
+                        (3,910m), offering stunning views of the Ganesh Himal and Langtang Lirung. Continuing upward, we
+                        reach the sacred Gosainkunda Lake. Walking time: 5-6 hours.
                     </div>
                 </div>
 
@@ -824,7 +848,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Early morning exploration of the lake and its surroundings. You can hike to nearby viewpoints for sunrise. After breakfast, we begin our descent back toward Shin Gompa, retracing our steps with magnificent mountain views. Walking time: 5-6 hours.
+                        Early morning exploration of the lake and its surroundings. You can hike to nearby viewpoints
+                        for sunrise. After breakfast, we begin our descent back toward Shin Gompa, retracing our steps
+                        with magnificent mountain views. Walking time: 5-6 hours.
                     </div>
                 </div>
 
@@ -834,7 +860,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        We continue our descent through the lush forests down to Dhunche. It's a pleasant walk as the air becomes warmer and richer in oxygen. Enjoy a farewell dinner with the trekking crew. Walking time: 4-5 hours.
+                        We continue our descent through the lush forests down to Dhunche. It's a pleasant walk as the
+                        air becomes warmer and richer in oxygen. Enjoy a farewell dinner with the trekking crew. Walking
+                        time: 4-5 hours.
                     </div>
                 </div>
 
@@ -844,7 +872,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        After breakfast, we board our vehicle for the drive back to Kathmandu. Upon arrival, you'll be transferred to your hotel. The rest of the day is free for shopping or relaxation in Thamel. Overnight in Kathmandu.
+                        After breakfast, we board our vehicle for the drive back to Kathmandu. Upon arrival, you'll be
+                        transferred to your hotel. The rest of the day is free for shopping or relaxation in Thamel.
+                        Overnight in Kathmandu.
                     </div>
                 </div>
 
@@ -854,7 +884,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Our representative will transfer you to the international airport for your flight back home or to your next destination. Namaste!
+                        Our representative will transfer you to the international airport for your flight back home or
+                        to your next destination. Namaste!
                     </div>
                 </div>
 
@@ -869,7 +900,8 @@
                 <div class="section-header" style="text-align: left; margin-bottom: 40px;">
                     <span class="section-tag">Pricing & Logistics</span>
                     <h2 class="section-title">Trip <span class="accent">Details</span></h2>
-                    <p style="font-size: 1.1rem; color: #666;">Starting from <strong style="color: var(--pkg-green); font-size: 1.8rem;">$550</strong> per person</p>
+                    <p style="font-size: 1.1rem; color: #666;">Starting from <strong
+                            style="color: var(--pkg-green); font-size: 1.8rem;">$550</strong> per person</p>
                 </div>
 
                 <div class="cost-grid">
@@ -898,7 +930,8 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 50px;">
-                    <a href="contact.html" class="btn-primary" style="padding: 18px 45px; font-size: 1.1rem;">Book This Package Now</a>
+                    <a href="contact.html" class="btn-primary" style="padding: 18px 45px; font-size: 1.1rem;">Book This
+                        Package Now</a>
                 </div>
             </div>
         </div>
@@ -928,6 +961,49 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Gosainkunda Lake <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Quick answers for your spiritual journey to the holy lakes</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the religious significance of Gosainkunda? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Gosainkunda is a <strong>sacred pilgrimage site</strong> for both Hindus and Buddhists. Hindus believe the lake was created by Lord Shiva's trident. Thousands of pilgrims visit during the Janai Purnima festival in August to take a holy dip in its waters, which are believed to wash away sins.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the trek to Gosainkunda? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>The trek is considered <strong>moderate</strong>. The main challenge is the rapid altitude gain from Dhunche (1,960m) to the lakes (4,380m). While the trails are well-defined, the steep ascents require good cardiovascular fitness and careful acclimatization.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I see other lakes besides Gosainkunda? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes! There are <strong>over 100 lakes</strong> in the Gosainkunda region. The most prominent ones near the main trail are Bhairab Kunda and Saraswati Kunda. Each has its own spiritual significance and stunning turquoise beauty.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the best time for this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p><strong>Spring (March-May)</strong> and <strong>Autumn (September-November)</strong> are the best seasons. In spring, the rhododendrons are in full bloom. Autumn offers the clearest views of the Ganesh Himal and Langtang Lirung. Winter trekking is possible but the lakes may be frozen and the passes blocked by snow.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is it possible to cross the Lauribina Pass? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, many trekkers continue from the lakes over the <strong>Lauribina Pass (4,610m)</strong> to reach the Helambu region. This adds a challenging pass crossing to the itinerary but rewards you with some of the best panoramic views in the entire Langtang region.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== STICKY BOOKING BAR ===== -->
     <div class="sticky-booking" id="stickyBooking">
         <div class="container sticky-inner">
@@ -942,68 +1018,80 @@
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <i class="fas fa-mountain"></i>
-                        Himalaya<span>Quest</span>
-                    </div>
-                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world, safely and sustainably.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="departures.html">Departures</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Top Regions</h4>
-                    <ul>
-                        <li><a href="everest-region.html">Everest Region</a></li>
-                        <li><a href="annapurna-region.html">Annapurna Region</a></li>
-                        <li><a href="langtang-region.html">Langtang Region</a></li>
-                        <li><a href="manaslu-region.html">Manaslu Region</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu</li>
-                        <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-                        <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mountain"></i>
+            Himalaya<span>Quest</span>
+          </div>
+          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
+            safely and sustainably.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
-            </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#treks">All Treks</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="#blog">Travel Blog</a></li>
+            <li><a href="contact.html">Plan My Trip</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h4>Trek Regions</h4>
+          <ul>
+            <li><a href="everest-region.html">Everest Region</a></li>
+            <li><a href="annapurna-region.html">Annapurna Region</a></li>
+            <li><a href="langtang-region.html">Langtang Region</a></li>
+            <li><a href="manaslu-region.html">Manaslu Region</a></li>
+            <li><a href="dolpa-region.html">Dolpa Region</a></li>
+            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+            <li><a href="mustang-region.html">Mustang Region</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+            <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
+            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <!-- Scripts -->
     <script src="app.js"></script>
     <script>
         // Local Page Scripts
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Read More Toggle
             const readMoreBtn = document.getElementById('overviewReadMore');
             const overviewBox = document.getElementById('overviewMore');
-            
-            if(readMoreBtn) {
-                readMoreBtn.addEventListener('click', function() {
+
+            if (readMoreBtn) {
+                readMoreBtn.addEventListener('click', function () {
                     const isHidden = overviewBox.style.display === 'none';
                     overviewBox.style.display = isHidden ? 'block' : 'none';
                     readMoreBtn.querySelector('span').textContent = isHidden ? 'Read Less' : 'Read More';
@@ -1015,9 +1103,9 @@
             // Highlights Toggle
             const seeMoreBtn = document.getElementById('btnSeeMore');
             const extraHighlights = document.querySelectorAll('.extra-highlight');
-            
-            if(seeMoreBtn) {
-                seeMoreBtn.addEventListener('click', function() {
+
+            if (seeMoreBtn) {
+                seeMoreBtn.addEventListener('click', function () {
                     const isHidden = extraHighlights[0].style.display === 'none' || extraHighlights[0].style.display === '';
                     extraHighlights.forEach(el => el.style.display = isHidden ? 'flex' : 'none');
                     seeMoreBtn.textContent = isHidden ? 'See Less Highlights' : 'See More Highlights';
@@ -1042,7 +1130,17 @@
                 }
             });
         });
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+
+

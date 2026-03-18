@@ -410,6 +410,50 @@
                 padding-left: 20px;
             }
         }
+
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
     </style>
 </head>
 
@@ -430,78 +474,8 @@
 
                 <!-- Desktop nav links -->
                 <ul class="nav-links" id="navLinks">
-
-                    <!-- Treks dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="tsum-valley-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-peace"></i></span>
-                                        <span><strong>Tsum Valley Trek</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="upper-mustang-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Upper Mustang Trek</strong><small>14 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i>
-                                        Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i
-                                            class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i>
-                                        Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Departures (direct) -->
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<!-- Departures (direct) -->
                     <li class="nav-item">
                         <a href="index.html#departures" class="nav-link">Departures</a>
                     </li>
@@ -1003,37 +977,43 @@
             <div class="section-header">
                 <span class="section-tag">Help Center</span>
                 <h2 class="section-title">Common <span class="accent">Questions</span></h2>
+                <p class="section-sub">Everything you need to know before you head to the roof of the world</p>
             </div>
-            <div class="faq-list">
+            <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is Everest Base Camp trek difficult?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">Is the Everest Base Camp trek difficult? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>It is considered a major high-altitude trek. While not technically climbing, it requires good
-                            physical fitness and stamina. You'll be walking 5–7 hours a day at altitudes where oxygen is
-                            significantly lower.</p>
+                        <p>EBC is considered a major high-altitude trek. While it doesn't involve technical climbing, it requires good physical fitness and mental stamina. You'll be walking 5–7 hours a day at altitudes where oxygen levels are significantly lower. We recommend 3-4 months of cardio and strength training prior to the trek.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Best time for EBC trek?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">What is the best time for the EBC trek? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>The best windows are Spring (March to May) and Autumn (late September to November). These
-                            months offer the clearest skies and most stable mountain weather.</p>
+                        <p>The best windows are <strong>Spring (March to May)</strong> and <strong>Autumn (late September to November)</strong>. Spring offers blooming rhododendrons and warmer days, while Autumn provides the clearest skies and most stable mountain weather for iconic views.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do I need prior trekking experience?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">How do I get to the trailhead? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>While prior experience is helpful, it's not a strict requirement. Most important is a
-                            positive mindset and solid pre-trek physical preparation (regular hiking, cardio).</p>
+                        <p>The trek starts with a scenic 35-minute flight from Kathmandu to <strong>Lukla's Tenzing-Hillary Airport</strong>. Due to air traffic, flights sometimes operate from Ramechhap (a 4-hour drive from Kathmandu) during peak seasons. We handle all flight logistics and transfers for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What happens if I get altitude sickness? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Our guides are trained in <strong>Wilderness First Aid</strong> and monitor your oxygen levels daily. We follow a strict "climb high, sleep low" protocol with two built-in acclimatization days. If symptoms of AMS (Acute Mountain Sickness) persist, we arrange an immediate descent and, if necessary, a helicopter evacuation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I charge my electronics and use Wi-Fi? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, most teahouses offer charging facilities and Wi-Fi for a small additional fee (usually $2–$5). We recommend bringing a <strong>power bank</strong> and a local SIM card (Ncell or Airalo) for better connectivity in lower regions, though service becomes spotty above 4,000m.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is the water safe to drink? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>You should not drink tap or stream water directly. We recommend using <strong>water purification tablets</strong> or a LifeStraw. Bottled water is available but discouraged to reduce plastic waste in the National Park. Boiled water can be purchased at teahouses.</p>
                     </div>
                 </div>
             </div>
@@ -1231,7 +1211,18 @@
                 btnFullItinerary.textContent = isHidden ? 'See Less' : 'See Full Itinerary';
             });
         }
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+
+
+

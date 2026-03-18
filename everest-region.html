@@ -181,6 +181,49 @@
         }
 
         /* Responsive Fixes */
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
@@ -203,66 +246,30 @@
 
     <!-- ===== STICKY NAVBAR ===== -->
     <nav id="navbar" class="navbar">
+
+        <!-- Main navbar -->
         <div class="nav-main">
             <div class="nav-container nav-main-inner">
+
+                <!-- Logo -->
                 <a href="index.html#home" class="nav-logo">
                     <span class="logo-icon"><i class="fas fa-mountain"></i></span>
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
-                <ul class="nav-links" id="navLinks">
-                    <!-- Treks dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i>
-                                        Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i
-                                            class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i>
-                                        Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
 
+                <!-- Desktop nav links -->
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- Departures (direct) -->
                     <li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
 
-                    <!-- Destinations dropdown (Active) -->
+                    <!-- Treks (direct) -->
+                    <li class="nav-item">
+                        <a href="treks.html" class="nav-link">Treks</a>
+                    </li>
+                    <!-- Destinations dropdown -->
                     <li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link nav-active">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
@@ -271,84 +278,78 @@
                             <div class="dropdown-inner">
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
-                                    <a href="everest-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-hiking"></i></span>
-                                        <span><strong>Everest Region</strong><small>12 treks available</small></span>
-                                    </a>
-                                    <a href="annapurna-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Region</strong><small>9 treks available</small></span>
-                                    </a>
-                                    <a href="langtang-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Region</strong><small>6 treks available</small></span>
-                                    </a>
-                                    <a href="manaslu-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Region</strong><small>5 treks available</small></span>
-                                    </a>
-                                    <a href="dolpa-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-paw"></i></span>
-                                        <span><strong>Dolpa Region</strong><small>4 treks available</small></span>
-                                    </a>
-                                    <a href="kanchenjunga-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Kanchenjunga Region</strong><small>2 treks available</small></span>
-                                    </a>
-                                    <a href="mustang-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Mustang Region</strong><small>3 treks available</small></span>
-                                    </a>
-                                    <a href="makalu-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Makalu Region</strong><small>1 trek available</small></span>
-                                    </a>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks
+                                                available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks
+                                                available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks
+                                                available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks
+                                                available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa Region</strong><small>4 treks
+                                                available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga Region</strong><small>2 treks
+                                                available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang Region</strong><small>3 treks
+                                                available</small></span></a>
+                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu Region</strong><small>2 treks
+                                                available</small></span></a>
+
                                 </div>
                             </div>
                         </div>
                     </li>
 
-                    <!-- About dropdown -->
-                    <li class="nav-item has-dropdown">
-                        <a href="about.html" class="nav-link">
-                            About <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown dropdown-sm">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Explore</p>
-                                    <a href="about.html#story" class="dropdown-link"><i class="fas fa-info-circle"
-                                            style="color:var(--orange);margin-right:8px"></i> Our Story</a>
-                                    <a href="about.html#values" class="dropdown-link"><i class="fas fa-award"
-                                            style="color:var(--green);margin-right:8px"></i> Our Values</a>
-                                    <a href="about.html#team" class="dropdown-link"><i class="fas fa-users"
-                                            style="color:var(--orange);margin-right:8px"></i> Local Team</a>
-                                    <a href="index.html#why" class="dropdown-link"><i class="fas fa-award"
-                                            style="color:var(--green);margin-right:8px"></i> Why Choose Us</a>
-                                    <a href="index.html#reviews" class="dropdown-link"><i class="fas fa-star"
-                                            style="color:var(--orange);margin-right:8px"></i> Traveller Reviews</a>
-                                    <a href="index.html#blog" class="dropdown-link"><i class="fas fa-newspaper"
-                                            style="color:var(--green);margin-right:8px"></i> Travel Blog</a>
-                                    <a href="index.html#faq" class="dropdown-link"><i class="fas fa-question-circle"
-                                            style="color:var(--orange);margin-right:8px"></i> FAQs</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-headset"
-                                            style="color:var(--green);margin-right:8px"></i> Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- About -->
+          <li class='nav-item'><a href='about.html' class='nav-link'>About</a></li>
+
+          <!-- Blog (direct) -->
+                    <li class="nav-item">
+                        <a href="travel-blog.html" class="nav-link">Blog</a>
                     </li>
 
+                    <!-- Contact (direct) -->
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                     </li>
-                </ul>
+
+                </ul><!-- /nav-links -->
+
+                <!-- Right side actions -->
                 <div class="nav-actions">
-                    <a href="contact.html" class="nav-cta"><i class="fas fa-paper-plane"></i> Plan My Trip</a>
-                    <button class="hamburger" id="hamburger"
-                        aria-label="Toggle menu"><span></span><span></span><span></span></button>
+                    <a href="contact.html" class="nav-cta">
+                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                    </a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
+
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-links">
+                <li><a href="index.html#treks">🏔 Featured Treks</a></li>
+                <li><a href="departures.html">📅 Departures</a></li>
+                <li><a href="treks.html">🏔 All Treks</a></li>
+                <li><a href="destinations.html">📍 Destinations</a></li>
+                <li><a href="about.html">⭐ About Us</a></li>
+                <li><a href="travel-blog.html">📝 Blog</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+            <a href="contact.html" class="mobile-cta">Plan My Trip →</a>
+        </div>
+
     </nav>
 
     <!-- ===== PACKAGE-STYLE HERO ===== -->
@@ -486,6 +487,49 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Region Guide</span>
+                <h2 class="section-title">Everest Region <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Quick answers to common questions about trekking in the Khumbu</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the difference between EBC and Gokyo Lakes? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p><strong>Everest Base Camp (EBC)</strong> is the classic "bucket list" trek focusing on the base of the world's highest peak. <strong>Gokyo Lakes</strong> is a quieter alternative featuring turquoise glacial lakes and what many consider a superior panoramic view of four 8,000m peaks from Gokyo Ri.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is trekking in the Everest region? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Most treks in this region are considered <strong>moderate to challenging</strong>. The primary challenge is the altitude, as most trails stay above 3,500m for several days. Good physical fitness and proper acclimatization are essential.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What permits do I need for the Everest region? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>You need two main permits: the <strong>Khumbu Pasang Lhamu Rural Municipality Entrance Permit</strong> and the <strong>Sagarmatha National Park Entry Permit</strong>. We handle all these permits as part of our trekking packages.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are there ATMs in the Everest region? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>There are ATMs in <strong>Namche Bazaar</strong> and <strong>Lukla</strong>, but they can be unreliable due to weather or technical issues. We strongly recommend carrying enough cash in Nepalese Rupees from Kathmandu to cover personal expenses like charging, Wi-Fi, and snacks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I see Mt. Everest from every trail? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>No, Everest is often hidden by other giants like Lhotse and Nuptse. Iconic views are best from the <strong>Everest View Hotel</strong> (near Namche), <strong>Kala Patthar</strong>, and <strong>Gokyo Ri</strong>. On the main EBC trail, you first see Everest from the trail between Namche and Tengboche.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer" id="contact">
         <div class="footer-top">
@@ -552,6 +596,20 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
+
+
+
+
+

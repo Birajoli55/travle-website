@@ -316,6 +316,49 @@
             color: #dc3545;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 992px) {
             .cost-grid {
                 grid-template-columns: 1fr;
@@ -360,68 +403,10 @@
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">Treks <i
-                                class="fas fa-chevron-down nav-arrow"></i></a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <<<<<<< Current (Your changes) <a href="mustang-region.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Mustang Region</strong><small>3 treks available</small></span>
-                                        =======
-                                        <a href="abc-trek.html" class="dropdown-link">
-                                            <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                            <span><strong>Annapurna Base Camp</strong><small>11 Days ·
-                                                    Moderate</small></span>
-                                        </a>
-                                        <a href="langtang-valley.html" class="dropdown-link">
-                                            <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                            <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                        </a>
-                                        <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                    class="fas fa-paw"></i></span><span><strong>Dolpa
-                                                    Region</strong><small>4 treks
-                                                    available</small></span></a>
-                                        <a href="kanchenjunga-region.html" class="dropdown-link"><span
-                                                class="dlink-icon"><i
-                                                    class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
-                                                    Region</strong><small>2 treks
-                                                    available</small></span></a>
-                                        <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                    class="fas fa-sun"></i></span><span><strong>Mustang
-                                                    Region</strong><small>3 treks
-                                                    available</small></span></a>
-                                        <a href="manaslu-circuit.html" class="dropdown-link">
-                                            <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                            <span><strong>Manaslu Circuit</strong><small>16 Days ·
-                                                    Challenging</small></span>
-                                        </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i>
-                                        Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i
-                                            class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="index.html#plan" class="dropdown-link"><i class="fas fa-paper-plane"></i>
-                                        Custom Trek</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="departures.html" class="nav-link">Departures</a></li>
-                    <li class="nav-item has-dropdown">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item"><a href="departures.html" class="nav-link">Departures</a></li>
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">Destinations <i
                                 class="fas fa-chevron-down nav-arrow"></i></a>
                         <div class="dropdown dropdown-sm">
@@ -744,69 +729,115 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the best time for the Gokyo Lakes Trek? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        The best times are Spring (March to May) and Autumn (September to November). These months offer
+                        clear skies, stable weather, and the best views of the lakes and surrounding peaks.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the Gokyo Lakes Trek? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        It is considered a moderate to challenging trek. While it doesn't involve technical climbing,
+                        the altitude (reaching over 5,300m) and sustained walking for 5-7 hours daily require good
+                        physical fitness and acclimatization.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need travel insurance for this trek? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        Yes, travel insurance is mandatory. It must specifically cover high-altitude trekking (up to
+                        6,000m) and include emergency helicopter evacuation, as there are no roads in the Gokyo region.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is the Gokyo Lakes Trek better than EBC? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        "Better" is subjective, but Gokyo offers quieter trails, the stunning turquoise lakes, and a
+                        view from Gokyo Ri that many trekkers believe is superior to the view from Kala Patthar near
+                        EBC.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
-    <footer class="footer" id="contact">
-        <div class="footer-top">
-            <div class="container footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <i class="fas fa-mountain"></i>
-                        Himalaya<span>Quest</span>
-                    </div>
-                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the
-                        world, safely and sustainably.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="index.html#treks">All Treks</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="index.html#blog">Travel Blog</a></li>
-                        <li><a href="contact.html">Plan My Trip</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trek Regions</h4>
-                    <ul>
-                        <li><a href="everest-region.html">Everest Region</a></li>
-                        <li><a href="annapurna-region.html">Annapurna Region</a></li>
-                        <li><a href="langtang-region.html">Langtang Region</a></li>
-                        <li><a href="manaslu-region.html">Manaslu Region</a></li>
-                        <li><a href="dolpa-region.html">Dolpa Region</a></li>
-                        <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
-                        <li><a href="mustang-region.html">Mustang Region</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
-                        <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-                        <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
-                        <li><i class="fas fa-clock"></i> Mon–Sat: 9AM – 6PM (NPT)</li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mountain"></i>
+            Himalaya<span>Quest</span>
+          </div>
+          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
+            safely and sustainably.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
-            </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#treks">All Treks</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="#blog">Travel Blog</a></li>
+            <li><a href="contact.html">Plan My Trip</a></li>
+          </ul>
         </div>
-    </footer>
+        <div class="footer-col">
+          <h4>Trek Regions</h4>
+          <ul>
+            <li><a href="everest-region.html">Everest Region</a></li>
+            <li><a href="annapurna-region.html">Annapurna Region</a></li>
+            <li><a href="langtang-region.html">Langtang Region</a></li>
+            <li><a href="manaslu-region.html">Manaslu Region</a></li>
+            <li><a href="dolpa-region.html">Dolpa Region</a></li>
+            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+            <li><a href="mustang-region.html">Mustang Region</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+            <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
+            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <script src="app.js"></script>
     <script>
@@ -817,7 +848,17 @@
                 item.classList.toggle('active');
             });
         });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+

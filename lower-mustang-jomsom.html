@@ -285,6 +285,49 @@
             color: #dc3545;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 992px) {
             .cost-grid {
                 grid-template-columns: 1fr;
@@ -314,78 +357,12 @@
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days ·
-                                                Challenging</small></span>
-                                    </a>
-                                    <a href="tsum-valley-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-peace"></i></span>
-                                        <span><strong>Tsum Valley Trek</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="lower-mustang-jomsom.html" class="dropdown-link nav-active">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Lower Mustang & Jomsom</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="upper-mustang-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Upper Mustang Trek</strong><small>14 Days ·
-                                                Moderate</small></span>
-                                    </a>
-                                    <a href="gokyo-lakes.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gokyo Lakes Trek</strong><small>14 Days · Moderate</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i>
-                                        Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i
-                                            class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i>
-                                        Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
-                    <li class="nav-item has-dropdown">
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
                         </a>
@@ -435,7 +412,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -759,6 +737,49 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Lower Mustang & Jomsom <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Quick answers for your journey through the Kali Gandaki valley</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the Lower Mustang & Jomsom trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>This is considered an <strong>easy to moderate</strong> trek. The maximum altitude is relatively low (2,950m at Muktinath/Kagbeni), and the trails are well-established. It's an excellent choice for first-time trekkers or those who want to experience Mustang's culture without extreme physical challenge.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the best time for this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Unlike many other treks, the Jomsom area is in a <strong>rain shadow</strong>, making it a great option even during the <strong>Monsoon (June-August)</strong>. However, the most popular times are Spring (March-May) and Autumn (September-November) for the clearest mountain views.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a special permit for Lower Mustang? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>No, you only need the standard <strong>ACAP (Annapurna Conservation Area Permit)</strong> and a <strong>TIMS card</strong>. The expensive $500 Restricted Area Permit is only required for <em>Upper</em> Mustang (beyond Kagbeni).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I get to Jomsom? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>The most common way is a <strong>scenic 20-minute flight</strong> from Pokhara. You can also reach Jomsom by a long and bumpy 10-12 hour jeep drive from Pokhara, which is an adventure in itself as you drive through the deepest gorge in the world.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is the water safe to drink? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>You should not drink tap water directly. We recommend using <strong>water purification tablets</strong> or buying boiled water at teahouses. Marpha and other villages also have "Safe Drinking Water" stations where you can refill your bottles for a small fee.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer" id="contact">
         <div class="footer-top">
@@ -837,7 +858,17 @@
                 if (!isActive) item.classList.add('active');
             });
         });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+

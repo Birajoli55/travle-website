@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Treks | HimalayaQuest Nepal</title>
+    <meta name="description"
+        content="Browse all treks offered by HimalayaQuest. Compare durations, difficulties, regions, and book the perfect Himalayan adventure." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== STICKY NAVBAR ===== -->
+    <nav id="navbar" class="navbar">
+
+        <!-- Main navbar -->
+        <div class="nav-main">
+            <div class="nav-container nav-main-inner">
+
+                <!-- Logo -->
+                <a href="index.html#home" class="nav-logo">
+                    <span class="logo-icon"><i class="fas fa-mountain"></i></span>
+                    <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
+                </a>
+
+                <!-- Desktop nav links -->
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- Departures (direct) -->
+                    <li class="nav-item">
+                        <a href="departures.html" class="nav-link">Departures</a>
+                    </li>
+
+                    <!-- Treks (direct) -->
+                    <li class="nav-item">
+                        <a href="treks.html" class="nav-link nav-active">Treks</a>
+                    </li>
+                    <!-- Destinations dropdown -->
+                    <li class="nav-item has-dropdown">
+                        <a href="destinations.html" class="nav-link">
+                            Destinations <i class="fas fa-chevron-down nav-arrow"></i>
+                        </a>
+                        <div class="dropdown dropdown-sm">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-col">
+                                    <p class="dropdown-heading">Regions</p>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks
+                                                available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks
+                                                available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks
+                                                available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks
+                                                available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa Region</strong><small>4 treks
+                                                available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga Region</strong><small>2 treks
+                                                available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang Region</strong><small>3 treks
+                                                available</small></span></a>
+                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu Region</strong><small>2 treks
+                                                available</small></span></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- About -->
+          <li class='nav-item'><a href='about.html' class='nav-link'>About</a></li>
+
+          <!-- Blog (direct) -->
+                    <li class="nav-item">
+                        <a href="travel-blog.html" class="nav-link">Blog</a>
+                    </li>
+
+                    <!-- Contact (direct) -->
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+
+                </ul><!-- /nav-links -->
+
+                <!-- Right side actions -->
+                <div class="nav-actions">
+                    <a href="contact.html" class="nav-cta">
+                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                    </a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-links">
+                <li><a href="index.html#treks">🏔 Featured Treks</a></li>
+                <li><a href="departures.html">📅 Departures</a></li>
+                <li><a href="treks.html">🏔 All Treks</a></li>
+                <li><a href="destinations.html">📍 Destinations</a></li>
+                <li><a href="about.html">⭐ About Us</a></li>
+                <li><a href="travel-blog.html">📝 Blog</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+            <a href="contact.html" class="mobile-cta">Plan My Trip →</a>
+        </div>
+
+    </nav>
+
+    <!-- ===== TREKS HERO ===== -->
+    <section class="about-hero" id="home">
+        <div class="about-hero-bg" style="background-image:url('hero.png');"></div>
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;opacity:0.5"></i>
+                <span>Treks</span>
+            </div>
+            <h1 class="about-title">All <span class="title-accent">Treks</span></h1>
+            <p class="about-subtitle">Explore our full catalog of Himalayan trekking routes and detailed adventure
+                packages.</p>
+        </div>
+    </section>
+
+    <!-- ===== TREK LIST ===== -->
+    <section class="section" id="treks-all">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore Every Route</span>
+                <h2 class="section-title">Complete <span class="accent">Trek Selection</span></h2>
+                <p class="section-sub">Start with gear, difficulty, and region filters, then click to view details on
+                    any trek page.</p>
+            </div>
+            <div class="treks-grid">
+                <!-- Copy of cards from index featured treks -->
+                <div class="trek-card" data-region="everest" data-days="14" data-diff="challenging" data-price="1200">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="Everest Base Camp Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="everest-base-camp.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Everest Base Camp Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Everest Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,200</strong></div>
+                            <a href="everest-base-camp.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-card" data-region="annapurna" data-days="18" data-diff="moderate" data-price="900">
+                    <div class="trek-img-wrap">
+                        <img src="annapurna.png" alt="Annapurna Circuit Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="annapurna-circuit.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Annapurna Circuit Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 18 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$900</strong></div>
+                            <a href="annapurna-circuit.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-card" data-region="langtang" data-days="10" data-diff="easy" data-price="650">
+                    <div class="trek-img-wrap">
+                        <img src="langtang.png" alt="Langtang Valley Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-easy">Easy</div>
+                        <div class="trek-overlay"><a href="langtang-valley.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Langtang Valley Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Langtang Region</span>
+                        </div>
+                        <div class="trek-diff diff-easy"><i class="fas fa-signal"></i> Easy</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$650</strong></div>
+                            <a href="langtang-valley.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-card" data-region="langtang" data-days="8" data-diff="moderate" data-price="550">
+                    <div class="trek-img-wrap">
+                        <img src="hero.png" alt="Gosainkunda Lake Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="gosainkunda-lake-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Gosainkunda Lake Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 8 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Langtang Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$550</strong></div>
+                            <a href="gosainkunda-lake-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tamang Heritage -->
+                <div class="trek-card filter-item" data-region="langtang" data-diff="easy" data-days="8">
+                    <div class="trek-img-wrap">
+                        <img src="cta.png" alt="Tamang Heritage Trail" class="trek-img">
+                        <div class="trek-badge badge-easy">Easy</div>
+                        <div class="trek-overlay"><a href="tamang-heritage-trail.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Tamang Heritage Trail</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 8 Days</span>
+                            <span><i class="fas fa-signal"></i> Easy</span>
+                        </div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$490</strong></div>
+                            <a href="tamang-heritage-trail.html" class="btn-sm">View Package</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower Mustang & Jomsom Trek -->
+                <div class="trek-card" data-region="mustang" data-days="8" data-diff="easy" data-price="890">
+                    <div class="trek-img-wrap">
+                        <img src="cta.png" alt="Lower Mustang & Jomsom Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-easy">Easy</div>
+                        <div class="trek-overlay"><a href="lower-mustang-jomsom.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Lower Mustang & Jomsom Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 8 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Mustang Region</span>
+                        </div>
+                        <div class="trek-diff diff-easy"><i class="fas fa-signal"></i> Easy</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$890</strong></div>
+                            <a href="lower-mustang-jomsom.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-card" data-region="annapurna" data-days="5" data-diff="easy" data-price="450">
+                    <div class="trek-img-wrap">
+                        <img src="hero.png" alt="Ghorepani Poon Hill Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-easy">Easy</div>
+                        <div class="trek-overlay"><a href="ghorepani-poon-hill.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Ghorepani Poon Hill Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+                        </div>
+                        <div class="trek-diff diff-easy"><i class="fas fa-signal"></i> Easy</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$450</strong></div>
+                            <a href="ghorepani-poon-hill.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trek-card" data-region="manaslu" data-days="16" data-diff="challenging" data-price="1100">
+                    <div class="trek-img-wrap">
+                        <img src="manaslu.png" alt="Manaslu Circuit Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="manaslu-circuit.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Manaslu Circuit Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 16 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Manaslu Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,100</strong></div>
+                            <a href="manaslu-circuit.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annapurna Base Camp Trek -->
+                <div class="trek-card" data-region="annapurna" data-days="11" data-diff="moderate" data-price="850">
+                    <div class="trek-img-wrap">
+                        <img src="annapurna.png" alt="Annapurna Base Camp Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="abc-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Annapurna Base Camp Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 11 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$850</strong></div>
+                            <a href="abc-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makalu Base Camp Trek -->
+                <div class="trek-card" data-region="makalu" data-days="18" data-diff="challenging" data-price="1350">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="Makalu Base Camp Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="makalu-base-camp-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Makalu Base Camp Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 18 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Makalu Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,350</strong></div>
+                            <a href="makalu-base-camp-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- North Ridge Trek -->
+                <div class="trek-card" data-region="makalu" data-days="20" data-diff="challenging" data-price="1550">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="North Ridge Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Very Hard</div>
+                        <div class="trek-overlay"><a href="north-ridge-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">North Ridge Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 20 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Makalu Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Very Hard</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,550</strong></div>
+                            <a href="north-ridge-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tsum Valley Trek -->
+                <div class="trek-card" data-region="manaslu" data-days="18" data-diff="moderate" data-price="1200">
+                    <div class="trek-img-wrap">
+                        <img src="manaslu.png" alt="Tsum Valley Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="tsum-valley-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Tsum Valley Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 18 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Manaslu Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,200</strong></div>
+                            <a href="tsum-valley-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gokyo Lakes Trek -->
+                <div class="trek-card" data-region="everest" data-days="14" data-diff="moderate" data-price="1300">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="Gokyo Lakes Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="gokyo-lakes.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Gokyo Lakes Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Everest Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,300</strong></div>
+                            <a href="gokyo-lakes.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanchenjunga Base Camp Trek -->
+                <div class="trek-card" data-region="kanchenjunga" data-days="22" data-diff="challenging"
+                    data-price="1850">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="Kanchenjunga Base Camp Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="kanchenjunga-base-camp-trek.html" class="btn-view">View
+                                Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Kanchenjunga Base Camp Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 22 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kanchenjunga Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,850</strong></div>
+                            <a href="kanchenjunga-base-camp-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanchenjunga Circuit Trek -->
+                <div class="trek-card" data-region="kanchenjunga" data-days="26" data-diff="challenging"
+                    data-price="2200">
+                    <div class="trek-img-wrap">
+                        <img src="everest.png" alt="Kanchenjunga Circuit Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="kanchenjunga-circuit-trek.html" class="btn-view">View Details
+                                <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Kanchenjunga Circuit Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 26 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kanchenjunga Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$2,200</strong></div>
+                            <a href="kanchenjunga-circuit-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower Dolpa & Phoksundo -->
+                <div class="trek-card" data-region="dolpa" data-days="14" data-diff="moderate" data-price="1650">
+                    <div class="trek-img-wrap">
+                        <img src="cta.png" alt="Lower Dolpa & Phoksundo" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="lower-dolpa-phoksundo.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Lower Dolpa & Phoksundo</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Dolpa Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,650</strong></div>
+                            <a href="lower-dolpa-phoksundo.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upper Dolpa Expedition -->
+                <div class="trek-card" data-region="dolpa" data-days="24" data-diff="challenging" data-price="2800">
+                    <div class="trek-img-wrap">
+                        <img src="cta.png" alt="Upper Dolpa Expedition" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-challenging">Challenging</div>
+                        <div class="trek-overlay"><a href="upper-dolpa-expedition.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Upper Dolpa Expedition</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 24 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Dolpa Region</span>
+                        </div>
+                        <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$2,800</strong></div>
+                            <a href="upper-dolpa-expedition.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upper Mustang Trek -->
+                <div class="trek-card" data-region="mustang" data-days="14" data-diff="moderate" data-price="1650">
+                    <div class="trek-img-wrap">
+                        <img src="cta.png" alt="Upper Mustang Trek" class="trek-img" loading="lazy" />
+                        <div class="trek-badge badge-moderate">Moderate</div>
+                        <div class="trek-overlay"><a href="upper-mustang-trek.html" class="btn-view">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="trek-body">
+                        <h3 class="trek-name">Upper Mustang Trek</h3>
+                        <div class="trek-meta">
+                            <span><i class="fas fa-clock"></i> 14 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Mustang Region</span>
+                        </div>
+                        <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+                        <div class="trek-footer">
+                            <div class="trek-price">From <strong>$1,650</strong></div>
+                            <a href="upper-mustang-trek.html" class="btn-sm">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-mountain"></i>
+                        Himalaya<span>Quest</span>
+                    </div>
+                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the
+                        world,
+                        safely and sustainably.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#treks">All Treks</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="#blog">Travel Blog</a></li>
+                        <li><a href="contact.html">Plan My Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trek Regions</h4>
+                    <ul>
+                        <li><a href="everest-region.html">Everest Region</a></li>
+                        <li><a href="annapurna-region.html">Annapurna Region</a></li>
+                        <li><a href="langtang-region.html">Langtang Region</a></li>
+                        <li><a href="manaslu-region.html">Manaslu Region</a></li>
+                        <li><a href="dolpa-region.html">Dolpa Region</a></li>
+                        <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+                        <li><a href="mustang-region.html">Mustang Region</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+                        <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
+                        <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+

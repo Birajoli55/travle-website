@@ -45,7 +45,8 @@
         .pkg-hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('hero.png'); /* Using hero.png as a placeholder for Poon Hill view */
+            background-image: url('hero.png');
+            /* Using hero.png as a placeholder for Poon Hill view */
             background-size: cover;
             background-position: center;
             z-index: -1;
@@ -385,6 +386,49 @@
             }
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
@@ -419,55 +463,12 @@
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i> Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="index.html#plan" class="dropdown-link"><i class="fas fa-paper-plane"></i> Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$450</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+`n<li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
-                    <li class="nav-item has-dropdown">
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
                         </a>
@@ -475,10 +476,18 @@
                             <div class="dropdown-inner">
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
-                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks available</small></span></a>
-                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks available</small></span></a>
-                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks available</small></span></a>
-                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks available</small></span></a>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks available</small></span></a>
                                 </div>
                             </div>
                         </div>
@@ -505,7 +514,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -570,17 +580,27 @@
                 style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
                 <div class="overview-text" id="overviewText">
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        The Ghorepani Poon Hill Trek is perhaps the most <strong>famous short trek in Nepal</strong>. Perfect for those with limited time or seeking a relatively gentle introduction to Himalayan trekking, this 5-day adventure offers world-class mountain vistas without the extreme altitudes of longer circuits.
+                        The Ghorepani Poon Hill Trek is perhaps the most <strong>famous short trek in Nepal</strong>.
+                        Perfect for those with limited time or seeking a relatively gentle introduction to Himalayan
+                        trekking, this 5-day adventure offers world-class mountain vistas without the extreme altitudes
+                        of longer circuits.
                     </p>
                     <div id="overviewMore" style="display: none;">
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                            The highlight is undoubtedly the pre-dawn hike to <strong>Poon Hill (3,210m)</strong>. From this vantage point, you'll witness a spectacular sunrise over the Dhaulagiri and Annapurna massifs. The sight of these giant peaks turning golden in the first light of day is a memory that stays with you forever.
+                            The highlight is undoubtedly the pre-dawn hike to <strong>Poon Hill (3,210m)</strong>. From
+                            this vantage point, you'll witness a spectacular sunrise over the Dhaulagiri and Annapurna
+                            massifs. The sight of these giant peaks turning golden in the first light of day is a memory
+                            that stays with you forever.
                         </p>
                         <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
-                            Beyond the views, the trek takes you through ancient <strong>rhododendron forests</strong> (a riot of color in spring) and into the heart of Gurung culture in villages like <strong>Ghandruk</strong>. It's a perfect blend of natural beauty and cultural immersion reachable in just a few days from Pokhara.
+                            Beyond the views, the trek takes you through ancient <strong>rhododendron forests</strong>
+                            (a riot of color in spring) and into the heart of Gurung culture in villages like
+                            <strong>Ghandruk</strong>. It's a perfect blend of natural beauty and cultural immersion
+                            reachable in just a few days from Pokhara.
                         </p>
                     </div>
-                    <button id="overviewReadMore" class="btn-read-more" style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                    <button id="overviewReadMore" class="btn-read-more"
+                        style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
                         <span>Read More</span> <i class="fas fa-chevron-down"></i>
                     </button>
                 </div>
@@ -598,7 +618,8 @@
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Meals</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking</td>
+                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking
+                            </td>
                         </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px 0; color: #666;">Transportation</td>
@@ -644,7 +665,8 @@
                     <i class="fas fa-users"></i>
                     <div>
                         <strong>Ghandruk Gurung Village</strong>
-                        <p>Explore one of Nepal's most beautiful traditional stone villages and its rich local culture.</p>
+                        <p>Explore one of Nepal's most beautiful traditional stone villages and its rich local culture.
+                        </p>
                     </div>
                 </li>
                 <li class="high-item">
@@ -700,11 +722,15 @@
             <div class="itinerary-container">
                 <div class="iti-item active">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">01</span> Pokhara &rarr; Drive to Nayapul &rarr; Trek to Ulleri (2,050m)</h4>
+                        <h4><span class="iti-day-circle">01</span> Pokhara &rarr; Drive to Nayapul &rarr; Trek to Ulleri
+                            (2,050m)</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Start your adventure with a 1.5-hour drive from Pokhara to Nayapul. The trek begins with a steady walk along the Modi Khola river, passing through small settlements and terraced fields. The day concludes with a steep but rewarding climb up the stone stairs to the beautiful village of Ulleri. Walking time: 5–6 hours.
+                        Start your adventure with a 1.5-hour drive from Pokhara to Nayapul. The trek begins with a
+                        steady walk along the Modi Khola river, passing through small settlements and terraced fields.
+                        The day concludes with a steep but rewarding climb up the stone stairs to the beautiful village
+                        of Ulleri. Walking time: 5–6 hours.
                     </div>
                 </div>
                 <div class="iti-item">
@@ -713,16 +739,23 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A magical day of trekking through dense forests of oak and rhododendron. The trail ascends gradually, offering occasional glimpses of the snowy peaks ahead. You'll arrive at Ghorepani, a bustling village on a ridge, in the afternoon. Enjoy the sunset views before resting for tomorrow's early start. Walking time: 4–5 hours.
+                        A magical day of trekking through dense forests of oak and rhododendron. The trail ascends
+                        gradually, offering occasional glimpses of the snowy peaks ahead. You'll arrive at Ghorepani, a
+                        bustling village on a ridge, in the afternoon. Enjoy the sunset views before resting for
+                        tomorrow's early start. Walking time: 4–5 hours.
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">03</span> Poon Hill Sunrise &rarr; Trek to Tadapani (2,630m)</h4>
+                        <h4><span class="iti-day-circle">03</span> Poon Hill Sunrise &rarr; Trek to Tadapani (2,630m)
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Rise at 4:30 AM for the climb to the summit of Poon Hill (3,210m). Witness one of the world's most spectacular sunrises as the first light hits Dhaulagiri, Annapurna South, and Machhapuchhre. After breakfast back in Ghorepani, trek through a high ridge forest to Tadapani. Walking time: 6–7 hours.
+                        Rise at 4:30 AM for the climb to the summit of Poon Hill (3,210m). Witness one of the world's
+                        most spectacular sunrises as the first light hits Dhaulagiri, Annapurna South, and
+                        Machhapuchhre. After breakfast back in Ghorepani, trek through a high ridge forest to Tadapani.
+                        Walking time: 6–7 hours.
                     </div>
                 </div>
                 <div class="iti-item">
@@ -731,16 +764,22 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A relatively easy day descending through the forest. Ghandruk is one of the most famous Gurung villages in Nepal, known for its traditional stone houses and incredible views of Annapurna South and Hiunchuli. Spend the afternoon exploring the village and the local museum. Walking time: 3–4 hours.
+                        A relatively easy day descending through the forest. Ghandruk is one of the most famous Gurung
+                        villages in Nepal, known for its traditional stone houses and incredible views of Annapurna
+                        South and Hiunchuli. Spend the afternoon exploring the village and the local museum. Walking
+                        time: 3–4 hours.
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">05</span> Ghandruk &rarr; Nayapul &rarr; Drive to Pokhara (827m)</h4>
+                        <h4><span class="iti-day-circle">05</span> Ghandruk &rarr; Nayapul &rarr; Drive to Pokhara
+                            (827m)</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The final day of trekking takes you down stone steps through terraced fields to the Modi Khola river. Reach Nayapul by midday, where your vehicle awaits for the 1.5-hour drive back to Pokhara. Celebrate your successful trek by the lakeside! Walking time: 4–5 hours.
+                        The final day of trekking takes you down stone steps through terraced fields to the Modi Khola
+                        river. Reach Nayapul by midday, where your vehicle awaits for the 1.5-hour drive back to
+                        Pokhara. Celebrate your successful trek by the lakeside! Walking time: 4–5 hours.
                     </div>
                 </div>
             </div>
@@ -801,51 +840,58 @@
     </section>
 
     <!-- ===== FAQ SECTION ===== -->
-    <section class="section faq-section" id="faq">
+    <section class="section bg-light" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Got Questions?</span>
-                <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Ghorepani Poon Hill <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Quick answers for your short Himalayan adventure</p>
             </div>
-            <div class="faq-list" id="faqList" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How difficult is the Ghorepani Poon Hill trek?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">How difficult is the Ghorepani Poon Hill trek? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>It is considered an <strong>easy to moderate</strong> trek. The most challenging part is the ascent of the stone stairs to Ulleri on Day 1. It is suitable for beginners and families with children.</p>
+                        <p>It is considered an <strong>easy to moderate</strong> trek. The most challenging part is the ascent of the stone stairs to Ulleri on Day 1. It is suitable for beginners and families with children who have a reasonable level of fitness.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is there a high risk of altitude sickness?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">Is there a high risk of altitude sickness? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>The maximum altitude is <strong>3,210m</strong> at Poon Hill. While mild symptoms can occur, the risk of serious altitude sickness is very low compared to treks like Everest Base Camp or the Annapurna Circuit.</p>
+                        <p>The maximum altitude is <strong>3,210m</strong> at Poon Hill. While mild symptoms like shortness of breath can occur during the climb, the risk of serious altitude sickness (AMS) is very low compared to high-altitude treks like Everest Base Camp.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What is the best time for this trek?</span>
-                        <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
-                    </button>
+                    <div class="faq-question">What is the best time for this trek? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>The best times are <strong>Spring (March-May)</strong> for blooming rhododendrons and <strong>Autumn (Sept-Nov)</strong> for crystal clear mountain views. Winter is also possible but can be chilly.</p>
+                        <p>The best times are <strong>Spring (March-May)</strong> for blooming rhododendron forests and <strong>Autumn (Sept-Nov)</strong> for crystal clear mountain views. Because of its lower altitude, it's also a great choice for <strong>Winter trekking</strong> (Dec-Feb).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a guide for this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>While the trails are well-marked, we strongly recommend a <strong>professional guide</strong>. They provide valuable cultural insights, handle logistics, and ensure your safety. For solo travelers, a guide is often mandatory in many trekking regions of Nepal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What permits are required? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>You need the <strong>ACAP (Annapurna Conservation Area Permit)</strong> and a <strong>TIMS card</strong>. We handle both of these for you and they are included in our package price.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- ===== FINAL CTA ===== -->
-     <section class="cta-section" style="padding: 100px 0; position: relative; text-align: center; color: white;">
-        <div class="cta-bg" style="background-image:url('cta.png'); position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1;"></div>
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-section" style="padding: 100px 0; position: relative; text-align: center; color: white;">
+        <div class="cta-bg"
+            style="background-image:url('cta.png'); position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1;">
+        </div>
         <div class="cta-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: -1;"></div>
         <div class="cta-content container">
             <h2>Ready for the <span class="accent">Ultimate Sunrise?</span></h2>
-            <p style="margin-bottom: 30px;">Book your Ghorepani Poon Hill adventure today and see the Himalayas in their best light.</p>
+            <p style="margin-bottom: 30px;">Book your Ghorepani Poon Hill adventure today and see the Himalayas in their
+                best light.</p>
             <div class="hero-btns" style="justify-content: center;">
                 <a href="contact.html" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Inquire Now</a>
@@ -870,7 +916,8 @@
                 <div class="footer-logo" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">
                     <i class="fas fa-mountain" style="color:var(--pkg-orange)"></i> HimalayaQuest
                 </div>
-                <p style="opacity: 0.7; line-height: 1.6;">Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world, safely and sustainably.</p>
+                <p style="opacity: 0.7; line-height: 1.6;">Nepal's premier adventure trekking company. We connect
+                    passionate travelers with the roof of the world, safely and sustainably.</p>
             </div>
             <div class="footer-col">
                 <h4 style="margin-bottom: 20px;">Quick Links</h4>
@@ -891,14 +938,19 @@
             </div>
             <div class="footer-col">
                 <h4 style="margin-bottom: 20px;">Newsletter</h4>
-                <p style="opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px;">Get the latest trekking news and offers.</p>
+                <p style="opacity: 0.7; font-size: 0.9rem; margin-bottom: 15px;">Get the latest trekking news and
+                    offers.</p>
                 <div style="display: flex; gap: 5px;">
-                    <input type="email" placeholder="Email" style="padding: 10px; border-radius: 5px; border: none; flex: 1;" />
-                    <button style="background: var(--pkg-orange); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;"><i class="fas fa-paper-plane"></i></button>
+                    <input type="email" placeholder="Email"
+                        style="padding: 10px; border-radius: 5px; border: none; flex: 1;" />
+                    <button
+                        style="background: var(--pkg-orange); color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;"><i
+                            class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom container" style="margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.8rem;">
+        <div class="footer-bottom container"
+            style="margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.8rem;">
             &copy; 2026 HimalayaQuest Nepal. All rights reserved.
         </div>
     </footer>
@@ -946,7 +998,17 @@
                 overviewReadMore.querySelector('i').className = isHidden ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
             });
         }
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+
+

@@ -285,6 +285,49 @@
             line-height: 1.6;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 768px) {
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
@@ -318,75 +361,12 @@
                     <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li class="nav-item has-dropdown">
-                        <a href="index.html#treks" class="nav-link">
-                            Treks <i class="fas fa-chevron-down nav-arrow"></i>
-                        </a>
-                        <div class="dropdown">
-                            <div class="dropdown-inner">
-                                <div class="dropdown-col">
-                                    <p class="dropdown-heading">Featured Treks</p>
-                                    <a href="everest-base-camp.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-campground"></i></span>
-                                        <span><strong>Everest Base Camp</strong><small>14 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="annapurna-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-mountain"></i></span>
-                                        <span><strong>Annapurna Circuit</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="abc-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Annapurna Base Camp</strong><small>11 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="ghorepani-poon-hill.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-binoculars"></i></span>
-                                        <span><strong>Ghorepani Poon Hill</strong><small>5 Days · Easy</small></span>
-                                    </a>
-                                    <a href="langtang-valley.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-tree"></i></span>
-                                        <span><strong>Langtang Valley</strong><small>10 Days · Easy</small></span>
-                                    </a>
-                                    <a href="gosainkunda-lake-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gosainkunda Lake</strong><small>8 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="tamang-heritage-trail.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-users"></i></span>
-                                        <span><strong>Tamang Heritage</strong><small>8 Days · Easy</small></span>
-                                    </a>
-                                    <a href="manaslu-circuit.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-compass"></i></span>
-                                        <span><strong>Manaslu Circuit</strong><small>16 Days · Challenging</small></span>
-                                    </a>
-                                    <a href="tsum-valley-trek.html" class="dropdown-link nav-active">
-                                        <span class="dlink-icon"><i class="fas fa-peace"></i></span>
-                                        <span><strong>Tsum Valley Trek</strong><small>18 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="upper-mustang-trek.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-sun"></i></span>
-                                        <span><strong>Upper Mustang Trek</strong><small>14 Days · Moderate</small></span>
-                                    </a>
-                                    <a href="gokyo-lakes.html" class="dropdown-link">
-                                        <span class="dlink-icon"><i class="fas fa-water"></i></span>
-                                        <span><strong>Gokyo Lakes Trek</strong><small>14 Days · Moderate</small></span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-col dropdown-col-cta">
-                                    <p class="dropdown-heading">Quick Actions</p>
-                                    <a href="index.html#filter" class="dropdown-link"><i class="fas fa-sliders-h"></i> Find My Trek</a>
-                                    <a href="departures.html" class="dropdown-link"><i class="fas fa-calendar-check"></i> View Departures</a>
-                                    <a href="contact.html" class="dropdown-link"><i class="fas fa-paper-plane"></i> Custom Trek</a>
-                                    <div class="dropdown-badge">
-                                        <i class="fas fa-tag"></i> Treks from <strong>$650</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+<li class="nav-item">
                         <a href="departures.html" class="nav-link">Departures</a>
                     </li>
-                    <li class="nav-item has-dropdown">
+                              <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
+<li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
                         </a>
@@ -394,13 +374,27 @@
                             <div class="dropdown-inner">
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
-                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks available</small></span></a>
-                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks available</small></span></a>
-                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks available</small></span></a>
-                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks available</small></span></a>
-                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-paw"></i></span><span><strong>Dolpa Region</strong><small>4 treks available</small></span></a>
-                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Kanchenjunga Region</strong><small>2 treks available</small></span></a>
-                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-sun"></i></span><span><strong>Mustang Region</strong><small>3 treks available</small></span></a>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
+                                                Region</strong><small>2 treks available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks available</small></span></a>
                                 </div>
                             </div>
                         </div>
@@ -426,7 +420,8 @@
             <ul class="mobile-links">
                 <li><a href="index.html#treks">🏔 Featured Treks</a></li>
                 <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
+                        <li><a href="treks.html">🏔 All Treks</a></li>
+<li><a href="destinations.html">📍 Destinations</a></li>
                 <li><a href="about.html">⭐ About Us</a></li>
                 <li><a href="contact.html">📞 Contact</a></li>
             </ul>
@@ -440,7 +435,8 @@
         <div class="pkg-hero-content">
             <span class="pkg-badge">Sacred Hidden Valley</span>
             <h1>Tsum Valley Trek</h1>
-            <p>Journey into a forgotten Buddhist kingdom — a 'Beyul' where time stands still and compassion rules the land.</p>
+            <p>Journey into a forgotten Buddhist kingdom — a 'Beyul' where time stands still and compassion rules the
+                land.</p>
             <div class="hero-btns">
                 <a href="#book" class="btn-primary">Book This Trek</a>
                 <a href="contact.html" class="btn-outline">Customize Trip</a>
@@ -486,24 +482,33 @@
                 <span class="section-tag">Overview</span>
                 <h2 class="section-title">The Valley of <span class="accent">Sacred Happiness</span></h2>
             </div>
-            <div class="overview-grid" style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
+            <div class="overview-grid"
+                style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
                 <div class="overview-text">
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        The Tsum Valley is a sacred Himalayan pilgrimage valley situated in northern Gorkha, Nepal. 'Tsum' is derived from the Tibetan word 'Tsombo', which means vivid. Traditionally, the valley was a distinct geographical area called Tsum Tso Chuksum.
+                        The Tsum Valley is a sacred Himalayan pilgrimage valley situated in northern Gorkha, Nepal.
+                        'Tsum' is derived from the Tibetan word 'Tsombo', which means vivid. Traditionally, the valley
+                        was a distinct geographical area called Tsum Tso Chuksum.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
-                        Against the backdrop of the majestic Ganesh Himal, Sringi Himal, and Boudha Himal ranges, this hidden valley is rich in ancient Buddhist culture. The people of Tsum Valley, known as Tsumbas, are of Tibetan origin and have their own unique dialect and traditions. The valley is known for its strict practice of non-violence (Shyakya), where no animals are slaughtered.
+                        Against the backdrop of the majestic Ganesh Himal, Sringi Himal, and Boudha Himal ranges, this
+                        hidden valley is rich in ancient Buddhist culture. The people of Tsum Valley, known as Tsumbas,
+                        are of Tibetan origin and have their own unique dialect and traditions. The valley is known for
+                        its strict practice of non-violence (Shyakya), where no animals are slaughtered.
                     </p>
 
                     <div class="permit-notice">
                         <i class="fas fa-id-card"></i>
                         <div>
                             <h4>Restricted Area Trek</h4>
-                            <p>Tsum Valley is a restricted area. Trekkers require a special Restricted Area Permit, and it is mandatory to trek with a licensed guide. All logistics and permits are handled by HimalayaQuest.</p>
+                            <p>Tsum Valley is a restricted area. Trekkers require a special Restricted Area Permit, and
+                                it is mandatory to trek with a licensed guide. All logistics and permits are handled by
+                                HimalayaQuest.</p>
                         </div>
                     </div>
                 </div>
-                <div class="overview-table" style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid var(--pkg-green);">
+                <div class="overview-table"
+                    style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid var(--pkg-green);">
                     <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Trip Facts</h3>
                     <table style="width: 100%; border-collapse: collapse;">
                         <tr style="border-bottom: 1px solid #ddd;">
@@ -540,7 +545,8 @@
                     <i class="fas fa-dharmachakra"></i>
                     <div>
                         <strong>Mu Gompa</strong>
-                        <p>The largest and oldest monastery in the valley, perched at 3,700m with stunning mountain vistas.</p>
+                        <p>The largest and oldest monastery in the valley, perched at 3,700m with stunning mountain
+                            vistas.</p>
                     </div>
                 </li>
                 <li class="high-item">
@@ -561,7 +567,8 @@
                     <i class="fas fa-users-rays"></i>
                     <div>
                         <strong>Hidden Culture</strong>
-                        <p>Authentic Tibetan-influenced lifestyle and the unique 'Shyakya' tradition of non-violence.</p>
+                        <p>Authentic Tibetan-influenced lifestyle and the unique 'Shyakya' tradition of non-violence.
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -578,48 +585,105 @@
             <div class="itinerary-container">
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">01</div> Arrival in Kathmandu</h4>
+                        <h4>
+                            <div class="iti-day-circle">01</div> Arrival in Kathmandu
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        <p>Pick up from Tribhuvan International Airport and transfer to your hotel. Evening briefing about the trek.</p>
+                        <p>Pick up from Tribhuvan International Airport and transfer to your hotel. Evening briefing
+                            about the trek.</p>
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">02</div> Kathmandu Sightseeing & Permits</h4>
+                        <h4>
+                            <div class="iti-day-circle">02</div> Kathmandu Sightseeing & Permits
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        <p>Guided tour of Pashupatinath, Boudhanath, and Swayambhunath while we process your restricted area permits.</p>
+                        <p>Guided tour of Pashupatinath, Boudhanath, and Swayambhunath while we process your restricted
+                            area permits.</p>
                     </div>
                 </div>
                 <!-- ... More days ... -->
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">03-05</div> Into the Foothills</h4>
+                        <h4>
+                            <div class="iti-day-circle">03-05</div> Into the Foothills
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        <p>Drive to Machha Khola and trek through the Budhi Gandaki gorge to Jagat, the gateway to the restricted area.</p>
+                        <p>Drive to Machha Khola and trek through the Budhi Gandaki gorge to Jagat, the gateway to the
+                            restricted area.</p>
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">06-10</div> Entering the Sacred Valley</h4>
+                        <h4>
+                            <div class="iti-day-circle">06-10</div> Entering the Sacred Valley
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        <p>Ascend to Lokpa - the entrance to Tsum Valley. Traverse through Chhekampar and Nile to reach the ultimate destination: Mu Gompa at 3,700m.</p>
+                        <p>Ascend to Lokpa - the entrance to Tsum Valley. Traverse through Chhekampar and Nile to reach
+                            the ultimate destination: Mu Gompa at 3,700m.</p>
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><div class="iti-day-circle">11-18</div> Return Journey</h4>
+                        <h4>
+                            <div class="iti-day-circle">11-18</div> Return Journey
+                        </h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
                         <p>Descend via Piren Phu cave and Gumba Lungdang. Return to Kathmandu and final departure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Tsum Valley <span class="accent">FAQs</span></h2>
+                <p class="section-sub">Essential information for your journey into the sacred hidden valley</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What makes Tsum Valley different from other treks? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Tsum Valley is unique for its <strong>deep spiritual atmosphere</strong> and strict adherence to non-violence (Shyakya). No animals are slaughtered in the valley, and the culture is purely Tibetan Buddhist. It feels like stepping back in time to an ancient, untouched Himalayan sanctuary.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a special permit for Tsum Valley? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, Tsum Valley is a <strong>restricted area</strong>. You need a special Restricted Area Permit (RAP), which costs $40 for the first week during Autumn and $30 during other seasons. You must also trek with a licensed guide and be in a group of at least two people.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How difficult is the Tsum Valley trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>It is considered a <strong>moderate trek</strong>. While it involves several days of 5-7 hour walks and some steep sections, the maximum altitude at Mu Gompa (3,700m) is lower than many other treks, making the risk of altitude sickness much lower.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I combine Tsum Valley with the Manaslu Circuit? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Yes, many trekkers combine the two for an epic 22-25 day journey. You first explore the sacred Tsum Valley and then rejoin the main <strong>Manaslu Circuit</strong> trail at Lokpa to continue toward the Larkya La Pass.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is the accommodation like in Tsum Valley? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">
+                        <p>Accommodation is in <strong>simple teahouses and community homestays</strong>. They are more basic than those on the Everest or Annapurna trails, but they offer a very authentic experience. You'll enjoy local Tibetan-style food and warm Himalayan hospitality.</p>
                     </div>
                 </div>
             </div>
@@ -700,7 +764,16 @@
                 item.classList.toggle('active');
             });
         });
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 
 </html>
+
+
