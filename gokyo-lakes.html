@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gokyo Lakes Trek 2026 | Turquoise Lakes & Everest Views | HimalayaQuest</title>
+    <title>Gokyo Lakes Trek 2026 | Turquoise Lakes & Everest Views | BESTTREKSNEPAL</title>
     <meta name="description"
-        content="Experience the stunning 14-day Gokyo Lakes Trek with HimalayaQuest. Discover turquoise glacial lakes, climb Gokyo Ri for panoramic Everest views, and explore the heart of the Sherpa highlands." />
+        content="Experience the stunning 14-day Gokyo Lakes Trek with BESTTREKSNEPAL. Discover turquoise glacial lakes, climb Gokyo Ri for panoramic Everest views, and explore the heart of the Sherpa highlands." />
     <meta name="keywords"
         content="Gokyo Lakes Trek, Gokyo Ri, Everest Region Trekking, Nepal Himalayan Treks, Ngozumpa Glacier, turquoise lakes Nepal" />
 
@@ -28,11 +28,41 @@
         :root {
             --pkg-green: #155a48;
             --pkg-orange: #ff7a00;
+            --body-font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+            --h1-font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+            --h2-font-size: clamp(1.75rem, 3vw + 1rem, 2.6rem);
+            --h3-font-size: clamp(1.35rem, 2vw + 0.8rem, 1.8rem);
+            --touch-target: 48px;
+        }
+
+        /* Global Responsive Fixes */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        body {
+            font-size: var(--body-font-size);
+            line-height: 1.6;
         }
 
         .pkg-hero {
-            height: 70vh;
-            min-height: 500px;
+            min-height: 80vh;
+            padding-top: 140px; /* Offset for fixed navbar */
+            padding-bottom: 100px; /* Extra space for quick-facts overlap */
             position: relative;
             display: flex;
             align-items: center;
@@ -49,6 +79,11 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .pkg-hero:hover .pkg-hero-bg {
             transform: scale(1.1);
         }
 
@@ -62,53 +97,62 @@
         .pkg-hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 900px;
+            padding: 0 24px;
         }
 
         .pkg-badge {
             background: var(--pkg-orange);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
             display: inline-block;
         }
 
+        .accent {
+            color: var(--pkg-orange);
+        }
+
         .pkg-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: var(--h1-font-size);
             font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.1;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .pkg-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
+            font-size: clamp(1.1rem, 1.5vw + 0.8rem, 1.3rem);
+            opacity: 0.95;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Essential Quick Facts Bar */
         .quick-facts-bar {
             background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            margin-top: -60px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+            padding: 35px;
+            margin-top: -70px;
             position: relative;
             z-index: 10;
         }
 
         .fact-item {
             text-align: center;
-            border-right: 1px solid #eee;
+            border-right: 1px solid var(--border);
+            padding: 10px;
         }
 
         .fact-item:last-child {
@@ -117,58 +161,80 @@
 
         .fact-item i {
             color: var(--pkg-green);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.75rem;
+            margin-bottom: 12px;
             display: block;
         }
 
         .fact-item strong {
             display: block;
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 4px;
         }
 
         .fact-item span {
-            font-size: 0.85rem;
-            color: #666;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            font-weight: 600;
         }
 
-        /* Sticky Booking Bar */
-        .sticky-booking {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .sticky-booking.show {
-            transform: translateY(0);
+        .overview-text p {
+            margin-bottom: 24px;
+            color: var(--text-muted);
         }
 
-        .sticky-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .overview-table-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 6px solid var(--pkg-green);
+            box-shadow: var(--shadow);
         }
 
-        .sticky-price {
-            font-size: 1.5rem;
+        .overview-table-card h3 {
+            margin-bottom: 25px;
+            font-size: var(--h3-font-size);
             font-weight: 800;
-            color: var(--pkg-green);
         }
 
-        .sticky-price span {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #666;
+        .trip-facts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .trip-facts-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trip-facts-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .trip-facts-table td {
+            padding: 14px 0;
+            font-size: 0.95rem;
+        }
+
+        .trip-facts-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .trip-facts-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* Itinerary Accordion */
@@ -178,113 +244,213 @@
         }
 
         .iti-item {
-            border: 1px solid #eef0f3;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
             overflow: hidden;
-            background: #fafbfc;
-            transition: all 0.3s ease;
+            background: white;
+            transition: all 0.35s ease;
         }
 
         .iti-header {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            background: white;
+            min-height: 64px; /* Touch target size */
         }
 
         .iti-header h4 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
+            font-weight: 700;
         }
 
         .iti-day-circle {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: var(--pkg-green);
             color: white;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 1rem;
             flex-shrink: 0;
         }
 
         .iti-content {
-            padding: 0 20px;
+            padding: 0 24px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .iti-header i {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
         }
 
         .iti-item.active {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-color: var(--pkg-green);
         }
 
         .iti-item.active .iti-content {
-            padding: 10px 20px 25px 75px;
-            max-height: 1000px;
+            padding: 10px 24px 30px 86px;
+            max-height: 1200px;
         }
 
         .iti-item.active .fa-chevron-down {
             transform: rotate(180deg);
+            color: var(--pkg-green);
         }
 
         /* Highlights Grid */
         .highlights-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
             list-style: none;
             padding: 0;
             margin-bottom: 30px;
         }
 
         .high-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
+            background: var(--off-white);
+            padding: 28px;
+            border-radius: 16px;
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: flex-start;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .high-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: var(--green-light);
+            background: white;
         }
 
         .high-item i {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
             color: var(--pkg-orange);
-            font-size: 1.2rem;
-            margin-top: 4px;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Includes/Excludes Side by Side */
+        .high-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .high-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Read More & See More Button Styling */
+        .btn-read-more, .btn-see-more {
+            background: transparent;
+            border: none;
+            color: var(--pkg-green);
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .btn-see-more {
+            border: 2px solid var(--pkg-green);
+            padding: 12px 32px;
+            border-radius: 50px;
+            margin: 40px auto 0;
+            justify-content: center;
+        }
+
+        .btn-read-more:hover, .btn-see-more:hover {
+            color: var(--pkg-orange);
+        }
+
+        .btn-see-more:hover {
+            background: var(--pkg-green);
+            color: white;
+            border-color: var(--pkg-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(21, 90, 72, 0.2);
+        }
+
+        .see-more-container {
+            text-align: center;
+        }
+
+        .extra-highlight {
+            display: none;
+        }
+
+        /* Cost Table */
         .cost-section {
             background: #f1f5f3;
-            border-radius: 20px;
-            padding: 50px;
+            border-radius: 24px;
+            padding: 60px;
+        }
+
+        .cost-header {
+            text-align: left;
+            margin-bottom: 45px;
+        }
+
+        .trek-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-top: 10px;
+        }
+
+        .trek-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         .cost-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .cost-col h3 {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: var(--h3-font-size);
+            font-weight: 800;
         }
 
         .cost-list {
@@ -294,9 +460,11 @@
 
         .cost-list li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .cost-list li::before {
@@ -304,6 +472,7 @@
             font-weight: 900;
             position: absolute;
             left: 0;
+            font-size: 1.1rem;
         }
 
         .inc-list li::before {
@@ -323,8 +492,8 @@
         }
 
         .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
         }
 
         .faq-question {
@@ -333,9 +502,10 @@
             align-items: center;
             cursor: pointer;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.15rem;
+            color: var(--text);
             transition: color 0.3s;
+            min-height: 48px;
         }
 
         .faq-question:hover {
@@ -345,56 +515,368 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            color: #666;
-            line-height: 1.6;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding-top: 15px;
+            max-height: 600px;
+            padding-top: 20px;
         }
 
         .faq-item.active .fa-chevron-down {
             transform: rotate(180deg);
+            color: var(--pkg-green);
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
+        }
+
+        .gallery-item.lg-col {
+            grid-column: span 2;
+        }
+
+        .gallery-item.lg-row {
+            grid-row: span 2;
+        }
+
+        /* Reviews Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-info strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .reviewer-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1440px) {
+            .container {
+                max-width: 1200px;
+                padding: 0 40px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .overview-grid {
+                gap: 40px;
+            }
+            .cost-section {
+                padding: 40px;
+            }
         }
 
         @media (max-width: 992px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
             .cost-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .gallery-item.lg-col, .gallery-item.lg-row {
+                grid-column: span 1;
+                grid-row: span 1;
             }
         }
 
         @media (max-width: 768px) {
+            .nav-main-inner {
+                height: 75px;
+            }
+
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
+                padding: 25px;
+                gap: 20px;
+                margin-top: -50px;
             }
 
             .fact-item {
                 border-right: none;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid var(--border);
                 padding-bottom: 15px;
+            }
+
+            .fact-item:nth-child(even) {
+                border-right: none;
+            }
+
+            .fact-item:last-child, .fact-item:nth-last-child(2) {
+                border-bottom: none;
+            }
+
+            .iti-item.active .iti-content {
+                padding-left: 24px;
+            }
+
+            .iti-header h4 {
+                font-size: 1.05rem;
+            }
+
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-actions {
+                gap: 15px;
+                margin-left: 10px;
+                align-items: center;
+            }
+
+            .nav-cta {
+                width: auto;
+                height: auto;
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                background: var(--pkg-orange);
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .nav-cta span {
+                display: inline;
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: white;
+                white-space: nowrap;
+            }
+
+            .nav-cta i {
+                display: none; /* Hide icon on mobile to match screenshot */
+            }
+
+            .pkg-hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+
+            .pkg-hero h1 {
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-facts-bar {
+                grid-template-columns: 1fr;
+                margin-top: -40px;
+            }
+
+            .fact-item {
+                border-bottom: 1px solid var(--border);
             }
 
             .fact-item:last-child {
                 border-bottom: none;
             }
 
-            .sticky-inner {
-                flex-direction: column;
-                gap: 10px;
+            .pkg-hero {
+                min-height: 100vh; /* Ensure full screen on mobile to fit content */
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
 
-            .iti-item.active .iti-content {
-                padding-left: 20px;
+            .pkg-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cost-section {
+                padding: 30px 20px;
+            }
+
+            .overview-table-card {
+                padding: 25px 20px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
-    </style>
+
+        @media (max-width: 360px) {
+            .pkg-hero h1 {
+                font-size: 2.1rem;
+            }
+            
+            .iti-header {
+                padding: 18px;
+            }
+
+            .iti-header h4 {
+                gap: 12px;
+            }
+
+            .iti-day-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
+    
+        @media (max-width: 320px) {
+            .pkg-hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-main-inner {
+                padding: 0 10px;
+            }
+            .fact-item strong {
+                font-size: 1rem;
+            }
+        }
+    
+    /* Extra Mobile Fixes */
+    @media (max-width: 992px) {
+        .overview-grid, .cost-grid {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+        }
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none !important; }
+        .nav-actions { width: auto !important; justify-content: flex-end; }
+        .nav-main-inner { padding: 0 15px !important; gap: 10px !important; }
+        .nav-cta span { display: none !important; }
+        .nav-cta i { display: block !important; }
+        .nav-cta { padding: 10px 14px !important; min-width: auto !important; }
+        
+        /* Ensure no horizontal scroll */
+        html, body { overflow-x: hidden !important; width: 100% !important; max-width: 100% !important; margin:0; padding:0;}
+        
+        .gallery-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        /* Fix hamburger and cta alignment */
+        .nav-logo { flex-shrink: 1; overflow: hidden; }
+        .logo-text { font-size: 1.2rem; }
+    }
+</style>
+
+
 </head>
 
 <body>
 
-            <!-- ===== STICKY NAVBAR ===== -->
+    <!-- ===== STICKY NAVBAR ===== -->
     <nav id="navbar" class="navbar">
 
         <!-- Main navbar -->
@@ -404,7 +886,7 @@
                 <!-- Logo -->
                 <a href="index.html#home" class="nav-logo">
                     <span class="logo-icon"><i class="fas fa-mountain"></i></span>
-                    <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
                 </a>
 
                 <!-- Desktop nav links -->
@@ -497,15 +979,22 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-links">
-                <li><a href="index.html#treks">?? Featured Treks</a></li>
-                <li><a href="departures.html">?? Departures</a></li>
-                <li><a href="treks.html">?? All Treks</a></li>
-                <li><a href="destinations.html">?? Destinations</a></li>
-                <li><a href="about.html">? About Us</a></li>
-                <li><a href="travel-blog.html">?? Blog</a></li>
-                <li><a href="contact.html">?? Contact</a></li>
+                <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i>
+                        Home</a></li>
+                <li><a href="departures.html"><i class="fas fa-calendar-alt"
+                            style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+                <li><a href="treks.html"><i class="fas fa-mountain"
+                            style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+                <li><a href="destinations.html"><i class="fas fa-map-marker-alt"
+                            style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"
+                            style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+                <li><a href="travel-blog.html"><i class="fas fa-pen-nib"
+                            style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"
+                            style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
             </ul>
-            <a href="contact.html" class="mobile-cta">Plan My Trip ?</a>
+            <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
         </div>
 
     </nav>
@@ -559,53 +1048,52 @@
     <!-- ===== TREK OVERVIEW ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-header" style="text-align: left; max-width: 800px; margin-left: 0;">
+            <div class="section-header overview-header">
                 <span class="section-tag">Overview</span>
                 <h2 class="section-title">A Journey to the <span class="accent">Emerald Lakes</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
-            <div class="overview-grid"
-                style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
+            <div class="overview-grid">
                 <div class="overview-text">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+                    <p>
                         The Gokyo Lakes trek is widely considered the most stunning alternative to the classic Everest
                         Base Camp route. It leads you into the heart of the Khumbu through a different valley, leading
                         to a series of six spectacular <strong>turquoise glacial lakes</strong>.
                     </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+                    <p>
                         Beyond the mesmerizing lakes, the trek offers a climb to the summit of <strong>Gokyo Ri
                             (5,357m)</strong>. From here, you'll witness a vista that many argue surpasses that of Kala
                         Patthar, featuring four of the world's fourteen 8,000m peaks: Everest, Lhotse, Makalu, and Cho
                         Oyu.
                     </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                    <p>
                         Traversing the <strong>Ngozumpa Glacier</strong>—the largest in the Nepal Himalayas—and staying
                         in the high-altitude settlement of Gokyo, this trek is a perfect blend of natural wonder and
                         cultural depth.
                     </p>
                 </div>
-                <div class="overview-table"
-                    style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid var(--pkg-green);">
-                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Trip Facts</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Group Size</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">2–12 Persons</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Accommodation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Teahouses / Lodges</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Max Elevation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">5,357m (Gokyo Ri)</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Difficulty</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Moderate</td>
+                <div class="overview-table-card">
+                    <h3>Trip Facts</h3>
+                    <table class="trip-facts-table">
+                        <tr>
+                            <td>Group Size</td>
+                            <td>2–12 Persons</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px 0; color: #666;">Starting Price</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">$1,150</td>
+                            <td>Accommodation</td>
+                            <td>Teahouses / Lodges</td>
+                        </tr>
+                        <tr>
+                            <td>Max Elevation</td>
+                            <td>5,357m (Gokyo Ri)</td>
+                        </tr>
+                        <tr>
+                            <td>Difficulty</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Starting Price</td>
+                            <td>$1,150</td>
                         </tr>
                     </table>
                 </div>
@@ -614,11 +1102,12 @@
     </section>
 
     <!-- ===== HIGHLIGHTS ===== -->
-    <section class="section" style="background: #fff;">
+    <section class="section bg-white">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Highlights</span>
                 <h2 class="section-title">Experience the <span class="accent">Gokyo Magic</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <ul class="highlights-list">
                 <li class="high-item"><i class="fas fa-water"></i>
@@ -661,9 +1150,10 @@
             <div class="section-header">
                 <span class="section-tag">Daily Route</span>
                 <h2 class="section-title">14 Days <span class="accent">Itinerary</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="itinerary-container">
-                <div class="iti-item">
+                <div class="iti-item active">
                     <div class="iti-header">
                         <h4><span class="iti-day-circle">01</span> Arrival in Kathmandu</h4><i
                             class="fas fa-chevron-down"></i>
@@ -803,6 +1293,7 @@
             <div class="section-header">
                 <span class="section-tag">Common Questions</span>
                 <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
@@ -849,11 +1340,13 @@
             <div class="section-header">
                 <span class="section-tag">Reviews</span>
                 <h2 class="section-title">What Our <span class="accent">Trekkers Say</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"An absolutely life-changing experience. The organization was top-notch and the views were beyond description."</p>
+                    <p class="review-text">"An absolutely life-changing experience. The organization was top-notch and
+                        the views were beyond description."</p>
                     <div class="reviewer">
                         <div class="reviewer-avatar" style="background:var(--pkg-green)">D</div>
                         <div class="reviewer-info"><strong>David L.</strong><span>Sydney, Australia</span></div>
@@ -861,7 +1354,8 @@
                 </div>
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"HimalayaQuest made everything so easy. From the airport pickup to the final farewell, we felt like family."</p>
+                    <p class="review-text">"BESTTREKSNEPAL made everything so easy. From the airport pickup to the final
+                        farewell, we felt like family."</p>
                     <div class="reviewer">
                         <div class="reviewer-avatar" style="background:var(--pkg-orange)">E</div>
                         <div class="reviewer-info"><strong>Emma W.</strong><span>Berlin, Germany</span></div>
@@ -871,69 +1365,84 @@
         </div>
     </section>
 
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-bg" style="background-image:url('cta.png')"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2>Ready to see the <span class="accent">Turquoise Lakes?</span></h2>
+            <p>Experience the mesmerizing Gokyo valley with an itinerary tailored to your pace and trekking background.</p>
+            <div class="hero-btns" style="margin-top:20px">
+                <a href="contact.html" class="btn-primary">Book This Trek</a>
+                <a href="everest-region.html" class="btn-outline">Back to Region</a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="contact">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <i class="fas fa-mountain"></i>
-            Himalaya<span>Quest</span>
-          </div>
-          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
-            safely and sustainably.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
-          </div>
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-mountain"></i>
+                        BESTTREKS<span>NEPAL</span>
+                    </div>
+                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the
+                        world,
+                        safely and sustainably.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#treks">All Treks</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="index.html#blog">Travel Blog</a></li>
+                        <li><a href="contact.html">Plan My Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trek Regions</h4>
+                    <ul>
+                        <li><a href="everest-region.html">Everest Region</a></li>
+                        <li><a href="annapurna-region.html">Annapurna Region</a></li>
+                        <li><a href="langtang-region.html">Langtang Region</a></li>
+                        <li><a href="manaslu-region.html">Manaslu Region</a></li>
+                        <li><a href="dolpa-region.html">Dolpa Region</a></li>
+                        <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+                        <li><a href="mustang-region.html">Mustang Region</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+                        <li><i class="fas fa-envelope"></i> info@besttreksnepal.com</li>
+                        <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="index.html#treks">All Treks</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="index.html#blog">Travel Blog</a></li>
-            <li><a href="contact.html">Plan My Trip</a></li>
-          </ul>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 BESTTREKSNEPAL Nepal. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Trek Regions</h4>
-          <ul>
-            <li><a href="everest-region.html">Everest Region</a></li>
-            <li><a href="annapurna-region.html">Annapurna Region</a></li>
-            <li><a href="langtang-region.html">Langtang Region</a></li>
-            <li><a href="manaslu-region.html">Manaslu Region</a></li>
-            <li><a href="dolpa-region.html">Dolpa Region</a></li>
-            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
-            <li><a href="mustang-region.html">Mustang Region</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <ul class="contact-list">
-            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
-            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-            <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
-            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Sitemap</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <script src="app.js"></script>
     <script>
@@ -944,21 +1453,10 @@
                 item.classList.toggle('active');
             });
         });
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
     </script>
 </body>
 
 </html>
-
-
-
 
 
 
