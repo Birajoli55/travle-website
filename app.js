@@ -66,7 +66,7 @@ function renderDepartures(filter = 'all') {
         <td class="dep-group"><strong>${d.group.cur}</strong>/${d.group.max} joined${spots > 0 ? ` &bull; <span style="color:var(--green)">${spots} spots left</span>` : ''}</td>
         <td>${statusHtml(d.status)}</td>
         <td class="dep-price">$${d.price.toLocaleString()}</td>
-        <td><button class="dep-book-btn ${isDisabled}">${btnLabel}</button></td>
+        <td><a href="${d.status === 'full' ? '#' : 'contact.html'}" class="dep-book-btn ${isDisabled}">${btnLabel}</a></td>
       </tr>`;
     }).join('');
   }
@@ -94,7 +94,7 @@ function renderDepartures(filter = 'all') {
         </div>
         <div class="dep-card-footer">
           <span class="dep-card-price">$${d.price.toLocaleString()}</span>
-          <button class="dep-book-btn ${isDisabled}">${btnLabel}</button>
+          <a href="${d.status === 'full' ? '#' : 'contact.html'}" class="dep-book-btn ${isDisabled}">${btnLabel}</a>
         </div>
       </div>`;
     }).join('');
@@ -159,6 +159,7 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
   const isOpen = mobileMenu.classList.toggle('open');
   hamburger.classList.toggle('open', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
@@ -167,15 +168,26 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
     hamburger.classList.remove('open');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
   });
 });
 
 // Close mobile menu on outside click / escape
+document.addEventListener('click', e => {
+  if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = '';
+  }
+});
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     mobileMenu.classList.remove('open');
     hamburger.classList.remove('open');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
   }
 });
@@ -286,6 +298,44 @@ window.addEventListener('DOMContentLoaded', () => {
   observeFadeIns();
 });
 
+// ── Accordions (Itinerary & Simple FAQ) ──
+function initAccordions() {
+  // Itinerary Accordion
+  document.querySelectorAll('.iti-header').forEach(header => {
+    // Remove existing listener to prevent double-toggle if script is re-run
+    const newHeader = header.cloneNode(true);
+    header.parentNode.replaceChild(newHeader, header);
+
+    newHeader.addEventListener('click', () => {
+      const item = newHeader.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.iti-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  // Basic FAQ Toggle (for simpler FAQ sections)
+  document.querySelectorAll('.faq-question').forEach(question => {
+    // If it's part of the complex FAQ logic handled below, skip it
+    if (question.closest('.faq-item')) return;
+
+    const newQuestion = question.cloneNode(true);
+    question.parentNode.replaceChild(newQuestion, question);
+
+    newQuestion.addEventListener('click', () => {
+      const item = newQuestion.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+}
+
+// Run on load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAccordions);
+} else {
+  initAccordions();
+}
+
 // ── Counter Animation for Hero Stats ──
 function animateCounter(el, target, suffix = '') {
   let start = 0;
@@ -318,28 +368,80 @@ document.addEventListener('DOMContentLoaded', () => {
   
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    
+    if (!question) return;
+
     question.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
+      // Support both 'active' and 'open' classes for compatibility
+      const isActive = item.classList.contains('active') || item.classList.contains('open');
       
       // Close all other items
       faqItems.forEach(otherItem => {
         if (otherItem !== item) {
-          otherItem.classList.remove('open');
-          otherItem.querySelector('.faq-answer').classList.remove('open');
+          otherItem.classList.remove('active', 'open');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          if (otherAnswer) otherAnswer.classList.remove('active', 'open');
         }
       });
       
       // Toggle current item
-      if (isOpen) {
-        item.classList.remove('open');
-        answer.classList.remove('open');
+      if (isActive) {
+        item.classList.remove('active', 'open');
+        const answer = item.querySelector('.faq-answer');
+        if (answer) answer.classList.remove('active', 'open');
       } else {
-        item.classList.add('open');
-        answer.classList.add('open');
+        item.classList.add('active'); // Use active as default
+        const answer = item.querySelector('.faq-answer');
+        if (answer) answer.classList.add('active');
       }
     });
+  });
+});
+
+// ── Webhook Form Submission ──
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.querySelector('.contact-form');
+  if (!contactForm) return;
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Set loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjcwNTZmMDYzMzA0MzQ1MjZjNTUzMzUxMzUi_pc', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        // Show success message
+        contactForm.innerHTML = `
+          <div class="form-success" style="text-align: center; padding: 40px 20px;">
+            <div style="font-size: 3rem; color: var(--green); margin-bottom: 20px;">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. Our trekking experts will get back to you within 24 hours.</p>
+            <button onclick="window.location.reload()" class="btn-primary" style="margin-top: 20px; border:none; cursor:pointer;">Send Another Message</button>
+          </div>
+        `;
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+      alert('Sorry, there was an error sending your message. Please try again or contact us directly at info@besttreksnepal.com');
+    }
   });
 });
 

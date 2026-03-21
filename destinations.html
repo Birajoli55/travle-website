@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trekking Destinations in Nepal | HimalayaQuest Nepal</title>
+  <title>Trekking Destinations in Nepal | BESTTREKSNEPAL</title>
   <meta name="description"
     content="Explore Nepal's most iconic trekking regions. From the high peaks of Everest to the cultural heart of Annapurna and the hidden valleys of Langtang and Manaslu." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,6 +79,7 @@
       font-weight: 800;
       margin-bottom: 12px;
       color: var(--text);
+      line-height: 1.3;
     }
 
     .region-desc {
@@ -178,6 +179,15 @@
       flex-direction: column;
       align-items: center;
       gap: 15px;
+      width: 90%;
+    }
+
+    .map-overlay-text h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.4;
+      margin: 0;
     }
 
     .map-overlay-text p {
@@ -189,6 +199,22 @@
     @media (max-width: 768px) {
       .dest-regions-grid {
         grid-template-columns: 1fr;
+      }
+
+      .map-placeholder {
+        height: 400px;
+      }
+
+      .map-overlay-text {
+        padding: 30px 20px;
+      }
+
+      .map-overlay-text h3 {
+        font-size: 1.25rem;
+      }
+
+      .map-overlay-text p {
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -206,7 +232,7 @@
                 <!-- Logo -->
                 <a href="index.html#home" class="nav-logo">
                     <span class="logo-icon"><i class="fas fa-mountain"></i></span>
-                    <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
                 </a>
 
                 <!-- Desktop nav links -->
@@ -296,19 +322,19 @@
             </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-links">
-                <li><a href="index.html#treks">🏔 Featured Treks</a></li>
-                <li><a href="departures.html">📅 Departures</a></li>
-                <li><a href="treks.html">🏔 All Treks</a></li>
-                <li><a href="destinations.html">📍 Destinations</a></li>
-                <li><a href="about.html">⭐ About Us</a></li>
-                <li><a href="travel-blog.html">📝 Blog</a></li>
-                <li><a href="contact.html">📞 Contact</a></li>
-            </ul>
-            <a href="contact.html" class="mobile-cta">Plan My Trip →</a>
-        </div>
+       <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-links">
+        <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i> Home</a></li>
+        <li><a href="departures.html"><i class="fas fa-calendar-alt" style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+        <li><a href="treks.html"><i class="fas fa-mountain" style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+        <li><a href="destinations.html"><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle" style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+        <li><a href="travel-blog.html"><i class="fas fa-pen-nib" style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
+    </div>
 
     </nav>
 
@@ -853,7 +879,7 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <i class="fas fa-mountain"></i>
-            Himalaya<span>Quest</span>
+            BESTTREKS<span>NEPAL</span>
           </div>
           <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
             safely and sustainably.</p>
@@ -892,7 +918,7 @@
           <ul class="contact-list">
             <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
             <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-            <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
+            <li><i class="fas fa-envelope"></i> info@BESTTREKSNEPAL.com</li>
             <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
           </ul>
         </div>
@@ -900,7 +926,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
+        <p>&copy; 2026 BESTTREKSNEPAL. All rights reserved.</p>
         <div class="footer-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
@@ -914,5 +940,7 @@
 </body>
 
 </html>
+
+
 
 

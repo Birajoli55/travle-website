@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>North Ridge Trek 2026 | 20 Days Itinerary & Cost | HimalayaQuest</title>
+    <title>North Ridge Trek 2026 | 20 Days Elite Expedition | BESTTREKSNEPAL</title>
     <meta name="description"
         content="Challenge yourself on the North Ridge Trek - a 20-day elite alpine expedition around Makalu with technical mountain terrain, stunning views, and authentic Sherpa culture." />
     <meta name="keywords"
@@ -28,11 +28,41 @@
         :root {
             --pkg-green: #155a48;
             --pkg-orange: #ff7a00;
+            --body-font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+            --h1-font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+            --h2-font-size: clamp(1.75rem, 3vw + 1rem, 2.6rem);
+            --h3-font-size: clamp(1.35rem, 2vw + 0.8rem, 1.8rem);
+            --touch-target: 48px;
+        }
+
+        /* Global Responsive Fixes */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        body {
+            font-size: var(--body-font-size);
+            line-height: 1.6;
         }
 
         .pkg-hero {
-            height: 70vh;
-            min-height: 500px;
+            min-height: 80vh;
+            padding-top: 140px; /* Offset for fixed navbar */
+            padding-bottom: 100px; /* Extra space for quick-facts overlap */
             position: relative;
             display: flex;
             align-items: center;
@@ -49,6 +79,11 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .pkg-hero:hover .pkg-hero-bg {
             transform: scale(1.1);
         }
 
@@ -62,53 +97,62 @@
         .pkg-hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 900px;
+            padding: 0 24px;
         }
 
         .pkg-badge {
             background: var(--pkg-orange);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
             display: inline-block;
         }
 
+        .accent {
+            color: var(--pkg-orange);
+        }
+
         .pkg-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: var(--h1-font-size);
             font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.1;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .pkg-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
+            font-size: clamp(1.1rem, 1.5vw + 0.8rem, 1.3rem);
+            opacity: 0.95;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Essential Quick Facts Bar */
         .quick-facts-bar {
             background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            margin-top: -60px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+            padding: 35px;
+            margin-top: -70px;
             position: relative;
             z-index: 10;
         }
 
         .fact-item {
             text-align: center;
-            border-right: 1px solid #eee;
+            border-right: 1px solid var(--border);
+            padding: 10px;
         }
 
         .fact-item:last-child {
@@ -117,58 +161,80 @@
 
         .fact-item i {
             color: var(--pkg-green);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.75rem;
+            margin-bottom: 12px;
             display: block;
         }
 
         .fact-item strong {
             display: block;
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 4px;
         }
 
         .fact-item span {
-            font-size: 0.85rem;
-            color: #666;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            font-weight: 600;
         }
 
-        /* Sticky Booking Bar */
-        .sticky-booking {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .sticky-booking.show {
-            transform: translateY(0);
+        .overview-text p {
+            margin-bottom: 24px;
+            color: var(--text-muted);
         }
 
-        .sticky-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .overview-table-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 6px solid var(--pkg-green);
+            box-shadow: var(--shadow);
         }
 
-        .sticky-price {
-            font-size: 1.5rem;
+        .overview-table-card h3 {
+            margin-bottom: 25px;
+            font-size: var(--h3-font-size);
             font-weight: 800;
-            color: var(--pkg-green);
         }
 
-        .sticky-price span {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #666;
+        .trip-facts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .trip-facts-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trip-facts-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .trip-facts-table td {
+            padding: 14px 0;
+            font-size: 0.95rem;
+        }
+
+        .trip-facts-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .trip-facts-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* Itinerary Accordion */
@@ -178,139 +244,213 @@
         }
 
         .iti-item {
-            border: 1px solid #eef0f3;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
             overflow: hidden;
-            background: #fafbfc;
-            transition: all 0.3s ease;
+            background: white;
+            transition: all 0.35s ease;
         }
 
         .iti-header {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            background: white;
+            min-height: 64px; /* Touch target size */
         }
 
         .iti-header h4 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
+            font-weight: 700;
         }
 
         .iti-day-circle {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: var(--pkg-green);
             color: white;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 1rem;
             flex-shrink: 0;
         }
 
         .iti-content {
-            padding: 0 20px;
+            padding: 0 24px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .iti-header i {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
         }
 
         .iti-item.active {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-color: var(--pkg-green);
         }
 
         .iti-item.active .iti-content {
-            padding: 10px 20px 25px 75px;
-            max-height: 1000px;
+            padding: 10px 24px 30px 86px;
+            max-height: 1200px;
         }
 
         .iti-item.active .fa-chevron-down {
             transform: rotate(180deg);
+            color: var(--pkg-green);
         }
 
         /* Highlights Grid */
         .highlights-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
             list-style: none;
             padding: 0;
             margin-bottom: 30px;
         }
 
         .high-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
+            background: var(--off-white);
+            padding: 28px;
+            border-radius: 16px;
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: flex-start;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            border: 1px solid transparent;
         }
 
-        .high-item.extra-highlight {
-            display: none;
+        .high-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: var(--green-light);
+            background: white;
         }
 
         .high-item i {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
             color: var(--pkg-orange);
-            font-size: 1.2rem;
-            margin-top: 4px;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .see-more-container {
-            text-align: center;
-            margin-top: 20px;
+        .high-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .high-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Read More & See More Button Styling */
+        .btn-read-more, .btn-see-more {
+            background: transparent;
+            border: none;
+            color: var(--pkg-green);
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
         }
 
         .btn-see-more {
-            background: transparent;
             border: 2px solid var(--pkg-green);
-            color: var(--pkg-green);
-            padding: 10px 30px;
+            padding: 12px 32px;
             border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            margin: 40px auto 0;
+            justify-content: center;
+        }
+
+        .btn-read-more:hover, .btn-see-more:hover {
+            color: var(--pkg-orange);
         }
 
         .btn-see-more:hover {
             background: var(--pkg-green);
             color: white;
+            border-color: var(--pkg-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(21, 90, 72, 0.2);
         }
 
-        /* Includes/Excludes Side by Side */
+        .see-more-container {
+            text-align: center;
+        }
+
+        .extra-highlight {
+            display: none;
+        }
+
+        /* Cost Table */
         .cost-section {
             background: #f1f5f3;
-            border-radius: 20px;
-            padding: 50px;
+            border-radius: 24px;
+            padding: 60px;
+        }
+
+        .cost-header {
+            text-align: left;
+            margin-bottom: 45px;
+        }
+
+        .trek-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-top: 10px;
+        }
+
+        .trek-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         .cost-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .cost-col h3 {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: var(--h3-font-size);
+            font-weight: 800;
         }
 
         .cost-list {
@@ -320,9 +460,11 @@
 
         .cost-list li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .cost-list li::before {
@@ -330,6 +472,7 @@
             font-weight: 900;
             position: absolute;
             left: 0;
+            font-size: 1.1rem;
         }
 
         .inc-list li::before {
@@ -342,29 +485,106 @@
             color: #dc3545;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text);
+            transition: color 0.3s;
+            min-height: 48px;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+            padding-top: 20px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+            color: var(--pkg-green);
+        }
+
         /* Photo Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 250px);
-            gap: 15px;
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
         }
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
         }
 
         .gallery-item.lg-col {
@@ -375,114 +595,297 @@
             grid-row: span 2;
         }
 
+        /* Reviews Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-info strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .reviewer-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1440px) {
+            .container {
+                max-width: 1200px;
+                padding: 0 40px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .overview-grid {
+                gap: 40px;
+            }
+            .cost-section {
+                padding: 40px;
+            }
+        }
+
         @media (max-width: 992px) {
-            .cost-grid {
+            .overview-grid {
                 grid-template-columns: 1fr;
             }
-
+            .cost-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
             }
-        }
-
-        /* FAQ Styles */
-        .faq-container {
-            max-width: 900px;
-            margin: 40px auto;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #333;
-            transition: color 0.3s;
-        }
-
-        .faq-question:hover {
-            color: var(--pkg-green);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding-top: 15px;
-        }
-
-        .faq-item.active .fa-chevron-down {
-            transform: rotate(180deg);
+            .gallery-item.lg-col, .gallery-item.lg-row {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
         }
 
         @media (max-width: 768px) {
+            .nav-main-inner {
+                height: 75px;
+            }
+
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
+                padding: 25px;
+                gap: 20px;
+                margin-top: -50px;
             }
 
             .fact-item {
                 border-right: none;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid var(--border);
                 padding-bottom: 15px;
+            }
+
+            .fact-item:nth-child(even) {
+                border-right: none;
+            }
+
+            .fact-item:last-child, .fact-item:nth-last-child(2) {
+                border-bottom: none;
+            }
+
+            .iti-item.active .iti-content {
+                padding-left: 24px;
+            }
+
+            .iti-header h4 {
+                font-size: 1.05rem;
+            }
+
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-actions {
+                gap: 15px;
+                margin-left: 10px;
+                align-items: center;
+            }
+
+            .nav-cta {
+                width: auto;
+                height: auto;
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                background: var(--pkg-orange);
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .nav-cta span {
+                display: inline;
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: white;
+                white-space: nowrap;
+            }
+
+            .nav-cta i {
+                display: none; /* Hide icon on mobile to match screenshot */
+            }
+
+            .pkg-hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+
+            .pkg-hero h1 {
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-facts-bar {
+                grid-template-columns: 1fr;
+                margin-top: -40px;
+            }
+
+            .fact-item {
+                border-bottom: 1px solid var(--border);
             }
 
             .fact-item:last-child {
                 border-bottom: none;
             }
 
-            .sticky-inner {
-                flex-direction: column;
-                gap: 10px;
+            .pkg-hero {
+                min-height: 100vh; /* Ensure full screen on mobile to fit content */
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
 
-            .iti-item.active .iti-content {
-                padding-left: 20px;
+            .pkg-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cost-section {
+                padding: 30px 20px;
+            }
+
+            .overview-table-card {
+                padding: 25px 20px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
-    </style>
+
+        @media (max-width: 360px) {
+            .pkg-hero h1 {
+                font-size: 2.1rem;
+            }
+            
+            .iti-header {
+                padding: 18px;
+            }
+
+            .iti-header h4 {
+                gap: 12px;
+            }
+
+            .iti-day-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
+    
+        @media (max-width: 320px) {
+            .pkg-hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-main-inner {
+                padding: 0 10px;
+            }
+            .fact-item strong {
+                font-size: 1rem;
+            }
+        }
+    
+    /* Extra Mobile Fixes */
+    @media (max-width: 992px) {
+        .overview-grid, .cost-grid {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+        }
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none !important; }
+        .nav-actions { width: auto !important; justify-content: flex-end; }
+        .nav-main-inner { padding: 0 15px !important; gap: 10px !important; }
+        .nav-cta span { display: none !important; }
+        .nav-cta i { display: block !important; }
+        .nav-cta { padding: 10px 14px !important; min-width: auto !important; }
+        
+        /* Ensure no horizontal scroll */
+        html, body { overflow-x: hidden !important; width: 100% !important; max-width: 100% !important; margin:0; padding:0;}
+        
+        .gallery-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        /* Fix hamburger and cta alignment */
+        .nav-logo { flex-shrink: 1; overflow: hidden; }
+        .logo-text { font-size: 1.2rem; }
+    }
+</style>
 </head>
 
 <body>
 
-            <!-- ===== STICKY NAVBAR ===== -->
+    <!-- ===== STICKY NAVBAR ===== -->
     <nav id="navbar" class="navbar">
-
-        <!-- Main navbar -->
         <div class="nav-main">
             <div class="nav-container nav-main-inner">
-
-                <!-- Logo -->
                 <a href="index.html#home" class="nav-logo">
                     <span class="logo-icon"><i class="fas fa-mountain"></i></span>
-                    <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
                 </a>
-
-                <!-- Desktop nav links -->
                 <ul class="nav-links" id="navLinks">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <!-- Departures (direct) -->
-                    <li class="nav-item">
-                        <a href="departures.html" class="nav-link">Departures</a>
-                    </li>
-
-                    <!-- Treks (direct) -->
-                    <li class="nav-item">
-                        <a href="treks.html" class="nav-link">Treks</a>
-                    </li>
-                    <!-- Destinations dropdown -->
+                    <li class="nav-item"><a href="departures.html" class="nav-link">Departures</a></li>
+                    <li class="nav-item"><a href="treks.html" class="nav-link">Treks</a></li>
                     <li class="nav-item has-dropdown">
                         <a href="destinations.html" class="nav-link">
                             Destinations <i class="fas fa-chevron-down nav-arrow"></i>
@@ -491,86 +894,44 @@
                             <div class="dropdown-inner">
                                 <div class="dropdown-col">
                                     <p class="dropdown-heading">Regions</p>
-                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-hiking"></i></span><span><strong>Everest
-                                                Region</strong><small>12 treks
-                                                available</small></span></a>
-                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
-                                                Region</strong><small>9 treks
-                                                available</small></span></a>
-                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-tree"></i></span><span><strong>Langtang
-                                                Region</strong><small>6 treks
-                                                available</small></span></a>
-                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-compass"></i></span><span><strong>Manaslu
-                                                Region</strong><small>5 treks
-                                                available</small></span></a>
-                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-paw"></i></span><span><strong>Dolpa
-                                                Region</strong><small>4 treks
-                                                available</small></span></a>
-                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
-                                                Region</strong><small>2 treks
-                                                available</small></span></a>
-                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-sun"></i></span><span><strong>Mustang
-                                                Region</strong><small>3 treks
-                                                available</small></span></a>
-                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
-                                                class="fas fa-mountain"></i></span><span><strong>Makalu
-                                                Region</strong><small>2 treks
-                                                available</small></span></a>
-
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-hiking"></i></span><span><strong>Everest Region</strong><small>12 treks available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Annapurna Region</strong><small>9 treks available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-tree"></i></span><span><strong>Langtang Region</strong><small>6 treks available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-compass"></i></span><span><strong>Manaslu Region</strong><small>5 treks available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-paw"></i></span><span><strong>Dolpa Region</strong><small>4 treks available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Kanchenjunga Region</strong><small>2 treks available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-sun"></i></span><span><strong>Mustang Region</strong><small>3 treks available</small></span></a>
+                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i class="fas fa-mountain"></i></span><span><strong>Makalu Region</strong><small>2 treks available</small></span></a>
                                 </div>
                             </div>
                         </div>
                     </li>
-
-                    <!-- About -->
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-
-                    <!-- Blog (direct) -->
-                    <li class="nav-item">
-                        <a href="travel-blog.html" class="nav-link">Blog</a>
-                    </li>
-
-                    <!-- Contact (direct) -->
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
-                    </li>
-
-                </ul><!-- /nav-links -->
-
-                <!-- Right side actions -->
+                    <li class="nav-item"><a href="travel-blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
                 <div class="nav-actions">
                     <a href="contact.html" class="nav-cta">
-                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                        <i class="fas fa-paper-plane"></i> <span>Plan My Trip</span>
                     </a>
                     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
-
             </div>
         </div>
-
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-links">
-                <li><a href="index.html#treks">?? Featured Treks</a></li>
-                <li><a href="departures.html">?? Departures</a></li>
-                <li><a href="treks.html">?? All Treks</a></li>
-                <li><a href="destinations.html">?? Destinations</a></li>
-                <li><a href="about.html">? About Us</a></li>
-                <li><a href="travel-blog.html">?? Blog</a></li>
-                <li><a href="contact.html">?? Contact</a></li>
+                <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i> Home</a></li>
+                <li><a href="departures.html"><i class="fas fa-calendar-alt" style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+                <li><a href="treks.html"><i class="fas fa-mountain" style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+                <li><a href="destinations.html"><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle" style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+                <li><a href="travel-blog.html"><i class="fas fa-pen-nib" style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope" style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
             </ul>
-            <a href="contact.html" class="mobile-cta">Plan My Trip ?</a>
+            <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
         </div>
-
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
@@ -579,90 +940,89 @@
         <div class="pkg-hero-overlay"></div>
         <div class="pkg-hero-content">
             <span class="pkg-badge">Elite Expedition</span>
-            <h1>North Ridge Trek</h1>
-            <p>A technical alpine expedition for experienced mountaineers - traverse the challenging north side of
-                Makalu with steep terrain and world-class views.</p>
-            <div class="hero-btns">
-                <a href="#itinerary" class="btn-primary">View Itinerary</a>
-                <a href="contact.html" class="btn-outline">Book This Trek</a>
-            </div>
+            <h1>North Ridge <span class="accent">Trek</span></h1>
+            <p>A technical alpine expedition for experienced mountaineers - traverse the challenging north side of Makalu with steep terrain and world-class views.</p>
+            <a href="contact.html" class="btn btn-primary">Book This Trip <i class="fas fa-calendar-check"></i></a>
         </div>
     </section>
 
+    <!-- ===== QUICK FACTS ===== -->
     <div class="container">
-        <!-- ===== QUICK FACTS BAR ===== -->
         <div class="quick-facts-bar">
             <div class="fact-item">
-                <i class="fas fa-calendar-alt"></i>
+                <i class="fas fa-clock"></i>
                 <strong>20 Days</strong>
-                <span>Trek Duration</span>
+                <span>Duration</span>
             </div>
             <div class="fact-item">
                 <i class="fas fa-mountain"></i>
                 <strong>5,600m</strong>
-                <span>Maximum Altitude</span>
+                <span>Max Altitude</span>
             </div>
             <div class="fact-item">
-                <i class="fas fa-hiking"></i>
+                <i class="fas fa-signal"></i>
                 <strong>Very Hard</strong>
-                <span>Difficulty Level</span>
+                <span>Difficulty</span>
             </div>
             <div class="fact-item">
-                <i class="fas fa-sun"></i>
-                <strong>Oct-Nov, Mar-May</strong>
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Oct-May</strong>
                 <span>Best Season</span>
             </div>
         </div>
     </div>
 
-    <!-- ===== OVERVIEW SECTION ===== -->
+    <!-- ===== TREK OVERVIEW ===== -->
     <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <div>
-                    <span class="section-tag">Overview</span>
-                    <h2 class="section-title">An <span class="accent">Elite Challenge</span></h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 25px;">
-                        The North Ridge Trek is an exclusive 20-day alpine expedition for experienced trekkers and
-                        mountaineers. This challenging route circumnavigates Makalu via the technical north ridge,
-                        offering steep terrain, high altitude passes, and unparalleled views of the fifth-highest
-                        mountain and its surrounding giants.
+            <div class="section-header overview-header">
+                <span class="section-tag">Overview</span>
+                <h2 class="section-title">An <span class="accent">Elite Challenge</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-text" id="overviewText">
+                    <p>
+                        The North Ridge Trek is an <strong>exclusive 20-day alpine expedition</strong> for experienced trekkers and mountaineers. This challenging route circumnavigates Makalu via the technical north ridge, offering steep terrain, high altitude passes, and unparalleled views of the fifth-highest mountain and its surrounding giants.
                     </p>
-                    <p style="font-size: 1rem; color: #666; line-height: 1.7;">
-                        This trek demands physical fitness, mountaineering experience, and mental resilience. Rewards
-                        include pristine wilderness rarely seen by tourists, technical climbing sections, and intimate
-                        encounters with mountain culture in isolated communities deep in the Makalu region.
-                    </p>
+                    <div id="overviewMore" style="display: none;">
+                        <p>
+                            This trek demands physical fitness, mountaineering experience, and mental resilience. Rewards include pristine wilderness rarely seen by tourists, technical climbing sections, and intimate encounters with mountain culture in isolated communities deep in the Makalu region.
+                        </p>
+                        <p>
+                            The expedition is led by professional mountaineers who ensure safety on technical rock and ice sections. You'll traverse glaciers, cross high-altitude passes, and experience the raw beauty of the Himalayas from perspectives that few ever witness.
+                        </p>
+                    </div>
+                    <button id="overviewReadMore" class="btn-read-more">
+                        <span>Read More</span> <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
-                <div
-                    style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid var(--pkg-green);">
-                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Trip Facts</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Group Size</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">2–6 Persons</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Accommodation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Teahouses / Camp</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Meals</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking
-                            </td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Transportation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Jeep / Domestic Flight
-                            </td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Max Elevation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">5,600m (High Camp)</td>
+                <div class="overview-table-card">
+                    <h3>Trip Facts</h3>
+                    <table class="trip-facts-table">
+                        <tr>
+                            <td>Group Size</td>
+                            <td>2–6 Persons</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px 0; color: #666;">Difficulty</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Very Challenging</td>
+                            <td>Accommodation</td>
+                            <td>Teahouses / Camp</td>
+                        </tr>
+                        <tr>
+                            <td>Meals</td>
+                            <td>B, L, D included</td>
+                        </tr>
+                        <tr>
+                            <td>Starting Point</td>
+                            <td>Tumlingtar</td>
+                        </tr>
+                        <tr>
+                            <td>Max Elevation</td>
+                            <td>5,600m (High Camp)</td>
+                        </tr>
+                        <tr>
+                            <td>Difficulty</td>
+                            <td>Very Challenging</td>
                         </tr>
                     </table>
                 </div>
@@ -671,27 +1031,26 @@
     </section>
 
     <!-- ===== HIGHLIGHTS ===== -->
-    <section class="section" style="background: #fff;">
+    <section class="section bg-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Highlights</span>
                 <h2 class="section-title">Why You'll <span class="accent">Love This Trek</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <ul class="highlights-list" id="highlightsList">
                 <li class="high-item">
                     <i class="fas fa-mountain"></i>
                     <div>
                         <strong>Technical Climbing</strong>
-                        <p>Experience rock and ice climbing sections with expert guides ensuring safety on challenging
-                            terrain.</p>
+                        <p>Experience rock and ice climbing sections with expert guides ensuring safety on challenging terrain.</p>
                     </div>
                 </li>
                 <li class="high-item">
                     <i class="fas fa-compass"></i>
                     <div>
                         <strong>North Ridge Route</strong>
-                        <p>Trek the less-traveled north side of Makalu with dramatic alpine scenery and fewer crowds.
-                        </p>
+                        <p>Trek the less-traveled north side of Makalu with dramatic alpine scenery and fewer crowds.</p>
                     </div>
                 </li>
                 <li class="high-item">
@@ -712,8 +1071,7 @@
                     <i class="fas fa-ice-cream"></i>
                     <div>
                         <strong>Glacial Landscape</strong>
-                        <p>Traverse pristine glaciers and pass through high alpine basins untouched by standard routes.
-                        </p>
+                        <p>Traverse pristine glaciers and pass through high alpine basins untouched by standard routes.</p>
                     </div>
                 </li>
                 <li class="high-item">
@@ -745,31 +1103,30 @@
     </section>
 
     <!-- ===== ITINERARY ===== -->
-    <section class="section bg-light" id="itinerary">
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Day-by-Day</span>
+            <div class="section-header overview-header">
+                <span class="section-tag">Daily Route</span>
                 <h2 class="section-title">Detailed <span class="accent">Itinerary</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
-            <div class="itinerary-container" id="itineraryList">
-                <div class="iti-item">
+            <div class="itinerary-container">
+                <div class="iti-item active">
                     <div class="iti-header">
                         <h4><span class="iti-day-circle">01</span> Arrival in Kathmandu</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Welcome to Nepal! Meet our team for trek briefing and equipment check. Prepare for one of the
-                        world's most challenging alpine expeditions.
+                        Welcome to Nepal! Meet our team for trek briefing and equipment check. Prepare for one of the world's most challenging alpine expeditions.
                     </div>
                 </div>
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">02</span> Acclimatization & Gear Preparation</h4>
+                        <h4><span class="iti-day-circle">02</span> Gear Prep & Briefing</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Explore Kathmandu heritage sites and conduct a detailed equipment check with your climbing team.
-                        Final altitude acclimatization day in the city.
+                        Explore Kathmandu heritage sites and conduct a detailed equipment check with your climbing team. Final altitude acclimatization day in the city.
                     </div>
                 </div>
                 <div class="iti-item">
@@ -778,8 +1135,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Travel through the scenic Arun Valley to Tumlingtar. Meet your porters and finalize logistics
-                        for the expedition.
+                        Travel through the scenic Arun Valley to Tumlingtar. Meet your porters and finalize logistics for the expedition.
                     </div>
                 </div>
                 <div class="iti-item">
@@ -788,8 +1144,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Begin the expedition with a 5-hour trek through subtropical forests along the Arun River to
-                        Khandbari (1,440m).
+                        Begin the expedition with a 5-hour trek through subtropical forests along the Arun River to Khandbari (1,440m).
                     </div>
                 </div>
                 <div class="iti-item">
@@ -801,155 +1156,40 @@
                         Continue through verdant hills to Rampur (2,260m). Mountain views increase as we gain elevation.
                     </div>
                 </div>
-                <div class="iti-extra-days" style="display: none;">
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">06</span> Rampur to Num</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Trek through rhododendron forests ascending to Num (2,580m). First views of major alpine
-                            peaks.
-                        </div>
+                <div class="iti-item">
+                    <div class="iti-header">
+                        <h4><span class="iti-day-circle">06</span> Rampur to Num</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">07</span> Num to Seduwa via Northern Pass</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Technical hiking across alpine terrain. First introduction to steeper gradients and altitude
-                            effects.
-                        </div>
+                    <div class="iti-content">
+                        Trek through rhododendron forests ascending to Num (2,580m). First views of major alpine peaks.
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">08</span> Seduwa to Salpa Pokhari</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Trek to pristine alpine lake at 3,200m surrounded by high peaks and glaciers. Magnificent
-                            views in all directions.
-                        </div>
+                </div>
+                <div class="iti-item">
+                    <div class="iti-header">
+                        <h4><span class="iti-day-circle">07-12</span> High Altitude Approach</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">09</span> Salpa Pokhari to North Tashigaon</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Trek the northern route toward Makalu along the remote northern valleys. Altitude gain to
-                            3,100m.
-                        </div>
+                    <div class="iti-content">
+                        Technical hiking across alpine terrain toward the North Ridge base. Intro to steeper gradients and rope work practice.
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">10</span> North Tashigaon to North Ridge Base</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Reach the North Ridge approach camp (3,600m). Introduction to technical terrain begins.
-                            Equipment check and rope work practice.
-                        </div>
+                </div>
+                <div class="iti-item">
+                    <div class="iti-header">
+                        <h4><span class="iti-day-circle">13</span> High Camp Summit Push</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">11</span> Technical Training & Acclimatization</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Intensive climbing training day including rope skills, ice climbing, and rock scrambling
-                            with professional mountain guides.
-                        </div>
+                    <div class="iti-content">
+                        Push to North Ridge High Point (5,600m). Master technical climbing on steep ice and rock. Breathtaking 360-degree panoramas.
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">12</span> High Camp Ridge Traverse</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Technical rock and ice climbing to High Camp (5,200m). Fixed ropes on steep sections.
-                            Stunning alpine vistas emerge.
-                        </div>
+                </div>
+                <div class="iti-item">
+                    <div class="iti-header">
+                        <h4><span class="iti-day-circle">14-20</span> Return Journey</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">13</span> High Camp Summit Push</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Push to North Ridge High Point (5,600m). Master technical climbing on steep ice and rock.
-                            Breathtaking 360-degree panoramas.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">14</span> Traverse to East Ridge</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Descend and traverse toward the east ridge with continued technical sections. Descent to
-                            intermediate camp (4,800m).
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">15</span> East Ridge Camp & Descent</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Trek from east ridge camp back toward lower elevations. Trail offers final iconic views of
-                            Makalu from new perspectives.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">16</span> Return to Seduwa</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Continue descent through alpine meadows back to Seduwa (3,000m). Reflect on the expedition's
-                            achievements.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">17</span> Descent to Tumlingtar</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Final trek days as we descend to Tumlingtar (starting point). Celebrate with local community
-                            and guides.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">18</span> Drive back to Kathmandu</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Long drive back to Kathmandu. Rest and recovery after the intense expedition.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">19</span> Rest & Celebration Day</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Final celebration dinner with the team. Collect expedition photographs and finalize records
-                            of your achievement.
-                        </div>
-                    </div>
-                    <div class="iti-item">
-                        <div class="iti-header">
-                            <h4><span class="iti-day-circle">20</span> Departure</h4>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="iti-content">
-                            Transfer to airport for departure. Safe travels home with memories of an elite alpine
-                            adventure.
-                        </div>
+                    <div class="iti-content">
+                        Technical descent and traverse back toward Tumlingtar. Celebrate your achievements before departing for home.
                     </div>
                 </div>
             </div>
@@ -958,123 +1198,125 @@
 
     <!-- ===== COST SECTION ===== -->
     <section class="section">
-        <div class="container cost-section">
-            <div class="section-header" style="margin-bottom:40px">
-                <h2 class="section-title">What's <span class="accent">Included & Excluded</span></h2>
-            </div>
-            <div class="cost-grid">
-                <div class="cost-col">
-                    <h3><i class="fas fa-check-circle" style="color: var(--pkg-green);"></i> Included</h3>
-                    <ul class="cost-list inc-list">
-                        <li>Accommodation in teahouses and expedition camps</li>
-                        <li>All meals (breakfast, lunch, dinner) during trekking days</li>
-                        <li>Expert mountain guide with technical climbing experience</li>
-                        <li>Porter support and load carrying</li>
-                        <li>Climbing rope, harnesses, and safety equipment</li>
-                        <li>All transportation in Nepal</li>
-                        <li>Airport transfers (Kathmandu)</li>
-                        <li>1 night accommodation in Kathmandu (before trek)</li>
-                        <li>Trek permits and local taxes</li>
-                        <li>First aid and emergency evacuation insurance</li>
-                    </ul>
+        <div class="container">
+            <div class="cost-section">
+                <div class="section-header cost-header">
+                    <h2 class="section-title">Expedition <span class="accent">Cost</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
+                    <div class="trek-price">From <strong>$2,450</strong> <span>/ person</span></div>
                 </div>
-                <div class="cost-col">
-                    <h3><i class="fas fa-times-circle" style="color: #dc3545;"></i> Excluded</h3>
-                    <ul class="cost-list exc-list">
-                        <li>International flights</li>
-                        <li>Personal climbing equipment (unless rented)</li>
-                        <li>Meals in Kathmandu (except included nights)</li>
-                        <li>Travel insurance</li>
-                        <li>Personal gear and clothing</li>
-                        <li>Tips for guide and porters</li>
-                        <li>Alcoholic beverages</li>
-                        <li>Personal spending and souvenirs</li>
-                    </ul>
+                <div class="cost-grid" id="book">
+                    <div class="cost-col">
+                        <h3><i class="fas fa-check-circle" style="color: var(--pkg-green);"></i> What's Included</h3>
+                        <ul class="cost-list inc-list">
+                            <li>All airport transfers in private vehicle</li>
+                            <li>Expedition permits & climbing fees</li>
+                            <li>Expert technical mountain guides & porters</li>
+                            <li>High-quality camping & climbing gear</li>
+                            <li>Teahouse & tent accommodation</li>
+                            <li>All meals (B, L, D) during the expedition</li>
+                            <li>Emergency first aid & oxygen support</li>
+                        </ul>
+                    </div>
+                    <div class="cost-col">
+                        <h3><i class="fas fa-times-circle" style="color: #dc3545;"></i> What's Excluded</h3>
+                        <ul class="cost-list exc-list">
+                            <li>Nepal Visa & International flights</li>
+                            <li>Personal climbing gear (can be rented)</li>
+                            <li>Travel & high-altitude rescue insurance</li>
+                            <li>Personal expenses & souvenirs</li>
+                            <li>Alcoholic beverages & soft drinks</li>
+                            <li>Tips for the expedition team</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== GALLERY ===== -->
-    <section class="section bg-light">
+    <!-- ===== PHOTO GALLERY ===== -->
+    <section class="section bg-white">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Gallery</span>
-                <h2 class="section-title">Visual <span class="accent">Journey</span></h2>
+            <div class="section-header overview-header">
+                <span class="section-tag">Visuals</span>
+                <h2 class="section-title">Gallery from <span class="accent">The North Ridge</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="everest.png" alt="Technical Climbing" />
+                <div class="gallery-item lg-col lg-row">
+                    <img src="everest.png" alt="North Ridge Panorama" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>The Technical Ridge</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="annapurna.png" alt="Ridge Traverse" />
+                    <img src="hero.png" alt="Alpine Climbing" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Elite Challenges</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="cta.png" alt="Mountain Pass" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>High Altitude Crossings</span>
+                    </div>
                 </div>
                 <div class="gallery-item lg-col">
-                    <img src="hero.png" alt="Makalu North Ridge" />
+                    <img src="annapurna.png" alt="Glacial Terrain" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Pristine Wilderness</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="langtang.png" alt="Alpine Expedition" />
-                </div>
-                <div class="gallery-item lg-row">
-                    <img src="cta.png" alt="High Camp" />
+                    <img src="langtang.png" alt="Summit View" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Roof of the World</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="manaslu.png" alt="Expeditionary Landscape" />
+                    <img src="manaslu.png" alt="Expedition Camp" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>High Camp Life</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FAQ ===== -->
+    <!-- ===== FAQ SECTION ===== -->
     <section class="section bg-light" id="faq">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Help Center</span>
-                <h2 class="section-title">Common <span class="accent">Questions</span></h2>
+            <div class="section-header overview-header">
+                <span class="section-tag">Common Questions</span>
+                <h2 class="section-title">Expedition <span class="accent">FAQ</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">What experience do I need for this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        How technical is the North Ridge Trek?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>This is for experienced mountaineers with prior high-altitude and technical climbing
-                            experience. You must be comfortable with rock climbing (Grade II), ice climbing, and working
-                            with ropes at altitude. Prior successful summits of 6,000m peaks are strongly recommended.
-                        </p>
+                        This is a <strong>highly technical</strong> alpine expedition. It involves fixed ropes, ice axe work, and rock scrambling. Prior mountaineering experience and familiarity with climbing gear are mandatory.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What are the physical requirements? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        What gear is provided?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>Outstanding fitness is essential. You should be prepared for 6-8 hours of daily hiking at
-                            altitude with significant elevation gain, technical climbing sections, and intense physical
-                            exertion. Pre-trek training including altitude running, rock climbing practice, and ice
-                            climbing lessons are highly recommended.</p>
+                        We provide all group climbing gear including ropes, snow bars, and ice screws. Personal gear like harnesses, crampons, and ice axes can be rented from us in Kathmandu if needed.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How is altitude sickness managed? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <p>We incorporate multiple acclimatization days and employ experienced guides trained in
-                            altitude sickness recognition. Gradual altitude gain schedule, proper hydration, and medical
-                            support are standard. In case of severe symptoms, we can rapidly descend to lower altitudes
-                            and access helicopter evacuation if needed.</p>
+                    <div class="faq-question">
+                        Is this trek suitable for solo travelers?
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is technical climbing training provided? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">
-                        <p>Yes, we provide intensive climbing training during the expedition with expert guides. This
-                            includes rope work, ice climbing technique, rock scrambling, and altitude-specific skills.
-                            However, basic climbing competency before arrival is essential and expected.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What's included in the climbing equipment? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">
-                        <p>We provide: ropes, harnesses, ice axes, crampons, carabiners, belay devices, and safety gear.
-                            You should bring personal climbing shoes, helmet, and insulated gloves. We arrange an
-                            optional pre-trek rental of technical gear at competitive rates if you prefer not to
-                            transport your own equipment.</p>
+                        Due to the technical nature and safety requirements, we only run this expedition for <strong>small groups</strong> (min 2 people). Solo travelers can join one of our fixed departure dates.
                     </div>
                 </div>
             </div>
@@ -1084,29 +1326,26 @@
     <!-- ===== REVIEWS ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Reviews</span>
-                <h2 class="section-title">What Our <span class="accent">Climbers Say</span></h2>
+                <h2 class="section-title">What Our <span class="accent">Expeditioners Say</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"The most technical and rewarding expedition I've ever done. Our guides were
-                        experts and kept us safe on some truly challenging terrain. Five-star professionalism and
-                        mountain expertise!"</p>
+                    <p class="review-text">"The most challenging and rewarding experience of my life. The North Ridge is a true mountaineer's dream. Our guides were world-class."</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background:var(--pkg-green)">D</div>
-                        <div class="reviewer-info"><strong>David K.</strong><span>Denver, USA</span></div>
+                        <div class="reviewer-avatar" style="background:var(--pkg-green)">AM</div>
+                        <div class="reviewer-info"><strong>Alex M.</strong><span>Chamonix, France</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card review-featured">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"For serious mountaineers only - this trek delivers. Superior guiding,
-                        impeccable expedition logistics, and views that exceed any expectations. Absolutely worth every
-                        effort!"</p>
+                    <p class="review-text">"BESTTREKSNEPAL's logistics were flawless. Safety was always the priority on the technical sections. The views of Makalu are unbeatable."</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background:var(--pkg-orange)">A</div>
-                        <div class="reviewer-info"><strong>Anna S.</strong><span>Zurich, Switzerland</span></div>
+                        <div class="reviewer-avatar" style="background:var(--pkg-orange)">LW</div>
+                        <div class="reviewer-info"><strong>Lisa W.</strong><span>Boulder, USA</span></div>
                     </div>
                 </div>
             </div>
@@ -1118,149 +1357,117 @@
         <div class="cta-bg" style="background-image:url('cta.png')"></div>
         <div class="cta-overlay"></div>
         <div class="cta-content">
-            <h2>Join an <span class="accent">Elite Expedition</span></h2>
-            <p>Challenge yourself on the world-class North Ridge Trek. Limited spots available for the ultimate alpine
-                adventure.</p>
+            <h2>Ready for the <span class="accent">Elite Challenge?</span></h2>
+            <p>Join our next expedition to the North Ridge and prove your mountaineering skills.</p>
             <div class="hero-btns" style="margin-top:20px">
                 <a href="contact.html" class="btn-primary">Book This Trek</a>
-                <a href="makalu-region.html" class="btn-outline">Explore Makalu Region</a>
+                <a href="contact.html" class="btn-outline">Plan Custom Trip</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== STICKY BOOKING BAR ===== -->
-    <div class="sticky-booking" id="stickyBooking">
-        <div class="container sticky-inner">
-            <div class="sticky-price">From $1,550 <span>/ person</span></div>
-            <div class="hero-btns" style="margin:0">
-                <a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Book Now</a>
+    
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-mountain"></i>
+                        BESTTREKS<span>NEPAL</span>
+                    </div>
+                    <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world, safely and sustainably.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="treks.html">All Treks</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="travel-blog.html">Travel Blog</a></li>
+                        <li><a href="contact.html">Plan My Trip</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trek Regions</h4>
+                    <ul>
+                        <li><a href="everest-region.html">Everest Region</a></li>
+                        <li><a href="annapurna-region.html">Annapurna Region</a></li>
+                        <li><a href="langtang-region.html">Langtang Region</a></li>
+                        <li><a href="manaslu-region.html">Manaslu Region</a></li>
+                        <li><a href="dolpa-region.html">Dolpa Region</a></li>
+                        <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+                        <li><a href="mustang-region.html">Mustang Region</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+                        <li><i class="fas fa-envelope"></i> info@besttreksnepal.com</li>
+                        <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-
-      <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="contact">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <i class="fas fa-mountain"></i>
-            Himalaya<span>Quest</span>
-          </div>
-          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
-            safely and sustainably.</p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
-          </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 BESTTREKSNEPAL Nepal. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a><a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="index.html#treks">All Treks</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="index.html#blog">Travel Blog</a></li>
-            <li><a href="contact.html">Plan My Trip</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Trek Regions</h4>
-          <ul>
-            <li><a href="everest-region.html">Everest Region</a></li>
-            <li><a href="annapurna-region.html">Annapurna Region</a></li>
-            <li><a href="langtang-region.html">Langtang Region</a></li>
-            <li><a href="manaslu-region.html">Manaslu Region</a></li>
-            <li><a href="dolpa-region.html">Dolpa Region</a></li>
-            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
-            <li><a href="mustang-region.html">Mustang Region</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <ul class="contact-list">
-            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
-            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-            <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
-            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Sitemap</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!-- Scripts -->
     <script src="app.js"></script>
     <script>
-        // Itinerary Accordion
-        document.querySelectorAll('.iti-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                const isActive = item.classList.contains('active');
-
-                document.querySelectorAll('.iti-item').forEach(i => i.classList.remove('active'));
-
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
 
         // Sticky Booking Bar
         const stickyBar = document.getElementById('stickyBooking');
         if (stickyBar) {
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 600) {
-                    stickyBar.classList.add('show');
-                } else {
-                    stickyBar.classList.remove('show');
-                }
+                stickyBar.classList.toggle('show', window.scrollY > 600);
             });
         }
 
         // See More Highlights
         const btnSeeMore = document.getElementById('btnSeeMore');
         const extraHighlights = document.querySelectorAll('.extra-highlight');
-
         if (btnSeeMore) {
             btnSeeMore.addEventListener('click', () => {
-                extraHighlights.forEach(item => {
-                    if (item.style.display === 'none') {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-                btnSeeMore.textContent = btnSeeMore.textContent === 'See More Highlights' ? 'See Less Highlights' : 'See More Highlights';
+                const isHidden = extraHighlights[0].style.display === 'none' || extraHighlights[0].style.display === '';
+                extraHighlights.forEach(item => { item.style.display = isHidden ? 'flex' : 'none'; });
+                btnSeeMore.textContent = isHidden ? 'See Less' : 'See More Highlights';
             });
         }
 
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
+        // Overview Read More
+        const overviewReadMore = document.getElementById('overviewReadMore');
+        const overviewMore = document.getElementById('overviewMore');
+        if (overviewReadMore && overviewMore) {
+            overviewReadMore.addEventListener('click', () => {
+                const isHidden = overviewMore.style.display === 'none';
+                overviewMore.style.display = isHidden ? 'block' : 'none';
+                overviewReadMore.querySelector('span').textContent = isHidden ? 'Read Less' : 'Read More';
+                overviewReadMore.querySelector('i').className = isHidden ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
             });
-        });
+        }
     </script>
 </body>
 
 </html>
-
-
 
 
 

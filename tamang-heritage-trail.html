@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamang Heritage Trail Trek 2026 | 8 Days Itinerary & Cost | HimalayaQuest</title>
+    <title>Tamang Heritage Trail Trek 2026 | 8 Days Itinerary & Cost | BESTTREKSNEPAL</title>
     <meta name="description"
-        content="Explore the rich culture of the Tamang people on the 8-day Tamang Heritage Trail with HimalayaQuest. Discover traditional villages, hot springs, and stunning mountain views." />
+        content="Explore the rich culture of the Tamang people on the 8-day Tamang Heritage Trail with BESTTREKSNEPAL. Discover traditional villages, hot springs, and stunning mountain views." />
     <meta name="keywords"
         content="Tamang Heritage Trail, Langtang Trek, Tamang Culture, Gatlang, Tatopani, Nagthali, Briddim, Homestay Nepal, Cultural Trekking" />
 
@@ -28,11 +28,41 @@
         :root {
             --pkg-green: #155a48;
             --pkg-orange: #ff7a00;
+            --body-font-size: clamp(1rem, 1vw + 0.75rem, 1.125rem);
+            --h1-font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+            --h2-font-size: clamp(1.75rem, 3vw + 1rem, 2.6rem);
+            --h3-font-size: clamp(1.35rem, 2vw + 0.8rem, 1.8rem);
+            --touch-target: 48px;
+        }
+
+        /* Global Responsive Fixes */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        body {
+            font-size: var(--body-font-size);
+            line-height: 1.6;
         }
 
         .pkg-hero {
-            height: 70vh;
-            min-height: 500px;
+            min-height: 80vh;
+            padding-top: 140px; /* Offset for fixed navbar */
+            padding-bottom: 100px; /* Extra space for quick-facts overlap */
             position: relative;
             display: flex;
             align-items: center;
@@ -49,6 +79,11 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .pkg-hero:hover .pkg-hero-bg {
             transform: scale(1.1);
         }
 
@@ -62,53 +97,62 @@
         .pkg-hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 900px;
+            padding: 0 24px;
         }
 
         .pkg-badge {
             background: var(--pkg-orange);
             color: white;
-            padding: 5px 15px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            margin-bottom: 24px;
             display: inline-block;
         }
 
+        .accent {
+            color: var(--pkg-orange);
+        }
+
         .pkg-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: var(--h1-font-size);
             font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.1;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: -1px;
         }
 
         .pkg-hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
+            font-size: clamp(1.1rem, 1.5vw + 0.8rem, 1.3rem);
+            opacity: 0.95;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Essential Quick Facts Bar */
         .quick-facts-bar {
             background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-radius: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            margin-top: -60px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 24px;
+            padding: 35px;
+            margin-top: -70px;
             position: relative;
             z-index: 10;
         }
 
         .fact-item {
             text-align: center;
-            border-right: 1px solid #eee;
+            border-right: 1px solid var(--border);
+            padding: 10px;
         }
 
         .fact-item:last-child {
@@ -117,58 +161,80 @@
 
         .fact-item i {
             color: var(--pkg-green);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.75rem;
+            margin-bottom: 12px;
             display: block;
         }
 
         .fact-item strong {
             display: block;
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 4px;
         }
 
         .fact-item span {
-            font-size: 0.85rem;
-            color: #666;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            font-weight: 600;
         }
 
-        /* Sticky Booking Bar */
-        .sticky-booking {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
+        /* Overview Grid */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .sticky-booking.show {
-            transform: translateY(0);
+        .overview-text p {
+            margin-bottom: 24px;
+            color: var(--text-muted);
         }
 
-        .sticky-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .overview-table-card {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 20px;
+            border-left: 6px solid var(--pkg-green);
+            box-shadow: var(--shadow);
         }
 
-        .sticky-price {
-            font-size: 1.5rem;
+        .overview-table-card h3 {
+            margin-bottom: 25px;
+            font-size: var(--h3-font-size);
             font-weight: 800;
-            color: var(--pkg-green);
         }
 
-        .sticky-price span {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #666;
+        .trip-facts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .trip-facts-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trip-facts-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .trip-facts-table td {
+            padding: 14px 0;
+            font-size: 0.95rem;
+        }
+
+        .trip-facts-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .trip-facts-table td:last-child {
+            text-align: right;
+            font-weight: 700;
+            color: var(--text);
         }
 
         /* Itinerary Accordion */
@@ -178,139 +244,213 @@
         }
 
         .iti-item {
-            border: 1px solid #eef0f3;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 16px;
             overflow: hidden;
-            background: #fafbfc;
-            transition: all 0.3s ease;
+            background: white;
+            transition: all 0.35s ease;
         }
 
         .iti-header {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            background: white;
+            min-height: 64px; /* Touch target size */
         }
 
         .iti-header h4 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
+            font-weight: 700;
         }
 
         .iti-day-circle {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             background: var(--pkg-green);
             color: white;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-weight: 800;
+            font-size: 1rem;
             flex-shrink: 0;
         }
 
         .iti-content {
-            padding: 0 20px;
+            padding: 0 24px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            color: #555;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .iti-header i {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
         }
 
         .iti-item.active {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             border-color: var(--pkg-green);
         }
 
         .iti-item.active .iti-content {
-            padding: 10px 20px 25px 75px;
-            max-height: 1000px;
+            padding: 10px 24px 30px 86px;
+            max-height: 1200px;
         }
 
         .iti-item.active .fa-chevron-down {
             transform: rotate(180deg);
+            color: var(--pkg-green);
         }
 
         /* Highlights Grid */
         .highlights-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
             list-style: none;
             padding: 0;
             margin-bottom: 30px;
         }
 
         .high-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
+            background: var(--off-white);
+            padding: 28px;
+            border-radius: 16px;
             display: flex;
-            gap: 15px;
+            gap: 20px;
             align-items: flex-start;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            border: 1px solid transparent;
         }
 
-        .high-item.extra-highlight {
-            display: none;
+        .high-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: var(--green-light);
+            background: white;
         }
 
         .high-item i {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
             color: var(--pkg-orange);
-            font-size: 1.2rem;
-            margin-top: 4px;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        .see-more-container {
-            text-align: center;
-            margin-top: 20px;
+        .high-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .high-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Read More & See More Button Styling */
+        .btn-read-more, .btn-see-more {
+            background: transparent;
+            border: none;
+            color: var(--pkg-green);
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
         }
 
         .btn-see-more {
-            background: transparent;
             border: 2px solid var(--pkg-green);
-            color: var(--pkg-green);
-            padding: 10px 30px;
+            padding: 12px 32px;
             border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: inherit;
+            margin: 40px auto 0;
+            justify-content: center;
+        }
+
+        .btn-read-more:hover, .btn-see-more:hover {
+            color: var(--pkg-orange);
         }
 
         .btn-see-more:hover {
             background: var(--pkg-green);
             color: white;
+            border-color: var(--pkg-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(21, 90, 72, 0.2);
         }
 
-        /* Includes/Excludes Side by Side */
+        .see-more-container {
+            text-align: center;
+        }
+
+        .extra-highlight {
+            display: none;
+        }
+
+        /* Cost Table */
         .cost-section {
             background: #f1f5f3;
-            border-radius: 20px;
-            padding: 50px;
+            border-radius: 24px;
+            padding: 60px;
+        }
+
+        .cost-header {
+            text-align: left;
+            margin-bottom: 45px;
+        }
+
+        .trek-price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-top: 10px;
+        }
+
+        .trek-price span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         .cost-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         .cost-col h3 {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: var(--h3-font-size);
+            font-weight: 800;
         }
 
         .cost-list {
@@ -320,9 +460,11 @@
 
         .cost-list li {
             position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            padding-left: 32px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
         }
 
         .cost-list li::before {
@@ -330,6 +472,7 @@
             font-weight: 900;
             position: absolute;
             left: 0;
+            font-size: 1.1rem;
         }
 
         .inc-list li::before {
@@ -342,29 +485,106 @@
             color: #dc3545;
         }
 
+        /* FAQ Styles */
+        .faq-container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text);
+            transition: color 0.3s;
+            min-height: 48px;
+        }
+
+        .faq-question:hover {
+            color: var(--pkg-green);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 600px;
+            padding-top: 20px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+            color: var(--pkg-green);
+        }
+
         /* Photo Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 250px);
-            gap: 15px;
+            grid-template-rows: repeat(2, 300px);
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: translateY(10px);
+            transition: transform 0.4s ease;
         }
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform: translateY(0);
         }
 
         .gallery-item.lg-col {
@@ -375,80 +595,281 @@
             grid-row: span 2;
         }
 
-        /* FAQ Styles */
-        .faq-container {
-            max-width: 900px;
-            margin: 40px auto;
+        /* Reviews Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+        .review-card {
+            background: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: var(--transition);
         }
 
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 700;
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-stars {
+            color: #ffc107;
             font-size: 1.1rem;
-            color: #333;
-            transition: color 0.3s;
+            margin-bottom: 20px;
         }
 
-        .faq-question:hover {
-            color: var(--pkg-green);
+        .review-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            color: #666;
-            line-height: 1.6;
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding-top: 15px;
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        .faq-item.active .fa-chevron-down {
-            transform: rotate(180deg);
+        .reviewer-info strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .reviewer-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1440px) {
+            .container {
+                max-width: 1200px;
+                padding: 0 40px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .overview-grid {
+                gap: 40px;
+            }
+            .cost-section {
+                padding: 40px;
+            }
         }
 
         @media (max-width: 992px) {
-            .cost-grid {
+            .overview-grid {
                 grid-template-columns: 1fr;
             }
-
+            .cost-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .gallery-item.lg-col, .gallery-item.lg-row {
+                grid-column: span 1;
+                grid-row: span 1;
             }
         }
 
         @media (max-width: 768px) {
+            .nav-main-inner {
+                height: 75px;
+            }
+
             .quick-facts-bar {
                 grid-template-columns: repeat(2, 1fr);
+                padding: 25px;
+                gap: 20px;
+                margin-top: -50px;
             }
 
             .fact-item {
                 border-right: none;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid var(--border);
                 padding-bottom: 15px;
+            }
+
+            .fact-item:nth-child(even) {
+                border-right: none;
+            }
+
+            .fact-item:last-child, .fact-item:nth-last-child(2) {
+                border-bottom: none;
+            }
+
+            .iti-item.active .iti-content {
+                padding-left: 24px;
+            }
+
+            .iti-header h4 {
+                font-size: 1.05rem;
+            }
+
+            .highlights-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-actions {
+                gap: 15px;
+                margin-left: 10px;
+                align-items: center;
+            }
+
+            .nav-cta {
+                width: auto;
+                height: auto;
+                padding: 10px 18px;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                background: var(--pkg-orange);
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .nav-cta span {
+                display: inline;
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: white;
+                white-space: nowrap;
+            }
+
+            .nav-cta i {
+                display: none; /* Hide icon on mobile to match screenshot */
+            }
+
+            .pkg-hero {
+                padding-top: 120px;
+                padding-bottom: 80px;
+            }
+
+            .pkg-hero h1 {
+                line-height: 1.2;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-facts-bar {
+                grid-template-columns: 1fr;
+                margin-top: -40px;
+            }
+
+            .fact-item {
+                border-bottom: 1px solid var(--border);
             }
 
             .fact-item:last-child {
                 border-bottom: none;
             }
 
-            .sticky-inner {
-                flex-direction: column;
-                gap: 10px;
+            .pkg-hero {
+                min-height: 100vh; /* Ensure full screen on mobile to fit content */
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .pkg-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cost-section {
+                padding: 30px 20px;
+            }
+
+            .overview-table-card {
+                padding: 25px 20px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
-    </style>
+
+        @media (max-width: 360px) {
+            .pkg-hero h1 {
+                font-size: 2.1rem;
+            }
+            
+            .iti-header {
+                padding: 18px;
+            }
+
+            .iti-header h4 {
+                gap: 12px;
+            }
+
+            .iti-day-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
+    
+        @media (max-width: 320px) {
+            .pkg-hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-main-inner {
+                padding: 0 10px;
+            }
+            .fact-item strong {
+                font-size: 1rem;
+            }
+        }
+    
+    /* Extra Mobile Fixes */
+    @media (max-width: 992px) {
+        .overview-grid, .cost-grid {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+        }
+        .gallery-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none !important; }
+        .nav-actions { width: auto !important; justify-content: flex-end; }
+        .nav-main-inner { padding: 0 15px !important; gap: 10px !important; }
+        .nav-cta span { display: none !important; }
+        .nav-cta i { display: block !important; }
+        .nav-cta { padding: 10px 14px !important; min-width: auto !important; }
+        
+        /* Ensure no horizontal scroll */
+        html, body { overflow-x: hidden !important; width: 100% !important; max-width: 100% !important; margin:0; padding:0;}
+        
+        .gallery-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        /* Fix hamburger and cta alignment */
+        .nav-logo { flex-shrink: 1; overflow: hidden; }
+        .logo-text { font-size: 1.2rem; }
+    }
+</style>
 </head>
 
 <body>
@@ -463,7 +884,7 @@
                 <!-- Logo -->
                 <a href="index.html#home" class="nav-logo">
                     <span class="logo-icon"><i class="fas fa-mountain"></i></span>
-                    <span class="logo-text">Himalaya<span class="logo-accent">Quest</span></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
                 </a>
 
                 <!-- Desktop nav links -->
@@ -543,7 +964,7 @@
                 <!-- Right side actions -->
                 <div class="nav-actions">
                     <a href="contact.html" class="nav-cta">
-                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                        <i class="fas fa-paper-plane"></i> <span>Plan My Trip</span>
                     </a>
                     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                         <span></span><span></span><span></span>
@@ -554,18 +975,18 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-links">
-                <li><a href="index.html#treks">?? Featured Treks</a></li>
-                <li><a href="departures.html">?? Departures</a></li>
-                <li><a href="treks.html">?? All Treks</a></li>
-                <li><a href="destinations.html">?? Destinations</a></li>
-                <li><a href="about.html">? About Us</a></li>
-                <li><a href="travel-blog.html">?? Blog</a></li>
-                <li><a href="contact.html">?? Contact</a></li>
-            </ul>
-            <a href="contact.html" class="mobile-cta">Plan My Trip ?</a>
-        </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-links">
+        <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i> Home</a></li>
+        <li><a href="departures.html"><i class="fas fa-calendar-alt" style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+        <li><a href="treks.html"><i class="fas fa-mountain" style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+        <li><a href="destinations.html"><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle" style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+        <li><a href="travel-blog.html"><i class="fas fa-pen-nib" style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
+    </div>
 
     </nav>
 
@@ -575,43 +996,35 @@
         <div class="pkg-hero-overlay"></div>
         <div class="pkg-hero-content">
             <span class="pkg-badge">Cultural Experience</span>
-            <h1>Tamang Heritage Trail</h1>
+            <h1>Tamang Heritage <span class="accent">Trail</span></h1>
             <p>Immerse yourself in the rich traditions, unique architecture, and warm hospitality of the Tamang people
                 in the Langtang region.</p>
-            <div class="hero-btns">
-                <a href="#book" class="btn-primary">Book This Trek</a>
-                <a href="contact.html" class="btn-outline">Customize Trip</a>
-            </div>
+            <a href="contact.html" class="btn btn-primary">Book This Trip <i class="fas fa-calendar-check"></i></a>
         </div>
     </section>
 
+    <!-- ===== QUICK FACTS ===== -->
     <div class="container">
-        <!-- ===== QUICK FACTS BAR ===== -->
         <div class="quick-facts-bar">
             <div class="fact-item">
-                <i class="fas fa-calendar-alt"></i>
+                <i class="fas fa-clock"></i>
+                <strong>08 Days</strong>
                 <span>Duration</span>
-                <strong>8 Days</strong>
             </div>
             <div class="fact-item">
                 <i class="fas fa-mountain"></i>
-                <span>Max Altitude</span>
                 <strong>3,165m</strong>
+                <span>Max Altitude</span>
             </div>
             <div class="fact-item">
                 <i class="fas fa-signal"></i>
-                <span>Difficulty</span>
                 <strong>Easy</strong>
+                <span>Difficulty</span>
             </div>
             <div class="fact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Region</span>
-                <strong>Langtang</strong>
-            </div>
-            <div class="fact-item">
-                <i class="fas fa-cloud-sun"></i>
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Mar-Nov</strong>
                 <span>Best Season</span>
-                <strong>Spring / Autumn</strong>
             </div>
         </div>
     </div>
@@ -619,67 +1032,63 @@
     <!-- ===== TREK OVERVIEW ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-header" style="text-align: left; max-width: 800px; margin-left: 0;">
+            <div class="section-header overview-header">
                 <span class="section-tag">Overview</span>
                 <h2 class="section-title">A Journey Into <span class="accent">Living Culture</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
-            <div class="overview-grid"
-                style="display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: start;">
+            <div class="overview-grid">
                 <div class="overview-text" id="overviewText">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+                    <p>
                         The Tamang Heritage Trail is a unique <strong>cultural trekking experience</strong> that takes
                         you off the beaten path into the heart of the Langtang region. Unlike more commercial routes,
                         this trail focuses on the rich heritage and traditions of the Tamang people, descendants of
                         Tibetan horse traders who have inhabited these hills for centuries.
                     </p>
                     <div id="overviewMore" style="display: none;">
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 20px;">
+                        <p>
                             The trek winds through beautifully preserved villages like Gatlang, Thuman, and Briddim,
                             where you can admire traditional stone houses with intricate wood carvings. Along the way,
                             you'll witness ancient rituals, colorful costumes, and the genuine warmth of local
                             hospitality through community-based homestays.
                         </p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                        <p>
                             Beyond the culture, the trail offers stunning natural beauty, including natural hot springs
                             at Tatopani and panoramic views of the Langtang Lirung, Ganesh Himal, and even the Tibetan
                             mountains from the Nagthali viewpoint. It's a perfect blend of easy trekking and deep
                             cultural immersion.
                         </p>
                     </div>
-                    <button id="overviewReadMore" class="btn-read-more"
-                        style="background: transparent; border: none; color: var(--pkg-green); font-weight: 700; cursor: pointer; padding: 0; font-size: 1rem; margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                    <button id="overviewReadMore" class="btn-read-more">
                         <span>Read More</span> <i class="fas fa-chevron-down"></i>
                     </button>
                 </div>
-                <div class="overview-table"
-                    style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid var(--pkg-green);">
-                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Trip Facts</h3>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Group Size</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">2–14 Persons</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Accommodation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Homestays / Teahouses</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Meals</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">B, L, D during trekking
-                            </td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Transportation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Private Jeep / Local Bus
-                            </td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 10px 0; color: #666;">Max Elevation</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">3,165m (Nagthali)</td>
+                <div class="overview-table-card">
+                    <h3>Trip Facts</h3>
+                    <table class="trip-facts-table">
+                        <tr>
+                            <td>Group Size</td>
+                            <td>2–14 Persons</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px 0; color: #666;">Difficulty</td>
-                            <td style="padding: 10px 0; text-align: right; font-weight: 600;">Easy / Moderate</td>
+                            <td>Accommodation</td>
+                            <td>Homestays / Teahouses</td>
+                        </tr>
+                        <tr>
+                            <td>Meals</td>
+                            <td>B, L, D included</td>
+                        </tr>
+                        <tr>
+                            <td>Starting Point</td>
+                            <td>Syabrubesi</td>
+                        </tr>
+                        <tr>
+                            <td>Max Elevation</td>
+                            <td>3,165m (Nagthali)</td>
+                        </tr>
+                        <tr>
+                            <td>Difficulty</td>
+                            <td>Easy / Moderate</td>
                         </tr>
                     </table>
                 </div>
@@ -688,11 +1097,12 @@
     </section>
 
     <!-- ===== HIGHLIGHTS ===== -->
-    <section class="section" style="background: #fff;">
+    <section class="section bg-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Highlights</span>
                 <h2 class="section-title">Why You'll <span class="accent">Love This Trek</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <ul class="highlights-list" id="highlightsList">
                 <li class="high-item">
@@ -775,18 +1185,17 @@
     </section>
 
     <!-- ===== ITINERARY ===== -->
-    <section class="section bg-light" id="itinerary">
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Day-by-Day</span>
+            <div class="section-header overview-header">
+                <span class="section-tag">Daily Route</span>
                 <h2 class="section-title">Detailed <span class="accent">Itinerary</span></h2>
-                <p class="section-sub">8 days of cultural discovery — click any day to expand</p>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
-
             <div class="itinerary-container">
-                <div class="iti-item">
+                <div class="iti-item active">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">01</span> Arrival in Kathmandu (1,400m)</h4>
+                        <h4><span class="iti-day-circle">01</span> Arrival in Kathmandu</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
@@ -798,80 +1207,79 @@
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">02</span> Drive Kathmandu &rarr; Syabrubesi (1,460m)</h4>
+                        <h4><span class="iti-day-circle">02</span> Drive to Syabrubesi</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
                         A scenic 7-8 hour drive takes us north from Kathmandu. We pass through rural towns and terraced
-                        hillsides, following the Trishuli River. Syabrubesi is the gateway to the Langtang region and
-                        our trek starting point. Overnight in Syabrubesi.
+                        hillsides, following the Trishuli River. Syabrubesi (1,460m) is the gateway to the Langtang region and
+                        our trek starting point.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">03</span> Syabrubesi &rarr; Gatlang (2,238m)</h4>
+                        <h4><span class="iti-day-circle">03</span> Trek to Gatlang</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
                         The trek begins with an ascent to a viewpoint overlooking the Ganesh Himal and the Tibetan
-                        border. We then descend into the beautiful Tamang village of Gatlang, known for its traditional
-                        stone houses and the nearby sacred lake, Parvati Kunda. Walking time: 5-6 hours.
+                        border. We then descend into the beautiful Tamang village of Gatlang (2,238m), known for its traditional
+                        stone houses and the nearby sacred lake, Parvati Kunda.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">04</span> Gatlang &rarr; Tatopani (2,607m)</h4>
+                        <h4><span class="iti-day-circle">04</span> Trek to Tatopani</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        Today's trail takes us through rhododendron and pine forests as we head toward Tatopani.
+                        Today's trail takes us through rhododendron and pine forests as we head toward Tatopani (2,607m).
                         'Tatopani' literally means 'hot water' in Nepali, and you can spend the afternoon relaxing in
-                        the natural hot springs to soothe your muscles. Walking time: 6-7 hours.
+                        the natural hot springs to soothe your muscles.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">05</span> Tatopani &rarr; Thuman (2,338m) via Nagthali (3,165m)
-                        </h4>
+                        <h4><span class="iti-day-circle">05</span> Reach Thuman via Nagthali</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        A highlight day! We climb to the open grassland of Nagthali Danda, the highest point of our
-                        trek, offering breathtaking 360-degree views of the Himalayas. We then descend to Thuman, a
-                        village strongly influenced by Tibetan culture. Walking time: 6-7 hours.
+                        A highlight day! We climb to the open grassland of Nagthali Danda (3,165m), the highest point of our
+                        trek, offering breathtaking 360-degree views of the Himalayas. We then descend to Thuman (2,338m), a
+                        village strongly influenced by Tibetan culture.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">06</span> Thuman &rarr; Briddim (2,229m)</h4>
+                        <h4><span class="iti-day-circle">06</span> Trek to Briddim</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
-                        The trail descends toward the Bhote Koshi river before climbing back up to Briddim. This village
+                        The trail descends toward the Bhote Koshi river before climbing back up to Briddim (2,229m). This village
                         offers a unique homestay experience where you live with a local family, learning about their
-                        daily tea rituals and farming life. Walking time: 5-6 hours.
+                        daily tea rituals and farming life.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">07</span> Briddim &rarr; Syabrubesi (1,460m)</h4>
+                        <h4><span class="iti-day-circle">07</span> Return to Syabrubesi</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
                         Our final trekking day takes us on a gentle descent through terraced fields and small
-                        settlements back to Syabrubesi. We'll celebrate the successful completion of our cultural
-                        journey with a farewell dinner with our guides and porters. Walking time: 3-4 hours.
+                        settlements back to Syabrubesi (1,460m). We'll celebrate the successful completion of our cultural
+                        journey with a farewell dinner with our guides and porters.
                     </div>
                 </div>
 
                 <div class="iti-item">
                     <div class="iti-header">
-                        <h4><span class="iti-day-circle">08</span> Drive Syabrubesi &rarr; Kathmandu (1,400m)</h4>
+                        <h4><span class="iti-day-circle">08</span> Return to Kathmandu</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="iti-content">
@@ -886,54 +1294,86 @@
 
     <!-- ===== COST SECTION ===== -->
     <section class="section">
-        <div class="container cost-section">
-            <div class="cost-grid" id="book">
-                <div class="cost-col">
-                    <h3><i class="fas fa-check-circle accent"></i> Cost Includes</h3>
-                    <ul class="cost-list inc-list">
-                        <li>Professional English-speaking Tamang heritage guide</li>
-                        <li>Porter service for carrying luggage (1 porter for 2 trekkers)</li>
-                        <li>Langtang National Park permits and TIMS card</li>
-                        <li>Accommodation in standard hotels in Kathmandu</li>
-                        <li>Homestays and teahouses during the trek</li>
-                        <li>Full board meals (Breakfast, Lunch, Dinner) on the trail</li>
-                        <li>Private ground transportation (Kathmandu-Syabrubesi-Kathmandu)</li>
-                    </ul>
+        <div class="container">
+            <div class="cost-section">
+                <div class="section-header cost-header">
+                    <h2 class="section-title">Trip <span class="accent">Cost</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
+                    <div class="trek-price">From <strong>$650</strong> <span>/ person</span></div>
                 </div>
-                <div class="cost-col">
-                    <h3><i class="fas fa-times-circle" style="color:#dc3545"></i> Cost Excludes</h3>
-                    <ul class="cost-list exc-list">
-                        <li>International airfare and Nepal entry visa</li>
-                        <li>Travel and emergency medical insurance (Compulsory)</li>
-                        <li>Personal expenses (Hot showers, Wi-Fi, battery charging)</li>
-                        <li>Tips for guide and porters</li>
-                        <li>Personal trekking gear (Available for rent)</li>
-                        <li>Alcoholic drinks and bottled mineral water</li>
-                    </ul>
+                <div class="cost-grid" id="book">
+                    <div class="cost-col">
+                        <h3><i class="fas fa-check-circle" style="color: var(--pkg-green);"></i> What's Included</h3>
+                        <ul class="cost-list inc-list">
+                            <li>Professional English-speaking Tamang heritage guide</li>
+                            <li>Porter service for carrying luggage (1 porter for 2 trekkers)</li>
+                            <li>Langtang National Park permits and TIMS card</li>
+                            <li>Accommodation in standard hotels in Kathmandu</li>
+                            <li>Homestays and teahouses during the trek</li>
+                            <li>Full board meals (Breakfast, Lunch, Dinner) on the trail</li>
+                            <li>Private ground transportation (Kathmandu-Syabrubesi-Kathmandu)</li>
+                        </ul>
+                    </div>
+                    <div class="cost-col">
+                        <h3><i class="fas fa-times-circle" style="color: #dc3545;"></i> What's Excluded</h3>
+                        <ul class="cost-list exc-list">
+                            <li>International airfare and Nepal entry visa</li>
+                            <li>Travel and emergency medical insurance (Compulsory)</li>
+                            <li>Personal expenses (Hot showers, Wi-Fi, battery charging)</li>
+                            <li>Tips for guide and porters</li>
+                            <li>Personal trekking gear (Available for rent)</li>
+                            <li>Alcoholic drinks and bottled mineral water</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== PHOTO GALLERY ===== -->
-    <section class="section">
+    <section class="section bg-white">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Visuals</span>
                 <h2 class="section-title">Gallery from <span class="accent">The Trail</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item lg-col lg-row">
-                    <img src="cta.png" alt="Tamang village landscape" />
+                    <img src="cta.png" alt="Tamang village landscape" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Traditional Tamang Village</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="hero.png" alt="Mountain views from Nagthali" />
+                    <img src="hero.png" alt="Mountain views from Nagthali" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Himalayan Vistas</span>
+                    </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="annapurna.png" alt="Traditional stone house" />
+                    <img src="annapurna.png" alt="Traditional stone house" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Local Architecture</span>
+                    </div>
                 </div>
                 <div class="gallery-item lg-col">
-                    <img src="langtang.png" alt="Tamang local costume" />
+                    <img src="langtang.png" alt="Tamang local costume" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Cultural Richness</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="everest.png" alt="Trekker on Trail" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Scenic Trails</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="manaslu.png" alt="Hot Springs" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <span>Tatopani Springs</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -942,69 +1382,84 @@
     <!-- ===== FAQ SECTION ===== -->
     <section class="section bg-light" id="faq">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Common Questions</span>
-                <h2 class="section-title">Tamang Heritage <span class="accent">FAQs</span></h2>
-                <p class="section-sub">Everything you need to know about this cultural journey</p>
+                <h2 class="section-title">Tamang Heritage <span class="accent">FAQ</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">How is the accommodation on the Tamang Heritage Trail? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        How is the accommodation on the Tamang Heritage Trail?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>The trek features unique <strong>community homestays</strong> and local teahouses. While basic, they provide a clean bed, warm blankets, and a chance to experience authentic Tamang lifestyle and cuisine. You'll often eat with the host family in their traditional kitchen.</p>
+                        The trek features unique <strong>community homestays</strong> and local teahouses. While basic, they provide a clean bed, warm blankets, and a chance to experience authentic Tamang lifestyle and cuisine. You'll often eat with the host family in their traditional kitchen.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Do I need to be an experienced trekker? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        Do I need to be an experienced trekker?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>No, this is considered an <strong>easy to moderate</strong> trek. It's suitable for beginners with a reasonable level of fitness. The highest point is 3,165m at Nagthali, so the risk of altitude sickness is significantly lower than on most other Himalayan treks.</p>
+                        No, this is considered an <strong>easy to moderate</strong> trek. It's suitable for beginners with a reasonable level of fitness. The highest point is 3,165m at Nagthali, so the risk of altitude sickness is significantly lower than on most other Himalayan treks.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What is the best time for the Tamang Heritage trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        What is the best time for the Tamang Heritage trek?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p><strong>Spring (March-May)</strong> and <strong>Autumn (September-November)</strong> are ideal. However, because this is a lower-altitude trek, it is also a great choice for <strong>Winter trekking</strong> (December-February), offering clear skies and mild daytime temperatures while higher trails are snow-bound.</p>
+                        <strong>Spring (March-May)</strong> and <strong>Autumn (September-November)</strong> are ideal. However, because this is a lower-altitude trek, it is also a great choice for <strong>Winter trekking</strong> (December-February), offering clear skies and mild daytime temperatures while higher trails are snow-bound.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Are there natural hot springs on the trail? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        Are there natural hot springs on the trail?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>Yes, the village of <strong>Tatopani</strong> is famous for its natural hot springs. 'Tatopani' means 'hot water' in Nepali. It's a highlight of the trek where you can soak in the healing mineral waters after a few days of walking.</p>
+                        Yes, the village of <strong>Tatopani</strong> is famous for its natural hot springs. 'Tatopani' means 'hot water' in Nepali. It's a highlight of the trek where you can soak in the healing mineral waters after a few days of walking.
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Can I customize this trek? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-question">
+                        Can I customize this trek?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                     <div class="faq-answer">
-                        <p>Absolutely! The Tamang Heritage Trail can easily be combined with the <strong>Langtang Valley Trek</strong> or the <strong>Gosainkunda Lake Trek</strong> for a longer 15-18 day adventure. Contact us to create your perfect custom itinerary.</p>
+                        Absolutely! The Tamang Heritage Trail can easily be combined with the <strong>Langtang Valley Trek</strong> or the <strong>Gosainkunda Lake Trek</strong> for a longer 15-18 day adventure. Contact us to create your perfect custom itinerary.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- ===== REVIEWS ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header overview-header">
                 <span class="section-tag">Reviews</span>
                 <h2 class="section-title">What Our <span class="accent">Trekkers Say</span></h2>
+                <p class="section-sub">Click any day to expand the detailed route information</p>
             </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"An absolutely life-changing experience. The organization was top-notch and the views were beyond description."</p>
+                    <p class="review-text">"A truly unique cultural immersion. Staying with Tamang families was the highlight of our trip to Nepal."</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background:var(--pkg-green)">D</div>
-                        <div class="reviewer-info"><strong>David L.</strong><span>Sydney, Australia</span></div>
+                        <div class="reviewer-avatar" style="background:var(--pkg-green)">SM</div>
+                        <div class="reviewer-info"><strong>Sarah M.</strong><span>London, UK</span></div>
                     </div>
                 </div>
-                <div class="review-card">
+                <div class="review-card review-featured">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"HimalayaQuest made everything so easy. From the airport pickup to the final farewell, we felt like family."</p>
+                    <p class="review-text">"The views from Nagthali were spectacular, and the hot springs at Tatopani were exactly what we needed!"</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background:var(--pkg-orange)">E</div>
-                        <div class="reviewer-info"><strong>Emma W.</strong><span>Berlin, Germany</span></div>
+                        <div class="reviewer-avatar" style="background:var(--pkg-orange)">JK</div>
+                        <div class="reviewer-info"><strong>James K.</strong><span>Vancouver, Canada</span></div>
                     </div>
                 </div>
             </div>
@@ -1012,31 +1467,18 @@
     </section>
 
     <!-- ===== FINAL CTA ===== -->
-    <section class="cta-section" style="padding: 100px 0; position: relative; text-align: center; color: white;">
-        <div class="cta-bg"
-            style="background-image:url('hero.png'); position: absolute; inset: 0; background-size: cover; background-position: center; z-index: -1;">
-        </div>
-        <div class="cta-overlay" style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: -1;"></div>
-        <div class="cta-content container">
-            <h2>Experience <span class="accent">Cultural Magic</span></h2>
-            <p style="margin-bottom: 30px;">Walk through history and heritage. Book your Tamang Heritage adventure
-                today.</p>
-            <div class="hero-btns" style="justify-content: center;">
+    <section class="cta-section">
+        <div class="cta-bg" style="background-image:url('cta.png')"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2>Experience <span class="accent">Tamang Culture</span></h2>
+            <p>Join our next cultural journey or design a private Tamang Heritage experience.</p>
+            <div class="hero-btns" style="margin-top:20px">
                 <a href="contact.html" class="btn-primary">Book This Trek</a>
-                <a href="contact.html" class="btn-outline">Inquire Now</a>
+                <a href="contact.html" class="btn-outline">Plan Custom Trip</a>
             </div>
         </div>
     </section>
-
-    <!-- ===== STICKY BOOKING BAR ===== -->
-    <div class="sticky-booking" id="stickyBooking">
-        <div class="container sticky-inner">
-            <div class="sticky-price">From $490 <span>/ person</span></div>
-            <div class="hero-btns" style="margin:0">
-                <a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Book Now</a>
-            </div>
-        </div>
-    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer" id="contact">
@@ -1045,7 +1487,7 @@
                 <div class="footer-brand">
                     <div class="footer-logo">
                         <i class="fas fa-mountain"></i>
-                        Himalaya<span>Quest</span>
+                        BESTTREKS<span>NEPAL</span>
                     </div>
                     <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the
                         world,
@@ -1085,7 +1527,7 @@
                     <ul class="contact-list">
                         <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
                         <li><i class="fas fa-phone"></i> +977 1 4701234</li>
-                        <li><i class="fas fa-envelope"></i> info@himalayaquest.com</li>
+                        <li><i class="fas fa-envelope"></i> info@besttreksnepal.com</li>
                         <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
                     </ul>
                 </div>
@@ -1093,7 +1535,7 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 HimalayaQuest Nepal. All rights reserved.</p>
+                <p>&copy; 2026 BESTTREKSNEPAL Nepal. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -1106,17 +1548,27 @@
     <!-- Scripts -->
     <script src="app.js"></script>
     <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
+        // Simple Accordion for Itinerary
+        document.querySelectorAll('.iti-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.iti-item').forEach(i => i.classList.remove('active'));
+
+                // Toggle clicked
+                if (!isActive) item.classList.add('active');
             });
         });
     </script>
 </body>
 
 </html>
+
+
+
+
 
 
 
