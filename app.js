@@ -2,7 +2,7 @@
    HIMALAYA QUEST — app.js
    =========================== */
 
-// ── Departures Data ──
+// ── Departures Data  ──
 const departures = [
   { trek: "Everest Base Camp Trek", img: "everest.png", region: "Everest", depart: "2026-03-15", ret: "2026-03-28", days: 14, diff: "Challenging", diffCls: "diff-hard", group: { cur: 8, max: 12 }, status: "open", price: 1200 },
   { trek: "Annapurna Circuit Trek", img: "annapurna.png", region: "Annapurna", depart: "2026-03-22", ret: "2026-04-08", days: 18, diff: "Moderate", diffCls: "diff-mod", group: { cur: 10, max: 12 }, status: "limited", price: 900 },
