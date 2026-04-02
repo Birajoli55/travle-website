@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Blog | BESTTREKSNEPAL</title>
+    <link rel="canonical" href="https://besttreksnepal.com/travel-blog.html" />
+    <meta name="description"
+        content="Latest travel stories, expert tips, and Himalayan trek updates from BESTTREKSNEPAL." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .blog-hero {
+            padding: 100px 0 70px;
+        }
+
+        .blog-hero .about-hero-bg {
+            background-image: url('hero.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-hero .about-hero-overlay {
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .blog-hero .about-title {
+            font-size: clamp(2rem, 3vw, 3.2rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-section {
+            padding: 70px 0 100px;
+        }
+
+        .blog-grid {
+            display: grid;
+            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .blog-post {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, .08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 460px;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .blog-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-body h3 {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.35;
+        }
+
+        .blog-body p {
+            margin: 0 0 18px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .blog-body .btn-sm {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .blog-sidebar {
+            background: #f9f9f9;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-sidebar h4 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .blog-sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .blog-sidebar li {
+            margin-bottom: 12px;
+        }
+
+        .blog-sidebar a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .blog-sidebar a:hover {
+            color: var(--green);
+        }
+
+        @media (max-width: 860px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+
+        @media (max-width: 680px) {
+            .blog-section {
+                padding: 40px 0 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+            <!-- ===== STICKY NAVBAR ===== -->
+    <nav id="navbar" class="navbar">
+
+        <!-- Main navbar -->
+        <div class="nav-main">
+            <div class="nav-container nav-main-inner">
+
+                <!-- Logo -->
+                <a href="index.html#home" class="nav-logo">
+                    <span class="logo-icon"><i class="fas fa-mountain"></i></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
+                </a>
+
+                <!-- Desktop nav links -->
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- Departures (direct) -->
+                    <li class="nav-item">
+                        <a href="departures.html" class="nav-link">Departures</a>
+                    </li>
+
+                    <!-- Treks (direct) -->
+                    <li class="nav-item">
+                        <a href="treks.html" class="nav-link">Treks</a>
+                    </li>
+                    <!-- Destinations dropdown -->
+                    <li class="nav-item has-dropdown">
+                        <a href="destinations.html" class="nav-link">
+                            Destinations <i class="fas fa-chevron-down nav-arrow"></i>
+                        </a>
+                        <div class="dropdown dropdown-sm">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-col">
+                                    <p class="dropdown-heading">Regions</p>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks
+                                                available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks
+                                                available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks
+                                                available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks
+                                                available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks
+                                                available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
+                                                Region</strong><small>2 treks
+                                                available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks
+                                                available</small></span></a>
+                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu
+                                                Region</strong><small>2 treks
+                                                available</small></span></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- About -->
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+
+                    <!-- Blog (direct) -->
+                    <li class="nav-item">
+                        <a href="travel-blog.html" class="nav-link">Blog</a>
+                    </li>
+
+                    <!-- Contact (direct) -->
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+
+                </ul><!-- /nav-links -->
+
+                <!-- Right side actions -->
+                <div class="nav-actions">
+                    <a href="contact.html" class="nav-cta">
+                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                    </a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+       <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-links">
+        <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i> Home</a></li>
+        <li><a href="departures.html"><i class="fas fa-calendar-alt" style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+        <li><a href="treks.html"><i class="fas fa-mountain" style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+        <li><a href="destinations.html"><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle" style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+        <li><a href="travel-blog.html"><i class="fas fa-pen-nib" style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="about-hero" id="home">
+        <div class="about-hero-bg" style="background-image:url('hero.png');"></div>
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;opacity:0.5"></i>
+                <span>Travel Blog</span>
+            </div>
+            <h1 class="about-title">Travel <span class="title-accent">Blog</span></h1>
+            <p class="about-subtitle">Stories, tips and insider guides to inspire your next Nepal adventure.</p>
+        </div>
+    </section>
+
+    <!-- ===== BLOG POSTS ===== -->
+    <section class="blog-section" id="blog-posts">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Insights & Stories</span>
+                <h2 class="section-title">Latest <span class="accent">Adventure Articles</span></h2>
+                <p class="section-sub">Practical guides, real trek reports, and Nepal travel tips from BESTTREKSNEPAL
+                    experts.</p>
+            </div>
+
+            <div class="blog-grid">
+
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.weserv.nl/?url=besttreksnepal.com/everest.png&w=1200&fit=inside&output=webp&q=80" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Travel Tips</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> October 2025</span>
+                        <h3 class="blog-title">Best Time to Trek in Nepal</h3>
+                        <p class="blog-excerpt">Discover the ideal seasons for trekking in Nepal — from spring
+                            wildflowers to autumn
+                            clarity.</p>
+                        <a href="best-time-to-trek-in-nepal.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80"
+                            alt="Everest Base Camp Trek Guide" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Trek Guide</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> November 2025</span>
+                        <h3 class="blog-title">Everest Base Camp Trek – Complete Guide</h3>
+                        <p class="blog-excerpt">Everything you need to know about the world's most iconic trek: permits,
+                            packing,
+                            altitude tips.</p>
+                        <a href="everest-base-camp-trek-complete-guide.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?auto=format&fit=crop&w=800&q=80"
+                            alt="Annapurna Trek Difficulty" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Difficulty Guide</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> December 2025</span>
+                        <h3 class="blog-title">Annapurna Trek Difficulty Explained</h3>
+                        <p class="blog-excerpt">Is the Annapurna Circuit right for you? A candid breakdown of what to
+                            expect on the
+                            trail.</p>
+                        <a href="annapurna-trek-difficulty-explained.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=800&q=80"
+                            alt="I Spent 14 Days Trekking to Everest Base Camp" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Firsthand</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 18, 2026</span>
+                        <h3 class="blog-title">I Spent 14 Days Trekking to Everest Base Camp – Here’s What Happened</h3>
+                        <p class="blog-excerpt">A day-by-day account of highs, challenges, and life-changing moments
+                            along the Khumbu Trail.</p>
+                        <a href="i-spent-14-days-trekking-to-everest-base-camp.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=800&q=80"
+                            alt="This Trek in Nepal Will Change Your Life Forever" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Inspiration</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 15, 2026</span>
+                        <h3 class="blog-title">This Trek in Nepal Will Change Your Life Forever</h3>
+                        <p class="blog-excerpt">Why one epic trek opens new perspectives on adventure, gratitude, and
+                            inner strength.</p>
+                        <a href="this-trek-in-nepal-will-change-your-life-forever.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=800&q=80"
+                            alt="Why 90% of Trekkers Fail at Everest Base Camp" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Reality</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 12, 2026</span>
+                        <h3 class="blog-title">Why 90% of Trekkers Fail at Everest Base Camp (Truth Revealed)</h3>
+                        <p class="blog-excerpt">Common mistakes, overlooked prep work, and how to set your trek up for
+                            success.</p>
+                        <a href="why-90-percent-of-trekkers-fail-at-everest-base-camp.html" class="blog-link">Read More
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                            alt="Don’t Go to Everest Base Camp Until You Read This" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Guidance</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 10, 2026</span>
+                        <h3 class="blog-title">Don’t Go to Everest Base Camp Until You Read This</h3>
+                        <p class="blog-excerpt">Essential must-knows for gear, timing, altitude safety, and realistic
+                            expectations.</p>
+                        <a href="dont-go-to-everest-base-camp-until-you-read-this.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1505993597083-3bd19fb75e57?auto=format&fit=crop&w=800&q=80"
+                            alt="Hidden Secrets of Everest Region" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Insider</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 05, 2026</span>
+                        <h3 class="blog-title">Hidden Secrets of Everest Region That Tourists Don’t Know</h3>
+                        <p class="blog-excerpt">Local traditions, secret viewpoints and off-the-map experiences for the
+                            adventurous traveler.</p>
+                        <a href="hidden-secrets-of-everest-region.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80"
+                            alt="Gokyo Lakes vs Everest Base Camp" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Comparison</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 22, 2026</span>
+                        <h3 class="blog-title">Gokyo Lakes vs Everest Base Camp: Which Trek is Better?</h3>
+                        <p class="blog-excerpt">Side-by-side analysis of scenery, difficulty, altitude, and candidate
+                            experience for two iconic routes.</p>
+                        <a href="gokyo-lakes-vs-everest-base-camp-which-trek-is-better.html" class="blog-link">Read More
+                            <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=800&q=80"
+                            alt="Everest Three Passes Trek" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Ultimate Guide</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 20, 2026</span>
+                        <h3 class="blog-title">Everest Three Passes Trek: The Ultimate Adventure Guide</h3>
+                        <p class="blog-excerpt">Detailed route, elevation plan, and key setup advice for the ultimate
+                            Everest circuit.</p>
+                        <a href="everest-three-passes-trek-guide.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.weserv.nl/?url=besttreksnepal.com/everest.png&w=1200&fit=inside&output=webp&q=80" alt="How to Prepare for High Altitude Trek" class="blog-img"
+                            loading="lazy" />
+                        <span class="blog-cat">Preparation</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 18, 2026</span>
+                        <h3 class="blog-title">How to Prepare for High Altitude Trek in Everest Region</h3>
+                        <p class="blog-excerpt">A practical pre-trek regimen covering fitness, gear, acclimation and
+                            medical checks at elevation.</p>
+                        <a href="how-to-prepare-for-everest-trek.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1589519160732-57fc498494f8?auto=format&fit=crop&w=800&q=80"
+                            alt="Trekking Cost Nepal 2026" class="blog-img" loading="lazy" />
+                        <span class="blog-cat">Budget</span>
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-date"><i class="fas fa-calendar"></i> March 24, 2026</span>
+                        <h3 class="blog-title">How Much Does Trekking in Nepal Really Cost in 2026?</h3>
+                        <p class="blog-excerpt">Comprehensive breakdown of trek packages, permits, guides, and daily
+                            expenses in the Himalayas.</p>
+                        <a href="trekking-cost-nepal-2026.html" class="blog-link">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="section bg-light" id="blog-faqs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Blog FAQs</span>
+                <h2 class="section-title">Common <span class="accent">Blog Questions</span></h2>
+                <p class="section-sub">Find answers about our content, contributions, and how to stay connected.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <div class="faq-q-icon"><i class="fas fa-feather-alt"></i></div>
+                        <span>How often do you publish new articles?</span>
+                        <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We typically publish <strong>2-3 new articles per month</strong>. Our content focuses on
+                            seasonal trekking advice, real-time trail updates, and cultural insights from our guides in
+                            the field.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <div class="faq-q-icon"><i class="fas fa-users"></i></div>
+                        <span>Can I contribute a guest post to your blog?</span>
+                        <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we love hearing from fellow adventurers! If you've trekked with us and want to share
+                            your story, please <strong>contact us</strong> with your pitch. We prioritize authentic,
+                            firsthand accounts that provide value to our community.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <div class="faq-q-icon"><i class="fas fa-check-circle"></i></div>
+                        <span>Are the trek reports based on real experiences?</span>
+                        <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Every trek report and guide on our blog is written by <strong>experienced
+                                Himalayan guides</strong> or travelers who have recently completed the routes. We pride
+                            ourselves on providing accurate, up-to-date information.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <div class="faq-q-icon"><i class="fas fa-bell"></i></div>
+                        <span>How can I stay updated with the latest posts?</span>
+                        <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The best way to stay updated is to <strong>follow us on Instagram and Facebook</strong>,
+                            where we announce every new post. You can also bookmark this page and check back regularly
+                            for new Himalayan inspiration.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <div class="faq-q-icon"><i class="fas fa-hiking"></i></div>
+                        <span>Do you offer personalized travel advice?</span>
+                        <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer">
+                        <p>While our blog provides general advice, we offer <strong>personalized trip planning</strong>
+                            for anyone looking to book a trek. Simply click "Plan My Trip" to connect with one of our
+                            experts for a customized itinerary.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cta-section">
+        <div class="cta-bg" style="background-image:url('cta.png')"></div>
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+            <h2>Ready to Start Your <span class="accent">Himalayan Story?</span></h2>
+            <p>Turn inspiration into adventure. Connect with our experts to plan your personalized Nepal trek today.</p>
+            <div class="hero-btns" style="margin-top:20px">
+                <a href="contact.html" class="btn-primary">Plan My Trip</a>
+                <a href="treks.html" class="btn-outline">Explore All Treks</a>
+            </div>
+        </div>
+    </section>
+
+      <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mountain"></i>
+            BESTTREKS<span>NEPAL</span>
+          </div>
+          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
+            safely and sustainably.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#treks">All Treks</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="index.html#blog">Travel Blog</a></li>
+            <li><a href="contact.html">Plan My Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trek Regions</h4>
+          <ul>
+            <li><a href="everest-region.html">Everest Region</a></li>
+            <li><a href="annapurna-region.html">Annapurna Region</a></li>
+            <li><a href="langtang-region.html">Langtang Region</a></li>
+            <li><a href="manaslu-region.html">Manaslu Region</a></li>
+            <li><a href="dolpa-region.html">Dolpa Region</a></li>
+            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+            <li><a href="mustang-region.html">Mustang Region</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+            <li><i class="fas fa-envelope"></i> info@BESTTREKSNEPAL.com</li>
+            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 BESTTREKSNEPAL. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+
+
+
