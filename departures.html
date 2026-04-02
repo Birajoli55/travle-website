@@ -739,7 +739,7 @@
             <tr>
               <td>
                 <div class="dep-trek-name">
-                  <img src="${d.img}" alt="${d.trek}" class="dep-trek-img" / loading="lazy" decoding="async">
+                  <img srcset="https://source.unsplash.com/featured/400x264?%24%7Bd.trek%7D 400w, https://source.unsplash.com/featured/800x528?%24%7Bd.trek%7D 800w, https://source.unsplash.com/featured/1200x792?%24%7Bd.trek%7D 1200w" sizes="(max-width: 768px) 100vw, 50vw" src="https://source.unsplash.com/featured/1200x792?%24%7Bd.trek%7D" alt="${d.trek}" class="dep-trek-img" / loading="lazy" decoding="async">
                   <div class="dep-trek-label">
                     <span>${d.trek}</span>
                     <small>${d.region} Region</small>
@@ -763,7 +763,7 @@
             return `
             <div class="dep-card">
               <div class="dep-card-header">
-                <img src="${d.img}" alt="${d.trek}" class="dep-card-img" / loading="lazy" decoding="async">
+                <img srcset="https://source.unsplash.com/featured/400x264?%24%7Bd.trek%7D 400w, https://source.unsplash.com/featured/800x528?%24%7Bd.trek%7D 800w, https://source.unsplash.com/featured/1200x792?%24%7Bd.trek%7D 1200w" sizes="(max-width: 768px) 100vw, 50vw" src="https://source.unsplash.com/featured/1200x792?%24%7Bd.trek%7D" alt="${d.trek}" class="dep-card-img" / loading="lazy" decoding="async">
                 <div class="dep-card-title">${d.trek}<small>${d.region} Region</small></div>
               </div>
               <div class="dep-card-body">
