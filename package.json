@@ -1,0 +1,13 @@
+{
+  "name": "nepal-trekking",
+  "version": "1.0.0",
+  "description": "BESTTREKSNEPAL Static Website",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}
+ 

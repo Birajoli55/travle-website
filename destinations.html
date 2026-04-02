@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trekking Destinations in Nepal | BESTTREKSNEPAL</title>
+    <link rel="canonical" href="https://besttreksnepal.com/destinations.html" />
+  <meta name="description"
+    content="Explore Nepal's most iconic trekking regions. From the high peaks of Everest to the cultural heart of Annapurna and the hidden valleys of Langtang and Manaslu." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom Styles for Destinations Page */
+    .dest-regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+ 
+    .region-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .region-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .region-img-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .region-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .region-card:hover .region-img {
+      transform: scale(1.1);
+    }
+
+    .region-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--green);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .region-body {
+      padding: 30px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .region-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .region-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .region-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .region-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .region-features i {
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    .region-footer {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .region-stats {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .region-stats strong {
+      color: var(--green);
+    }
+
+    .btn-region {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-region:hover {
+      color: var(--orange);
+      gap: 10px;
+    }
+
+    /* Map Section Mockup */
+    .map-section {
+      background: var(--off-white);
+      padding: 100px 0;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 500px;
+      background: #e0e4e8;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .map-overlay-text {
+      position: absolute;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: var(--radius);
+      max-width: 450px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      width: 90%;
+    }
+
+    .map-overlay-text h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .map-overlay-text p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Region Selector Sidebar style for mobile */
+    @media (max-width: 768px) {
+      .dest-regions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-placeholder {
+        height: 400px;
+      }
+
+      .map-overlay-text {
+        padding: 30px 20px;
+      }
+
+      .map-overlay-text h3 {
+        font-size: 1.25rem;
+      }
+
+      .map-overlay-text p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+      <!-- ===== STICKY NAVBAR ===== -->
+    <nav id="navbar" class="navbar">
+
+        <!-- Main navbar -->
+        <div class="nav-main">
+            <div class="nav-container nav-main-inner">
+
+                <!-- Logo -->
+                <a href="index.html#home" class="nav-logo">
+                    <span class="logo-icon"><i class="fas fa-mountain"></i></span>
+                    <span class="logo-text">BESTTREKS<span class="logo-accent">NEPAL</span></span>
+                </a>
+
+                <!-- Desktop nav links -->
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <!-- Departures (direct) -->
+                    <li class="nav-item">
+                        <a href="departures.html" class="nav-link">Departures</a>
+                    </li>
+
+                    <!-- Treks (direct) -->
+                    <li class="nav-item">
+                        <a href="treks.html" class="nav-link">Treks</a>
+                    </li>
+                    <!-- Destinations dropdown -->
+                    <li class="nav-item has-dropdown">
+                        <a href="destinations.html" class="nav-link nav-active">
+                            Destinations <i class="fas fa-chevron-down nav-arrow"></i>
+                        </a>
+                        <div class="dropdown dropdown-sm">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-col">
+                                    <p class="dropdown-heading">Regions</p>
+                                    <a href="everest-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-hiking"></i></span><span><strong>Everest
+                                                Region</strong><small>12 treks
+                                                available</small></span></a>
+                                    <a href="annapurna-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Annapurna
+                                                Region</strong><small>9 treks
+                                                available</small></span></a>
+                                    <a href="langtang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-tree"></i></span><span><strong>Langtang
+                                                Region</strong><small>6 treks
+                                                available</small></span></a>
+                                    <a href="manaslu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-compass"></i></span><span><strong>Manaslu
+                                                Region</strong><small>5 treks
+                                                available</small></span></a>
+                                    <a href="dolpa-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-paw"></i></span><span><strong>Dolpa
+                                                Region</strong><small>4 treks
+                                                available</small></span></a>
+                                    <a href="kanchenjunga-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Kanchenjunga
+                                                Region</strong><small>2 treks
+                                                available</small></span></a>
+                                    <a href="mustang-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-sun"></i></span><span><strong>Mustang
+                                                Region</strong><small>3 treks
+                                                available</small></span></a>
+                                    <a href="makalu-region.html" class="dropdown-link"><span class="dlink-icon"><i
+                                                class="fas fa-mountain"></i></span><span><strong>Makalu
+                                                Region</strong><small>2 treks
+                                                available</small></span></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- About -->
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+
+                    <!-- Blog (direct) -->
+                    <li class="nav-item">
+                        <a href="travel-blog.html" class="nav-link">Blog</a>
+                    </li>
+
+                    <!-- Contact (direct) -->
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+
+                </ul><!-- /nav-links -->
+
+                <!-- Right side actions -->
+                <div class="nav-actions">
+                    <a href="contact.html" class="nav-cta">
+                        <i class="fas fa-paper-plane"></i> Plan My Trip
+                    </a>
+                    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+       <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-links">
+        <li><a href="index.html"><i class="fas fa-home" style="margin-right: 12px; color: var(--green);"></i> Home</a></li>
+        <li><a href="departures.html"><i class="fas fa-calendar-alt" style="margin-right: 12px; color: var(--green);"></i> Departures</a></li>
+        <li><a href="treks.html"><i class="fas fa-mountain" style="margin-right: 12px; color: var(--green);"></i> All Treks</a></li>
+        <li><a href="destinations.html"><i class="fas fa-map-marker-alt" style="margin-right: 12px; color: var(--green);"></i> Destinations</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle" style="margin-right: 12px; color: var(--green);"></i> About Us</a></li>
+        <li><a href="travel-blog.html"><i class="fas fa-pen-nib" style="margin-right: 12px; color: var(--green);"></i> Blog</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope" style="margin-right: 12px; color: var(--green);"></i> Contact</a></li>
+      </ul>
+      <a href="contact.html" class="mobile-cta">Plan My Trip <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    </nav>
+
+  <!-- ===== DESTINATIONS HERO SECTION ===== -->
+  <section class="about-hero" id="home">
+    <div class="about-hero-bg" style="background-image:url('hero.png');"></div>
+    <div class="about-hero-overlay"></div>
+    <div class="about-hero-content container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fas fa-chevron-right" style="font-size:0.6rem;opacity:0.5"></i>
+        <span>Destinations</span>
+      </div>
+      <h1 class="about-title">Explore Nepal's <span class="title-accent">Regions</span></h1>
+      <p class="about-subtitle">From the roof of the world in Everest to the lush valleys of Annapurna, discover the
+        diverse landscapes and cultures of the Himalayas.</p>
+    </div>
+  </section>
+
+  <!-- ===== REGIONS SECTION ===== -->
+  <section class="section" id="regions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Choose Your Path</span>
+        <h2 class="section-title">Major Trekking <span class="accent">Regions</span></h2>
+        <p class="section-sub">Every region in Nepal offers a unique blend of scenery, culture, and challenge.</p>
+      </div>
+
+      <div class="dest-regions-grid">
+
+        <!-- Everest Region -->
+        <div class="region-card fade-in" id="everest">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/everest.png&w=1200&fit=inside&output=webp&q=80" alt="Everest Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Most Popular</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Everest Region</h3>
+            <p class="region-desc">Home to Mt. Everest (8848m), the Khumbu region offers iconic high-altitude trails,
+              Sherpa culture, and legendary monasteries.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Iconic views of the world's highest peaks</li>
+              <li><i class="fas fa-check-circle"></i> Rich Sherpa Buddhist culture</li>
+              <li><i class="fas fa-check-circle"></i> High-altitude challenges & glaciers</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>12</strong> Treks Available</span>
+              <a href="everest-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Annapurna Region -->
+        <div class="region-card fade-in" id="annapurna">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/annapurna.png&w=1200&fit=inside&output=webp&q=80" alt="Annapurna Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Most Diverse</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Annapurna Region</h3>
+            <p class="region-desc">Famous for its incredible diversity, ranging from subtropical forests to
+              high-altitude
+              deserts and the majestic Annapurna massif.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Stunning variety of landscapes</li>
+              <li><i class="fas fa-check-circle"></i> Cultural mix of Gurung & Magar villages</li>
+              <li><i class="fas fa-check-circle"></i> Accessible trails for all levels</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>9</strong> Treks Available</span>
+              <a href="annapurna-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Langtang Region -->
+        <div class="region-card fade-in" id="langtang">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/langtang.png&w=1200&fit=inside&output=webp&q=80" alt="Langtang Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Closest to Kathmandu</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Langtang Region</h3>
+            <p class="region-desc">The "Valley of Glaciers" offers beautiful pine forests, traditional Tamang culture,
+              and incredible views without the long travel times.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Short travel time from Kathmandu</li>
+              <li><i class="fas fa-check-circle"></i> Authentic Tamang heritage</li>
+              <li><i class="fas fa-check-circle"></i> Beautiful rhododendron forests</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>6</strong> Treks Available</span>
+              <a href="langtang-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manaslu Region -->
+        <div class="region-card fade-in" id="manaslu">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/manaslu.png&w=1200&fit=inside&output=webp&q=80" alt="Manaslu Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Remote & Wild</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Manaslu Region</h3>
+            <p class="region-desc">A restricted region offering a more "off-the-beaten-path" experience around the
+              world's eighth-highest mountain.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Pristine, uncrowded trails</li>
+              <li><i class="fas fa-check-circle"></i> Remote Tibetan-influenced culture</li>
+              <li><i class="fas fa-check-circle"></i> Challenging high-pass crossings</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>5</strong> Treks Available</span>
+              <a href="index.html#filter" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Dolpo Region -->
+        <div class="region-card fade-in" id="dolpo">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/cta.png&w=1200&fit=inside&output=webp&q=80" alt="Dolpo Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Ultimate Adventure</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Dolpo Region</h3>
+            <p class="region-desc">The most remote part of Nepal, featuring the turquoise Phoksundo Lake and the
+              centuries-old Bon religion.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Untouched wilderness & wildlife</li>
+              <li><i class="fas fa-check-circle"></i> Crystal clear alpine lakes</li>
+              <li><i class="fas fa-check-circle"></i> True expedition-style trekking</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>3</strong> Treks Available</span>
+              <a href="dolpa-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanchenjunga Region -->
+        <div class="region-card fade-in" id="kanchenjunga">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/manaslu.png&w=1200&fit=inside&output=webp&q=80" alt="Kanchenjunga Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Eastern Frontier</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Kanchenjunga Region</h3>
+            <p class="region-desc">Home to the world's third highest peak, this remote eastern region offers
+              rhododendron forests, Limbu culture, and utter solitude.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Pristine, uncrowded mountain trails</li>
+              <li><i class="fas fa-check-circle"></i> Rare wildlife and botanical richness</li>
+              <li><i class="fas fa-check-circle"></i> Authentic eastern Himalayan culture</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>2</strong> Treks Available</span>
+              <a href="kanchenjunga-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mustang Region -->
+        <div class="region-card fade-in" id="mustang">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/cta.png&w=1200&fit=inside&output=webp&q=80" alt="Mustang Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Forbidden Kingdom</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Mustang Region</h3>
+            <p class="region-desc">Enter the desert-like Trans-Himalayan landscape of Mustang, home to ancient caves,
+              royal palaces, and the walled city of Lo Manthang.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Unique high-altitude desert scenery</li>
+              <li><i class="fas fa-check-circle"></i> Ancient Tibetan Buddhist enclaves</li>
+              <li><i class="fas fa-check-circle"></i> The mythical walled city of Lo Manthang</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>3</strong> Treks Available</span>
+              <a href="mustang-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="region-card fade-in" id="makalu">
+          <div class="region-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/everest.png&w=1200&fit=inside&output=webp&q=80" alt="Makalu Region" class="region-img" / loading="lazy" decoding="async">
+            <div class="region-badge">Remote Alpine</div>
+          </div>
+          <div class="region-body">
+            <h3 class="region-title">Makalu Region</h3>
+            <p class="region-desc">Venture into one of the Himalayas' most remote and untouched regions around the
+              fifth-highest mountain, where true alpine wilderness awaits.</p>
+            <ul class="region-features">
+              <li><i class="fas fa-check-circle"></i> Pristine alpine wilderness and undiscovered trails</li>
+              <li><i class="fas fa-check-circle"></i> Stunning views of world-class Himalayan peaks</li>
+              <li><i class="fas fa-check-circle"></i> Authentic mountain communities and culture</li>
+            </ul>
+            <div class="region-footer">
+              <span class="region-stats"><strong>2</strong> Treks Available</span>
+              <a href="makalu-region.html" class="btn-region">View Treks <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERACTIVE MAP SECTION ===== -->
+  <section class="map-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visual Guide</span>
+        <h2 class="section-title">Where We <span class="accent">Trek</span></h2>
+        <p class="section-sub">A bird's-eye view of our Himalayan playground.</p>
+      </div>
+      <div class="map-placeholder fade-in">
+        <img src="https://images.weserv.nl/?url=besttreksnepal.com/hero.png&w=1200&fit=inside&output=webp&q=80" alt="Map of Nepal" / loading="lazy" decoding="async">
+        <div class="map-overlay-text">
+          <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--green); margin-bottom: 20px;"></i>
+          <h3>Interactive Map Coming Soon</h3>
+          <p>We're currently building a detailed interactive map to help you visualize every pass, peak, and trail in
+            our portfolio.</p>
+          <a href="index.html#filter" class="btn-primary" style="margin-top: 20px;">Explore List View</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED TREKS (REUSED) ===== -->
+  <section class="section" id="treks">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Best of the Best</span>
+        <h2 class="section-title">Featured <span class="accent">Adventures</span></h2>
+        <p class="section-sub">Don't know where to start? These are our most-loved treks.</p>
+      </div>
+      <div class="treks-grid" id="featuredTreksDest">
+        <!-- Will be populated by JS or same as index -->
+        <div class="trek-card fade-in">
+          <div class="trek-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/everest.png&w=1200&fit=inside&output=webp&q=80" alt="Everest Base Camp Trek" class="trek-img" loading="lazy" />
+            <div class="trek-badge badge-challenging">Challenging</div>
+            <div class="trek-overlay"><a href="everest-base-camp.html" class="btn-view">View Details <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="trek-body">
+            <h3 class="trek-name">Everest Base Camp Trek</h3>
+            <div class="trek-meta">
+              <span><i class="fas fa-clock"></i> 14 Days</span>
+              <span><i class="fas fa-map-marker-alt"></i> Everest Region</span>
+            </div>
+            <div class="trek-diff diff-hard"><i class="fas fa-signal"></i> Challenging</div>
+            <div class="trek-footer">
+              <div class="trek-price">From <strong>$1,200</strong></div>
+              <a href="everest-base-camp.html" class="btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trek-card fade-in">
+          <div class="trek-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/hero.png&w=1200&fit=inside&output=webp&q=80" alt="Gokyo Lakes Trek" class="trek-img" loading="lazy" />
+            <div class="trek-badge badge-moderate">Moderate</div>
+            <div class="trek-overlay"><a href="gokyo-lakes.html" class="btn-view">View Details <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="trek-body">
+            <h3 class="trek-name">Gokyo Lakes Trek</h3>
+            <div class="trek-meta">
+              <span><i class="fas fa-clock"></i> 14 Days</span>
+              <span><i class="fas fa-map-marker-alt"></i> Everest Region</span>
+            </div>
+            <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+            <div class="trek-footer">
+              <div class="trek-price">From <strong>$1,150</strong></div>
+              <a href="gokyo-lakes.html" class="btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trek-card fade-in">
+          <div class="trek-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/annapurna.png&w=1200&fit=inside&output=webp&q=80" alt="Annapurna Circuit Trek" class="trek-img" loading="lazy" />
+            <div class="trek-badge badge-moderate">Moderate</div>
+            <div class="trek-overlay"><a href="annapurna-circuit.html" class="btn-view">View Details <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="trek-body">
+            <h3 class="trek-name">Annapurna Circuit Trek</h3>
+            <div class="trek-meta">
+              <span><i class="fas fa-clock"></i> 18 Days</span>
+              <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+            </div>
+            <div class="trek-diff diff-mod"><i class="fas fa-signal"></i> Moderate</div>
+            <div class="trek-footer">
+              <div class="trek-price">From <strong>$900</strong></div>
+              <a href="annapurna-circuit.html" class="btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="trek-card fade-in">
+          <div class="trek-img-wrap">
+            <img src="https://images.weserv.nl/?url=besttreksnepal.com/langtang.png&w=1200&fit=inside&output=webp&q=80" alt="Langtang Valley Trek" class="trek-img" loading="lazy" />
+            <div class="trek-badge badge-easy">Easy</div>
+            <div class="trek-overlay"><a href="langtang-valley.html" class="btn-view">View Details <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="trek-body">
+            <h3 class="trek-name">Langtang Valley Trek</h3>
+            <div class="trek-meta">
+              <span><i class="fas fa-clock"></i> 10 Days</span>
+              <span><i class="fas fa-map-marker-alt"></i> Langtang Region</span>
+            </div>
+            <div class="trek-diff diff-easy"><i class="fas fa-signal"></i> Easy</div>
+            <div class="trek-footer">
+              <div class="trek-price">From <strong>$650</strong></div>
+              <a href="langtang-valley.html" class="btn-sm">View Details</a>
+            </div>
+          </div>
+          <div class="trek-card fade-in">
+            <div class="trek-img-wrap">
+              <img src="https://images.weserv.nl/?url=besttreksnepal.com/langtang.png&w=1200&fit=inside&output=webp&q=80" alt="Ghorepani Poon Hill Trek" class="trek-img" loading="lazy" />
+              <div class="trek-badge badge-easy">Easy</div>
+              <div class="trek-overlay"><a href="ghorepani-poon-hill.html" class="btn-view">View Details <i
+                    class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="trek-body">
+              <h3 class="trek-name">Ghorepani Poon Hill Trek</h3>
+              <div class="trek-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+              </div>
+              <div class="trek-diff diff-easy"><i class="fas fa-signal"></i> Easy</div>
+              <div class="trek-footer">
+                <div class="trek-price">From <strong>$450</strong></div>
+                <a href="ghorepani-poon-hill.html" class="btn-sm">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+        <p class="section-sub">Everything you need to know before you hit the trail</p>
+      </div>
+      <div class="faq-layout">
+
+        <div class="faq-categories">
+          <button class="faq-cat-btn active" data-cat="all">All Questions</button>
+          <button class="faq-cat-btn" data-cat="booking">Booking</button>
+          <button class="faq-cat-btn" data-cat="preparation">Preparation</button>
+          <button class="faq-cat-btn" data-cat="safety">Safety</button>
+          <button class="faq-cat-btn" data-cat="permits">Permits</button>
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+          <div class="faq-item" data-cat="booking">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-calendar-check"></i></span>
+              <span>How far in advance should I book my trek?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>We recommend booking at least <strong>2–3 months in advance</strong>, especially for peak season
+                (March–May and September–November). Popular treks like Everest Base Camp fill up quickly. However, we
+                can sometimes accommodate last-minute bookings — contact us and we'll do our best!</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="booking">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-credit-card"></i></span>
+              <span>What is your cancellation and refund policy?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>We offer a <strong>full refund</strong> if you cancel 30+ days before the trek start date.
+                Cancellations 15–29 days before receive a 50% refund. Cancellations within 14 days are non-refundable.
+                However, we're always happy to reschedule your trek at no extra cost.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="preparation">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-dumbbell"></i></span>
+              <span>What fitness level is required for trekking in Nepal?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Fitness requirements vary by trek. Easy treks like <strong>Langtang Valley</strong> need basic fitness.
+                Moderate treks like Annapurna Circuit require regular cardio training 2–3 months prior. Challenging
+                treks like <strong>Everest Base Camp</strong> demand consistent hiking, running, and stair-climbing
+                exercise for 3–4 months. No prior trekking experience is needed — just good physical conditioning.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="preparation">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-suitcase-rolling"></i></span>
+              <span>What should I pack for a Himalayan trek?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Essential packing includes: <strong>layered clothing</strong> (moisture-wicking base, insulating
+                mid-layer, waterproof outer shell), quality trekking boots, trekking poles, a 35–45L daypack, sleeping
+                bag (rated to -10°C for high-altitude treks), sun protection, and a first aid kit. We provide a detailed
+                packing list upon booking. Gear can also be rented affordably in Kathmandu's Thamel district.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="preparation">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-calendar-alt"></i></span>
+              <span>What is the best time of year to trek in Nepal?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Nepal has two ideal trekking windows: <strong>Spring (March–May)</strong> — clear skies, blooming
+                rhododendrons, warm temperatures; and <strong>Autumn (September–November)</strong> — the most popular
+                season with exceptional visibility and crystal-clear mountain views. Winter treks (Dec–Feb) are possible
+                at lower altitudes and offer solitude. Monsoon (June–August) is generally avoided for most high-altitude
+                treks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="safety">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-heartbeat"></i></span>
+              <span>How do you handle altitude sickness (AMS)?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Altitude Mountain Sickness (AMS) is a serious concern above 3,000m. Our guides are <strong>Wilderness
+                  First Aid (WFA) certified</strong> and trained to monitor symptoms closely. We follow a strict
+                acclimatization schedule with rest days built in ("climb high, sleep low"). All guides carry pulse
+                oximeters and emergency oxygen. In severe cases, immediate descent and helicopter evacuation is
+                arranged. We strongly advise purchasing <strong>comprehensive travel insurance</strong> that covers
+                high-altitude evacuation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="safety">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-shield-alt"></i></span>
+              <span>Is trekking in Nepal safe for solo travelers and women?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Nepal is considered one of the <strong>safest adventure travel destinations in Asia</strong>. Solo
+                travelers — including women — trek successfully every year. On our group treks, you're never alone. We
+                recommend staying on established routes, keeping emergency contacts updated, and registering with TIMS
+                (Trekkers' Information Management System). Our guides are personally vetted and background-checked for
+                your peace of mind.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="permits">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-file-alt"></i></span>
+              <span>What permits are required for trekking in Nepal?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Most treks require a <strong>TIMS Card</strong> (Trekkers' Information Management System) and a
+                <strong>National Park / Conservation Area Permit</strong>. For example, Everest treks need a Sagarmatha
+                National Park permit, while Annapurna treks need an ACAP permit. Note that some specific areas (like
+                Dolpa) require additional special permits. <strong>We handle all permits on your behalf</strong> —
+                just provide your passport copy and we take care of the rest.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="permits">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-passport"></i></span>
+              <span>Do I need a visa to enter Nepal?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Most nationalities can obtain a <strong>Nepal Tourist Visa on arrival</strong> at Tribhuvan
+                International Airport (Kathmandu) or at land border crossings. Fees are approximately <strong>$30 for 15
+                  days, $50 for 30 days, $125 for 90 days</strong>. You'll need a valid passport (6+ months),
+                passport-size photos, and the visa fee in cash (USD preferred). We provide a complete pre-arrival
+                checklist with your booking confirmation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-cat="booking">
+            <button class="faq-question" aria-expanded="false">
+              <span class="faq-q-icon"><i class="fas fa-users"></i></span>
+              <span>Can I join a trek as a solo traveler or do I need a group?</span>
+              <span class="faq-chevron"><i class="fas fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! Solo travelers are warmly welcomed. You can <strong>join one of our scheduled group
+                  departures</strong> to meet like-minded adventurers, or book a <strong>private custom trek</strong>
+                with a dedicated guide and porter just for you. Private treks can be customized for pace, itinerary, and
+                dates. We specialize in making solo travel comfortable, social, and safe.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section class="cta-section" id="plan">
+    <div class="cta-bg" style="background-image:url('cta.png')"></div>
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <span class="section-tag" style="color:#ff7a00;border-color:#ff7a00">Customized For You</span>
+      <h2>Can't Decide on a<br /><span style="color:#ff7a00">Destination?</span></h2>
+      <p>Tell us your interests, fitness level, and timeframe, and our experts will suggest the perfect region for
+        your adventure.</p>
+      <a href="contact.html" class="btn-primary btn-large"><i class="fas fa-paper-plane"></i> Get Expert Advice</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mountain"></i>
+            BESTTREKS<span>NEPAL</span>
+          </div>
+          <p>Nepal's premier adventure trekking company. We connect passionate travelers with the roof of the world,
+            safely and sustainably.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#treks">All Treks</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="index.html#blog">Travel Blog</a></li>
+            <li><a href="contact.html">Plan My Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trek Regions</h4>
+          <ul>
+            <li><a href="everest-region.html">Everest Region</a></li>
+            <li><a href="annapurna-region.html">Annapurna Region</a></li>
+            <li><a href="langtang-region.html">Langtang Region</a></li>
+            <li><a href="manaslu-region.html">Manaslu Region</a></li>
+            <li><a href="dolpa-region.html">Dolpa Region</a></li>
+            <li><a href="kanchenjunga-region.html">Kanchenjunga Region</a></li>
+            <li><a href="mustang-region.html">Mustang Region</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+            <li><i class="fas fa-phone"></i> +977 1 4701234</li>
+            <li><i class="fas fa-envelope"></i> info@BESTTREKSNEPAL.com</li>
+            <li><i class="fas fa-clock"></i> Mon&ndash;Sat: 9AM &ndash; 6PM (NPT)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 BESTTREKSNEPAL. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
+
+
+
+
